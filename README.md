@@ -1,8 +1,11 @@
-# eBury-Interneteros
-Trabajo grupal de la asignatura de Sistemas de Información para Internet relacionado con la empresa eBury.
-
+## Integrantes del grupo
+- Carlos Quesada Cruz
+- Eduard Nicolás Cybulkiewicz
+- Ilias Mohamed Abselam
+- Pedro Sánchez Machuca
 
 # Fases del trabajo
 
-# Entidades JPA
-# 
+## Modelado de entidades JPA
+Hemos de modelar para cada requisito que consideremos necesarios una entidad JPA con sus atributos y relaciones entré si.
+## 
