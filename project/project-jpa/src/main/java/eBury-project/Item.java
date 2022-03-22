@@ -1,4 +1,4 @@
-package eBury-project;
+package eBury_project;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
