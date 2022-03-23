@@ -8,4 +8,12 @@ public class Cuenta_referencia {
 	@Id
 	private String iban;
 	
+	public String get_iban(){
+		return iban;
+	}
+	
+	public void set_iban(String x){
+		iban = x;
+	}
+	
 }
