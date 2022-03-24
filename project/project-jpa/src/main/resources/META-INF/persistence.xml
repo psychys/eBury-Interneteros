@@ -6,6 +6,8 @@
         <class>eBury_project.Cuenta_referencia</class>
         <class>eBury_project.Cuenta_eBury</class>
         <class>eBury_project.Currency_Account</class>
+        <class>eBury_project.Pooled</class>
+        <class>eBury_project.Segregated</class>
         <properties>
 			<property name="javax.persistence.jdbc.url" value="jdbc:h2:mem:test"/>
 			<property name="javax.persistence.jdbc.user" value=""/>

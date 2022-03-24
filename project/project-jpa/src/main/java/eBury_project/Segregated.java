@@ -1,11 +1,12 @@
 package eBury_project;
 
 import javax.persistence.Embeddable;
-import javax.persistence.OneToOne;
+import javax.persistence.ManyToOne;
+
 
 @Embeddable
-public class Currency_Account {
+public class Segregated {
 
-	@OneToOne
+	@ManyToOne
 	private Cuenta_referencia c_ref;
 }
