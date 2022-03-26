@@ -8,7 +8,15 @@
         <class>eBury_project.Currency_Account</class>
         <class>eBury_project.Pooled</class>
         <class>eBury_project.Segregated</class>
-        <properties>
+		<class>eBury_project.Empresa</class>
+		<class>eBury_project.Individual</class>
+		<class>eBury_project.Datos</class>
+		<class>eBury_project.Cuenta_Externa</class>
+		<class>eBury_project.Transaccion</class>
+		<class>eBury_project.Interna</class>
+		<class>eBury_project.Externa</class>
+		<class>eBury_project.Divisa</class>
+		<properties>
 			<property name="javax.persistence.jdbc.url" value="jdbc:h2:mem:test"/>
 			<property name="javax.persistence.jdbc.user" value=""/>
 			<property name="javax.persistence.jdbc.password" value=""/>
