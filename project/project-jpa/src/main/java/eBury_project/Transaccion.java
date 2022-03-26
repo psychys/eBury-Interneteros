@@ -73,4 +73,8 @@ public class Transaccion {
     public void setTransacciones(Collection<Divisa> transacciones) {
         this.transacciones = transacciones;
     }
+
+    @ManyToOne
+    private Cuenta_eBury cuenta;
+
 }

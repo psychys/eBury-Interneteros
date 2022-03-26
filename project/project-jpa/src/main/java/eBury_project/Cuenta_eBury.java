@@ -1,6 +1,8 @@
 package eBury_project;
 
+import java.util.Collection;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.*;
 
@@ -60,6 +62,9 @@ public class Cuenta_eBury {
 	public void setC_account(Currency_Account c_account) {
 		this.c_account = c_account;
 	}
-	
-	
+
+
+	@OneToMany(mappedBy = "cuenta")
+	private List<Transaccion> transacciones;
+
 }
