@@ -5,6 +5,7 @@ import javax.persistence.Id;
 import javax.persistence.Column;
 import javax.persistence.OneToMany;
 import javax.persistence.ManyToMany;
+import java.util.Collection;
 import java.util.List;
 
 @Entity
@@ -25,4 +26,7 @@ public class Pais {
     public void setAbreviatura(String abreviatura) { this.abreviatura = abreviatura; }
 
     public void setNombre_pais(String nombre_pais) { this.nombre_pais = nombre_pais; }
+
+    @ManyToMany(mappedBy = "paises")
+    private Collection<Divisa> divisas;
 }

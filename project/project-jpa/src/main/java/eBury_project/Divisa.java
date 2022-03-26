@@ -50,4 +50,7 @@ public class Divisa {
     public void setDivisas(Collection<Transaccion> divisas) {
         this.divisas = divisas;
     }
+
+    @ManyToMany
+    private Collection<Pais> paises;
 }
