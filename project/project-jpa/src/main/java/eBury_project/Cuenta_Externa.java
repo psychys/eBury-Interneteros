@@ -1,6 +1,7 @@
 package eBury_project;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "Cuenta_Externa")
@@ -34,4 +35,7 @@ public class Cuenta_Externa {
     public void setBeneficiario(String beneficiario) {
         this.beneficiario = beneficiario;
     }
+
+    @OneToMany (mappedBy = "c_ext")
+    private List<Externa> externas;
 }
