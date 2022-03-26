@@ -1,5 +1,7 @@
 package eBury_project;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
@@ -11,9 +13,9 @@ public class Cuenta_referencia {
 	@Id
 	private String iban;
 	@ManyToMany
-	private Pooled pooled;
+	private List<Pooled> pooled;
 	@OneToMany
-	private Segregated segregated;
+	private List<Segregated> segregated;
 	@OneToOne
 	private Currency_Account c_account;
 	

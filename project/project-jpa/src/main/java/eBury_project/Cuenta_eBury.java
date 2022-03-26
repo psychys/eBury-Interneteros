@@ -26,6 +26,10 @@ public class Cuenta_eBury {
 	private Cliente cliente;
 	@OneToOne
 	private Saldo saldo;
+	@OneToMany(mappedBy = "cuenta")
+	private List<Transaccion> transacciones;
+	@OneToMany
+	private List<Interna> internas;
 
 	public Cliente getCliente() {
 		return cliente;
@@ -64,7 +68,6 @@ public class Cuenta_eBury {
 	}
 
 
-	@OneToMany(mappedBy = "cuenta")
-	private List<Transaccion> transacciones;
+
 
 }
