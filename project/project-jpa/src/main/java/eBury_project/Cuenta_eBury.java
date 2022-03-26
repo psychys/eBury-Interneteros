@@ -2,14 +2,7 @@ package eBury_project;
 
 import java.util.Date;
 
-import javax.persistence.Column;
-import javax.persistence.Embedded;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+import javax.persistence.*;
 
 
 @Entity
@@ -31,8 +24,12 @@ public class Cuenta_eBury {
 	private Cliente cliente;
 	@OneToOne
 	private Saldo saldo;
-	
-	
+
+	public Cliente getCliente() {
+		return cliente;
+	}
+
+
 	public int getN_cuenta() {
 		return n_cuenta;
 	}
