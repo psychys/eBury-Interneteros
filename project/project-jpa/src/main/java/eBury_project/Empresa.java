@@ -14,6 +14,7 @@ public class Empresa {
     private String NIF;
     @Column(unique=true)
     private String Pagina_web;
+    //entidad debil
     @Embedded
     private Datos datos;
     
@@ -22,7 +23,15 @@ public class Empresa {
         return Nombre;
     }
 
-    public void setNombre(String nombre) {
+    public Datos getDatos() {
+		return datos;
+	}
+
+	public void setDatos(Datos datos) {
+		this.datos = datos;
+	}
+
+	public void setNombre(String nombre) {
         Nombre = nombre;
     }
 

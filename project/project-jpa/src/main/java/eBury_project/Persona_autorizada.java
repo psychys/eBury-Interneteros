@@ -13,8 +13,20 @@ public class Persona_autorizada {
     private String Nombre;
     private String Apellidos;
 
-    @Embedded
+
+	@OneToMany
     private Datos datos;
+    @ManyToOne
+    private Direccion direccion;
+
+    
+    public Direccion getDireccion() {
+		return direccion;
+	}
+
+	public void setDireccion(Direccion direccion) {
+		this.direccion = direccion;
+	}
 
     public String getDNI() {
         return DNI;

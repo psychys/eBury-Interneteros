@@ -23,7 +23,31 @@ public class Banco {
         return nombre_banco;
     }
 
-    public String getTipo_banco() {
+    public Direccion getDireccion() {
+		return direccion;
+	}
+
+	public void setDireccion(Direccion direccion) {
+		this.direccion = direccion;
+	}
+
+	public List<Cuenta_referencia> getC_ref() {
+		return c_ref;
+	}
+
+	public void setC_ref(List<Cuenta_referencia> c_ref) {
+		this.c_ref = c_ref;
+	}
+
+	public Pais getPais() {
+		return pais;
+	}
+
+	public void setPais(Pais pais) {
+		this.pais = pais;
+	}
+
+	public String getTipo_banco() {
         return tipo_banco;
     }
 

@@ -11,4 +11,18 @@ public class Interna {
     private double Comision;
     @ManyToOne
     private Cuenta_eBury cuenta;
+    
+	public double getComision() {
+		return Comision;
+	}
+	public void setComision(double comision) {
+		Comision = comision;
+	}
+	public Cuenta_eBury getCuenta() {
+		return cuenta;
+	}
+	public void setCuenta(Cuenta_eBury cuenta) {
+		this.cuenta = cuenta;
+	}
+    
 }
