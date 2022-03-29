@@ -3,6 +3,8 @@ package eBury_project;
 import javax.persistence.*;
 import java.util.Collection;
 
+//Entidad debil con saldo
+
 @Entity
 @Table(name = "divisa")
 public class Divisa {
@@ -13,9 +15,20 @@ public class Divisa {
     private String abreviatura;
     @Column(name= "simbolo", unique = true, nullable = false)
     private String simbolo;
+    @Column(nullable = false)
     private double tipo_cambio_dolar;
-
-    public String getNombre_divisa() {
+    @ManyToMany
+    private Collection<Pais> paises;
+    @ManyToMany
+    private Collection<Transaccion> divisas;
+    
+    public Collection<Pais> getPaises() {
+		return paises;
+	}
+	public void setPaises(Collection<Pais> paises) {
+		this.paises = paises;
+	}
+	public String getNombre_divisa() {
         return nombre_divisa;
     }
     public String getAbreviatura() {
@@ -25,7 +38,6 @@ public class Divisa {
     public double getTipo_cambio_dolar() {
         return tipo_cambio_dolar;
     }
-
 
     public void setNombre_divisa(String nombre_divisa) {
         this.nombre_divisa = nombre_divisa;
@@ -40,8 +52,7 @@ public class Divisa {
         this.tipo_cambio_dolar = tipo_cambio_dolar;
     }
 
-    @ManyToMany
-    private Collection<Transaccion> divisas;
+    
 
     public Collection<Transaccion> getDivisas() {
         return divisas;
@@ -50,4 +61,6 @@ public class Divisa {
     public void setDivisas(Collection<Transaccion> divisas) {
         this.divisas = divisas;
     }
+
+    
 }

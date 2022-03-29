@@ -27,8 +27,8 @@ public class Cliente {
     private Individual individual;
     @OneToMany
     private Collection<Cuenta_eBury> cuentas_ebury;
-    //@ManyToOne
-    //private Direccion direccion;
+    @ManyToOne
+    private Direccion direccion;
 
     public Collection<Cuenta_eBury> getCuentas_ebury() {
         return cuentas_ebury;

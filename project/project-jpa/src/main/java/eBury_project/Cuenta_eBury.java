@@ -24,8 +24,69 @@ public class Cuenta_eBury {
 	private Segregated segregated;
 	@ManyToOne
 	private Cliente cliente;
+	//preguntar entidad debil
 	@OneToOne
 	private Saldo saldo;
+	@OneToMany(mappedBy = "cuenta")
+	private List<Transaccion> transacciones;
+	@OneToMany
+	private List<Interna> internas;
+
+	
+	public Pooled getPooled() {
+		return pooled;
+	}
+
+
+	public void setPooled(Pooled pooled) {
+		this.pooled = pooled;
+	}
+
+
+	public Segregated getSegregated() {
+		return segregated;
+	}
+
+
+	public void setSegregated(Segregated segregated) {
+		this.segregated = segregated;
+	}
+
+
+	public Saldo getSaldo() {
+		return saldo;
+	}
+
+
+	public void setSaldo(Saldo saldo) {
+		this.saldo = saldo;
+	}
+
+
+	public List<Transaccion> getTransacciones() {
+		return transacciones;
+	}
+
+
+	public void setTransacciones(List<Transaccion> transacciones) {
+		this.transacciones = transacciones;
+	}
+
+
+	public List<Interna> getInternas() {
+		return internas;
+	}
+
+
+	public void setInternas(List<Interna> internas) {
+		this.internas = internas;
+	}
+
+
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
+	}
+
 
 	public Cliente getCliente() {
 		return cliente;
@@ -64,7 +125,6 @@ public class Cuenta_eBury {
 	}
 
 
-	@OneToMany(mappedBy = "cuenta")
-	private List<Transaccion> transacciones;
+
 
 }

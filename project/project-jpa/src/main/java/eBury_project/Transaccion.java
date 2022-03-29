@@ -21,8 +21,38 @@ public class Transaccion {
     private Integer cantidad_recibida;
     @Embedded
     private Externa externa;
-    @Embedded Interna interna;
+    @Embedded 
+    private Interna interna;
+    
 
+	@ManyToMany(mappedBy = "divisas")
+    private Collection<Divisa> transacciones;
+    @ManyToOne
+    private Cuenta_eBury cuenta;
+    
+    public Externa getExterna() {
+		return externa;
+	}
+
+	public void setExterna(Externa externa) {
+		this.externa = externa;
+	}
+
+	public Interna getInterna() {
+		return interna;
+	}
+
+	public void setInterna(Interna interna) {
+		this.interna = interna;
+	}
+
+	public Cuenta_eBury getCuenta() {
+		return cuenta;
+	}
+
+	public void setCuenta(Cuenta_eBury cuenta) {
+		this.cuenta = cuenta;
+	}
     public Integer getNumero_Transaccion() {
         return Numero_Transaccion;
     }
@@ -63,9 +93,6 @@ public class Transaccion {
         this.cantidad_recibida = cantidad_recibida;
     }
 
-    @ManyToMany(mappedBy = "divisas")
-    private Collection<Divisa> transacciones;
-
     public Collection<Divisa> getTransacciones() {
         return transacciones;
     }
@@ -74,7 +101,6 @@ public class Transaccion {
         this.transacciones = transacciones;
     }
 
-    @ManyToOne
-    private Cuenta_eBury cuenta;
+    
 
 }

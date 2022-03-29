@@ -3,9 +3,9 @@ package eBury_project;
 import javax.persistence.*;
 
 @Entity
-@Embeddable
+//@Embeddable
 public class Datos {
-
+//preguntar profesor sobre la clave compuesta
     @Id
     @Column(nullable = false)
     private String Tipo_autorizacion;

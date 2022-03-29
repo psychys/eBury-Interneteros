@@ -1,5 +1,7 @@
 package eBury_project;
 
+import java.util.List;
+
 import javax.persistence.Embeddable;
 import javax.persistence.ManyToMany;
 
@@ -8,5 +10,5 @@ import javax.persistence.ManyToMany;
 public class Pooled {
 	
 	@ManyToMany
-	private Cuenta_referencia c_ref;
+	private List<Cuenta_referencia> c_ref;
 }

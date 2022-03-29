@@ -1,7 +1,8 @@
 package eBury_project;
 
 import javax.persistence.*;
-
+import java.util.List;
+//Fallo al realicar relaciones con subentidades
 @Entity
 @Table(name = "Cuenta_Externa")
 public class Cuenta_Externa {
@@ -10,8 +11,19 @@ public class Cuenta_Externa {
     private String IBAN;
     private String SWIFT;
     private String beneficiario;
+    @OneToMany (mappedBy = "c_ext")
+    private List<Externa> externas;
 
-    public String getIBAN() {
+    
+    public List<Externa> getExternas() {
+		return externas;
+	}
+
+	public void setExternas(List<Externa> externas) {
+		this.externas = externas;
+	}
+
+	public String getIBAN() {
         return IBAN;
     }
 
@@ -34,4 +46,6 @@ public class Cuenta_Externa {
     public void setBeneficiario(String beneficiario) {
         this.beneficiario = beneficiario;
     }
+
+    
 }
