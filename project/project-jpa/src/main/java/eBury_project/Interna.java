@@ -2,11 +2,10 @@ package eBury_project;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
+import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
-
-@Embeddable
-
-public class Interna {
+@Entity
+public class Interna extends Transaccion{
     @Column(name= "Comision", nullable = false)
     private double Comision;
     @ManyToOne
