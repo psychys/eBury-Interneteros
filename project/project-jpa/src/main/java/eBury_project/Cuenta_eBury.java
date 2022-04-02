@@ -16,11 +16,10 @@ public class Cuenta_eBury {
 	private Date fecha_alta;
 	@Temporal(TemporalType.DATE)
 	private Date fecha_baja;
-	@Embedded
+	
 	private Currency_Account c_account;
-	@Embedded
 	private Pooled pooled;
-	@Embedded
+	
 	private Segregated segregated;
 	@ManyToOne
 	private Cliente cliente;
