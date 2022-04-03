@@ -19,32 +19,14 @@ public class Transaccion {
     private Date fecha_ejecucion;
     private Integer cantidad_enviada;
     private Integer cantidad_recibida;
-    @Embedded
+
     private Externa externa;
-    @Embedded 
     private Interna interna;
-    
 
 	@ManyToMany(mappedBy = "divisas")
     private Collection<Divisa> transacciones;
     @ManyToOne
     private Cuenta_eBury cuenta;
-    
-    public Externa getExterna() {
-		return externa;
-	}
-
-	public void setExterna(Externa externa) {
-		this.externa = externa;
-	}
-
-	public Interna getInterna() {
-		return interna;
-	}
-
-	public void setInterna(Interna interna) {
-		this.interna = interna;
-	}
 
 	public Cuenta_eBury getCuenta() {
 		return cuenta;
@@ -101,6 +83,19 @@ public class Transaccion {
         this.transacciones = transacciones;
     }
 
-    
+    public Interna getInterna() {
+        return interna;
+    }
 
+    public void setInterna(Interna interna) {
+        this.interna = interna;
+    }
+
+    public Externa getExterna() {
+        return externa;
+    }
+
+    public void setExterna(Externa externa) {
+        this.externa = externa;
+    }
 }

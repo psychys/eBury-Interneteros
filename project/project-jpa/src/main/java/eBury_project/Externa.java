@@ -1,12 +1,9 @@
 package eBury_project;
-import javax.persistence.Embeddable;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 
-//Error en Inteli J
-@Embeddable
-    public class Externa {
+@Entity
+
+public class Externa extends Transaccion{
 
     @ManyToOne
     private Cuenta_Externa c_ext;

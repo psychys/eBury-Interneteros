@@ -2,7 +2,7 @@ package eBury_project;
 
 import javax.persistence.*;
 import java.util.List;
-//Fallo al realicar relaciones con subentidades
+
 @Entity
 @Table(name = "Cuenta_Externa")
 public class Cuenta_Externa {
