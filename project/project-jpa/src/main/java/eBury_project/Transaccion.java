@@ -83,6 +83,19 @@ public class Transaccion {
         this.transacciones = transacciones;
     }
 
-    
+    public Interna getInterna() {
+        return interna;
+    }
 
+    public void setInterna(Interna interna) {
+        this.interna = interna;
+    }
+
+    public Externa getExterna() {
+        return externa;
+    }
+
+    public void setExterna(Externa externa) {
+        this.externa = externa;
+    }
 }
