@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.Collection;
 import java.util.Date;
 
-@MappedSuperclass
+@Entity
 @Table(name = "transaccion")
 public class Transaccion {
     @Id
@@ -19,6 +19,9 @@ public class Transaccion {
     private Date fecha_ejecucion;
     private Integer cantidad_enviada;
     private Integer cantidad_recibida;
+
+    private Externa externa;
+    private Interna interna;
 
 	@ManyToMany(mappedBy = "divisas")
     private Collection<Divisa> transacciones;
