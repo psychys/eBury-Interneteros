@@ -20,3 +20,5 @@ project/project-jpa/.idea/compiler.xml
 project/project-jpa/target/classes/eBury_project/Item.class
 
 project/project-jpa/target/classes/eBury_project/Main.class
+
+project/.idea/jpa-buddy.xml

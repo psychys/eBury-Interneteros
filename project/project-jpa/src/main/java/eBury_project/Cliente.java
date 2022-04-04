@@ -21,24 +21,14 @@ public class Cliente {
     private Date Fecha_apertura;
     @Temporal(TemporalType.DATE)
     private Date Fecha_cierre;
-    @Embedded
-    private Empresa empresa;
-    @Embedded
-    private Individual individual;
-    @OneToMany
+
+    @OneToMany(mappedBy="cliente")
     private Collection<Cuenta_eBury> cuentas_ebury;
     @ManyToOne
     private Direccion direccion;
 
     public Collection<Cuenta_eBury> getCuentas_ebury() {
         return cuentas_ebury;
-    }
-
-    public Empresa getIndivdual() {
-        return empresa;
-    }
-    public Individual getIndividual() {
-        return individual;
     }
 
     public Integer getIdentificador() {

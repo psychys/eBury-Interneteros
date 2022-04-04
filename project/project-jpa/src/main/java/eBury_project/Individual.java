@@ -6,10 +6,10 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.util.Date;
 
-@Embeddable
-public class Individual {
+@Entity
+public class Individual extends Cliente{
 
-    @Id
+
     @Column(nullable = false)
     private String Nombre;
     @Column(nullable = false)

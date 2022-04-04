@@ -1,6 +1,8 @@
 package eBury_project;
 
-public class Saldo_Id {
+import java.io.Serializable;
+
+public class Saldo_Id implements Serializable {
 
 	private int n_cuenta;
 	private String nombre_divisa;

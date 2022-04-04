@@ -9,6 +9,7 @@ import javax.persistence.IdClass;
 @Entity
 @IdClass(Saldo_Id.class)
 public class Saldo {
+
 	@Id
 	private String nombre_divisa;
 	@Id

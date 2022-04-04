@@ -1,10 +1,11 @@
 package eBury_project;
 
-import javax.persistence.*;
-import java.util.Collection;
+import javax.persistence.Column;
 
-@Embeddable
-public class Empresa {
+import javax.persistence.Entity;
+
+@Entity
+public class Empresa extends Cliente{
 
     @Column(unique=true)
     private String Nombre;
@@ -14,22 +15,12 @@ public class Empresa {
     private String NIF;
     @Column(unique=true)
     private String Pagina_web;
-    //entidad debil
-    @Embedded
-    private Datos datos;
+
     
 
     public String getNombre() {
         return Nombre;
     }
-
-    public Datos getDatos() {
-		return datos;
-	}
-
-	public void setDatos(Datos datos) {
-		this.datos = datos;
-	}
 
 	public void setNombre(String nombre) {
         Nombre = nombre;
