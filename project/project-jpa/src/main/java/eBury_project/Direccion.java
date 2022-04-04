@@ -3,7 +3,6 @@ package eBury_project;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Column;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.OneToMany;
 
@@ -21,8 +20,8 @@ public class Direccion {
     private Banco banco;
     @OneToMany (mappedBy = "direccion")
     private List<Cliente> cliente;
-    @OneToMany
-    private Persona_autorizada p_auth;
+    @OneToMany (mappedBy = "direccion")
+    private List<Persona_autorizada> p_auth;
 
     public Banco getBanco() {
 		return banco;
@@ -40,11 +39,11 @@ public class Direccion {
 		this.cliente = cliente;
 	}
 
-	public Persona_autorizada getP_auth() {
+	public List<Persona_autorizada> getP_auth() {
 		return p_auth;
 	}
 
-	public void setP_auth(Persona_autorizada p_auth) {
+	public void setP_auth(List<Persona_autorizada> p_auth) {
 		this.p_auth = p_auth;
 	}
 
