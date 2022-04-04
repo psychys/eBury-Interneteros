@@ -16,6 +16,9 @@
 		<class>eBury_project.Interna</class>
 		<class>eBury_project.Externa</class>
 		<class>eBury_project.Divisa</class>
+		<class>eBury_project.Direccion</class>
+		<class>eBury_project.Banco</class>
+		<class>eBury_project.Pais</class>
 		<properties>
 			<property name="javax.persistence.jdbc.url" value="jdbc:h2:mem:test"/>
 			<property name="javax.persistence.jdbc.user" value=""/>
