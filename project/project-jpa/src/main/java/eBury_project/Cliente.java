@@ -78,4 +78,16 @@ public class Cliente {
     public void setFecha_cierre(Date fecha_cierre) {
         Fecha_cierre = fecha_cierre;
     }
+
+    public void setCuentas_ebury(Collection<Cuenta_eBury> cuentas_ebury) {
+        this.cuentas_ebury = cuentas_ebury;
+    }
+
+    public Direccion getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(Direccion direccion) {
+        this.direccion = direccion;
+    }
 }

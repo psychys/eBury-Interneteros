@@ -15,4 +15,5 @@ public class Externa extends Transaccion{
 	public void setC_ext(Cuenta_Externa c_ext) {
 		this.c_ext = c_ext;
 	}
+
 }

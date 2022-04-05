@@ -58,4 +58,5 @@ public class Individual extends Cliente{
     public void setOcupacion(String ocupacion) {
         Ocupacion = ocupacion;
     }
+
 }

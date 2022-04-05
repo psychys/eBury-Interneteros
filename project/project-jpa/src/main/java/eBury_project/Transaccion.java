@@ -20,9 +20,6 @@ public class Transaccion {
     private Integer cantidad_enviada;
     private Integer cantidad_recibida;
 
-    private Externa externa;
-    private Interna interna;
-
 	@ManyToMany(mappedBy = "divisas")
     private Collection<Divisa> transacciones;
     @ManyToOne
@@ -83,19 +80,5 @@ public class Transaccion {
         this.transacciones = transacciones;
     }
 
-    public Interna getInterna() {
-        return interna;
-    }
 
-    public void setInterna(Interna interna) {
-        this.interna = interna;
-    }
-
-    public Externa getExterna() {
-        return externa;
-    }
-
-    public void setExterna(Externa externa) {
-        this.externa = externa;
-    }
 }

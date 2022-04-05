@@ -49,4 +49,6 @@ public class Empresa extends Cliente{
     public void setPagina_web(String pagina_web) {
         Pagina_web = pagina_web;
     }
+
+
 }
