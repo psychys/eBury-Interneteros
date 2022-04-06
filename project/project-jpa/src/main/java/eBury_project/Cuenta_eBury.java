@@ -17,7 +17,6 @@ public class Cuenta_eBury {
 	@Temporal(TemporalType.DATE)
 	private Date fecha_baja;
 
-
 	@ManyToOne
 	private Cliente cliente;
 	//preguntar entidad debil
@@ -28,6 +27,19 @@ public class Cuenta_eBury {
 	@OneToMany
 	private List<Interna> internas;
 
+	public Cuenta_eBury(int n_cuenta, Date fecha_alta, Date fecha_baja, Cliente cliente, Saldo saldo, List<Transaccion> transacciones, List<Interna> internas) {
+		this.n_cuenta = n_cuenta;
+		this.fecha_alta = fecha_alta;
+		this.fecha_baja = fecha_baja;
+		this.cliente = cliente;
+		this.saldo = saldo;
+		this.transacciones = transacciones;
+		this.internas = internas;
+	}
+
+	public Cuenta_eBury() {
+
+	}
 
 	public Saldo getSaldo() {
 		return saldo;

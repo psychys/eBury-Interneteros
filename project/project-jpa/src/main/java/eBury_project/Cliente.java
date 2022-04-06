@@ -27,6 +27,21 @@ public class Cliente {
     @ManyToOne
     private Direccion direccion;
 
+    public Cliente(Integer identificador, String activo, String correo, Integer telefono, Date fecha_apertura, Date fecha_cierre, Collection<Cuenta_eBury> cuentas_ebury, Direccion direccion) {
+        Identificador = identificador;
+        Activo = activo;
+        Correo = correo;
+        Telefono = telefono;
+        Fecha_apertura = fecha_apertura;
+        Fecha_cierre = fecha_cierre;
+        this.cuentas_ebury = cuentas_ebury;
+        this.direccion = direccion;
+    }
+
+    public Cliente() {
+
+    }
+
     public Collection<Cuenta_eBury> getCuentas_ebury() {
         return cuentas_ebury;
     }

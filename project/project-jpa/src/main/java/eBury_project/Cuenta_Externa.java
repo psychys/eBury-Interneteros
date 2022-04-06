@@ -14,7 +14,17 @@ public class Cuenta_Externa {
     @OneToMany (mappedBy = "c_ext")
     private List<Externa> externas;
 
-    
+    public Cuenta_Externa(String IBAN, String SWIFT, String beneficiario, List<Externa> externas) {
+        this.IBAN = IBAN;
+        this.SWIFT = SWIFT;
+        this.beneficiario = beneficiario;
+        this.externas = externas;
+    }
+
+    public Cuenta_Externa() {
+
+    }
+
     public List<Externa> getExternas() {
 		return externas;
 	}

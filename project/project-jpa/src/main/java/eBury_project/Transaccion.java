@@ -25,7 +25,21 @@ public class Transaccion {
     @ManyToOne
     private Cuenta_eBury cuenta;
 
-	public Cuenta_eBury getCuenta() {
+    public Transaccion(Integer numero_Transaccion, Date fecha_realizacion, Date fecha_ejecucion, Integer cantidad_enviada, Integer cantidad_recibida, Collection<Divisa> transacciones, Cuenta_eBury cuenta) {
+        Numero_Transaccion = numero_Transaccion;
+        this.fecha_realizacion = fecha_realizacion;
+        this.fecha_ejecucion = fecha_ejecucion;
+        this.cantidad_enviada = cantidad_enviada;
+        this.cantidad_recibida = cantidad_recibida;
+        this.transacciones = transacciones;
+        this.cuenta = cuenta;
+    }
+
+    public Transaccion() {
+
+    }
+
+    public Cuenta_eBury getCuenta() {
 		return cuenta;
 	}
 

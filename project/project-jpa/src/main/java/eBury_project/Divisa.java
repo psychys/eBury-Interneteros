@@ -7,6 +7,7 @@ import java.util.Collection;
 
 @Entity
 @Table(name = "divisa")
+@IdClass(Saldo_Id.class)
 public class Divisa {
     @Id
     @Column(name = "nombre_divisa", nullable = false)
@@ -21,7 +22,20 @@ public class Divisa {
     private Collection<Pais> paises;
     @ManyToMany
     private Collection<Transaccion> divisas;
-    
+
+    public Divisa(String nombre_divisa, String abreviatura, String simbolo, double tipo_cambio_dolar, Collection<Pais> paises, Collection<Transaccion> divisas) {
+        this.nombre_divisa = nombre_divisa;
+        this.abreviatura = abreviatura;
+        this.simbolo = simbolo;
+        this.tipo_cambio_dolar = tipo_cambio_dolar;
+        this.paises = paises;
+        this.divisas = divisas;
+    }
+
+    public Divisa() {
+
+    }
+
     public Collection<Pais> getPaises() {
 		return paises;
 	}

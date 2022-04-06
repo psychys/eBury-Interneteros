@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.Collection;
 
 @Entity
-
+@IdClass(Datos_Id.class)
 public class Persona_autorizada {
 
     @Id
@@ -13,13 +13,20 @@ public class Persona_autorizada {
     private String Nombre;
     private String Apellidos;
 
-
-	@OneToMany
-    private Datos datos;
     @ManyToOne
     private Direccion direccion;
 
-    
+    public Persona_autorizada(String DNI, String nombre, String apellidos, Direccion direccion) {
+        this.DNI = DNI;
+        Nombre = nombre;
+        Apellidos = apellidos;
+        this.direccion = direccion;
+    }
+
+    public Persona_autorizada() {
+
+    }
+
     public Direccion getDireccion() {
 		return direccion;
 	}
@@ -52,11 +59,4 @@ public class Persona_autorizada {
         Apellidos = apellidos;
     }
 
-    public Datos getDatos() {
-        return datos;
-    }
-
-    public void setDatos(Datos datos) {
-        this.datos =  datos;
-    }
 }

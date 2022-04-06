@@ -16,8 +16,17 @@ public class Saldo {
 	private int n_cuenta;
 	@Column(nullable = false)
 	private int Cantidad;
-	
-	
+
+	public Saldo(String nombre_divisa, int n_cuenta, int cantidad) {
+		this.nombre_divisa = nombre_divisa;
+		this.n_cuenta = n_cuenta;
+		Cantidad = cantidad;
+	}
+
+	public Saldo() {
+
+	}
+
 	public int get_cantidad(){
 		return Cantidad;
 	}

@@ -3,8 +3,10 @@ package eBury_project;
 import javax.persistence.Column;
 
 import javax.persistence.Entity;
+import javax.persistence.IdClass;
 
 @Entity
+@IdClass(Datos_Id.class )
 public class Empresa extends Cliente{
 
     @Column(unique=true)
@@ -16,7 +18,16 @@ public class Empresa extends Cliente{
     @Column(unique=true)
     private String Pagina_web;
 
-    
+    public Empresa(String nombre, String razon_social, String NIF, String pagina_web) {
+        Nombre = nombre;
+        Razon_social = razon_social;
+        this.NIF = NIF;
+        Pagina_web = pagina_web;
+    }
+
+    public Empresa() {
+
+    }
 
     public String getNombre() {
         return Nombre;

@@ -19,6 +19,18 @@ public class Banco {
     @ManyToOne
     private Pais pais;
 
+    public Banco(String nombre_banco, String tipo_banco, Direccion direccion, List<Cuenta_referencia> c_ref, Pais pais) {
+        this.nombre_banco = nombre_banco;
+        this.tipo_banco = tipo_banco;
+        this.direccion = direccion;
+        this.c_ref = c_ref;
+        this.pais = pais;
+    }
+
+    public Banco() {
+
+    }
+
     public String getNombre_banco() {
         return nombre_banco;
     }

@@ -19,7 +19,18 @@ public class Pais {
     @ManyToMany(mappedBy = "paises")
     private Collection<Divisa> divisas;
 
-	public List<Banco> getBanco() {
+    public Pais(String abreviatura, String nombre_pais, List<Banco> banco, Collection<Divisa> divisas) {
+        this.abreviatura = abreviatura;
+        this.nombre_pais = nombre_pais;
+        this.banco = banco;
+        this.divisas = divisas;
+    }
+
+    public Pais() {
+
+    }
+
+    public List<Banco> getBanco() {
 		return banco;
 	}
 

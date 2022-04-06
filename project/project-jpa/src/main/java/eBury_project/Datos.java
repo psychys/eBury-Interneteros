@@ -9,10 +9,21 @@ public class Datos {
     @Id
     @Column(nullable = false)
     private String Tipo_autorizacion;
+
     @Id
     private Integer Identificador;
     @Id
     private String DNI;
+
+    public Datos(String tipo_autorizacion, Integer identificador, String DNI) {
+        Tipo_autorizacion = tipo_autorizacion;
+        Identificador = identificador;
+        this.DNI = DNI;
+    }
+
+    public Datos() {
+
+    }
 
     public String getTipo_autorizacion() {
         return Tipo_autorizacion;
@@ -37,4 +48,6 @@ public class Datos {
     public void setDNI(String DNI) {
         this.DNI = DNI;
     }
+
+
 }

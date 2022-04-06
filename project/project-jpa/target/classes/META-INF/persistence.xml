@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
 	<persistence-unit name="eBury_project" transaction-type="RESOURCE_LOCAL">
+		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
 		<class>eBury_project.Item</class>
         <class>eBury_project.Cliente</class>
         <class>eBury_project.Cuenta_referencia</class>
@@ -16,6 +17,12 @@
 		<class>eBury_project.Interna</class>
 		<class>eBury_project.Externa</class>
 		<class>eBury_project.Divisa</class>
+		<class>eBury_project.Direccion</class>
+		<class>eBury_project.Banco</class>
+		<class>eBury_project.Pais</class>
+		<class>eBury_project.Datos_Id</class>
+		<class>eBury_project.Saldo</class>
+		<class>eBury_project.Saldo_Id</class>
 		<properties>
 			<property name="javax.persistence.jdbc.url" value="jdbc:h2:mem:test"/>
 			<property name="javax.persistence.jdbc.user" value=""/>
@@ -23,7 +30,9 @@
 			<property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>
 			<property name="javax.persistence.schema-generation.scripts.action" value="create"/>
 			<property name="javax.persistence.schema-generation.scripts.create-target" value="esquema.ddl"/>
-			<property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
+			<property name="javax.persistence.schema-generation.scripts.drop-target" value="esquemaDrop.ddl"/>
+			<property name="javax.persistence.schema-generation.scripts.action.action" value="drop-and-create"/>
+			<property name="javax.persistence.schema-generation.database.create-source" value="metadata"/>
 		</properties>
 	</persistence-unit>
 </persistence>

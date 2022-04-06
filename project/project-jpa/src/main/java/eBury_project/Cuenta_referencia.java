@@ -21,8 +21,19 @@ public class Cuenta_referencia {
 	private Currency_Account c_account;
 	@ManyToOne
 	private Banco banco;
-	
-	
+
+	public Cuenta_referencia(String iban, List<Pooled> pooled, List<Segregated> segregated, Currency_Account c_account, Banco banco) {
+		this.iban = iban;
+		this.pooled = pooled;
+		this.segregated = segregated;
+		this.c_account = c_account;
+		this.banco = banco;
+	}
+
+	public Cuenta_referencia() {
+
+	}
+
 	public String getIban() {
 		return iban;
 	}

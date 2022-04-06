@@ -23,6 +23,19 @@ public class Direccion {
     @OneToMany (mappedBy = "direccion")
     private List<Persona_autorizada> p_auth;
 
+    public Direccion(int codigo_postal, String calle, int numero, Banco banco, List<Cliente> cliente, List<Persona_autorizada> p_auth) {
+        this.codigo_postal = codigo_postal;
+        this.calle = calle;
+        this.numero = numero;
+        this.banco = banco;
+        this.cliente = cliente;
+        this.p_auth = p_auth;
+    }
+
+    public Direccion() {
+
+    }
+
     public Banco getBanco() {
 		return banco;
 	}
