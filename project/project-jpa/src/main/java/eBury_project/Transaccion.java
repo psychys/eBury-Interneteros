@@ -94,5 +94,4 @@ public class Transaccion {
         this.transacciones = transacciones;
     }
 
-
 }

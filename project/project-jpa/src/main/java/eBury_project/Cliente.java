@@ -13,27 +13,36 @@ public class Cliente {
     private Integer Identificador;
     @Column(nullable = false)
     private String Activo;
+    //requisito de login cumplido con correo y contrasena
     @Column(unique=true)
     private String Correo;
+    @Column(nullable = false)
+    private Integer contrasena;
     @Column(unique=true)
     private Integer Telefono;
     @Temporal(TemporalType.DATE)
     private Date Fecha_apertura;
     @Temporal(TemporalType.DATE)
     private Date Fecha_cierre;
+    //Con el booleano administrador cumplimos el requisito de tener
+    @Column(nullable = false)
+    private boolean administrador;
+
 
     @OneToMany(mappedBy="cliente")
     private Collection<Cuenta_eBury> cuentas_ebury;
     @ManyToOne
     private Direccion direccion;
 
-    public Cliente(Integer identificador, String activo, String correo, Integer telefono, Date fecha_apertura, Date fecha_cierre, Collection<Cuenta_eBury> cuentas_ebury, Direccion direccion) {
+    public Cliente(Integer identificador, String activo, String correo, Integer contrasena, Integer telefono, Date fecha_apertura, Date fecha_cierre, boolean administrador, Collection<Cuenta_eBury> cuentas_ebury, Direccion direccion) {
         Identificador = identificador;
         Activo = activo;
         Correo = correo;
+        this.contrasena = contrasena;
         Telefono = telefono;
         Fecha_apertura = fecha_apertura;
         Fecha_cierre = fecha_cierre;
+        this.administrador = administrador;
         this.cuentas_ebury = cuentas_ebury;
         this.direccion = direccion;
     }
@@ -104,5 +113,13 @@ public class Cliente {
 
     public void setDireccion(Direccion direccion) {
         this.direccion = direccion;
+    }
+
+    public Integer getContrasena() {
+        return contrasena;
+    }
+
+    public void setContrasena(Integer contrasena) {
+        this.contrasena = contrasena;
     }
 }

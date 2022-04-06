@@ -66,7 +66,6 @@ public class Divisa {
         this.tipo_cambio_dolar = tipo_cambio_dolar;
     }
 
-    
 
     public Collection<Transaccion> getDivisas() {
         return divisas;
@@ -76,5 +75,8 @@ public class Divisa {
         this.divisas = divisas;
     }
 
-    
+    //Preguntar si con esto cumple el requisito cambio de divisa
+    public double cambiodivisa(double cantidad_euros){
+        return cantidad_euros*tipo_cambio_dolar;
+    }
 }
