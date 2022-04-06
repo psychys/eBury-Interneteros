@@ -22,3 +22,11 @@ project/project-jpa/target/classes/eBury_project/Item.class
 project/project-jpa/target/classes/eBury_project/Main.class
 
 project/.idea/jpa-buddy.xml
+
+project/.idea/misc.xml
+
+project/.idea/dataSources.xml
+
+project/project-jpa/project-jpa.iml
+
+project/.idea/sqldialects.xml

@@ -5,10 +5,9 @@ import java.util.Objects;
 
 public class Datos_Id implements Serializable {
 
-
     private Integer Identificador;
-
     private String  DNI;
+
 
     public Datos_Id(Integer identificador, String DNI) {
         Identificador = identificador;

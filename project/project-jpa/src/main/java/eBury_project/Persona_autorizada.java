@@ -1,7 +1,6 @@
 package eBury_project;
 
 import javax.persistence.*;
-import java.util.Collection;
 
 @Entity
 @IdClass(Datos_Id.class)

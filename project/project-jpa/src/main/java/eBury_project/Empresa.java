@@ -4,6 +4,8 @@ import javax.persistence.Column;
 
 import javax.persistence.Entity;
 import javax.persistence.IdClass;
+import java.util.Collection;
+import java.util.Date;
 
 @Entity
 @IdClass(Datos_Id.class )
@@ -18,7 +20,8 @@ public class Empresa extends Cliente{
     @Column(unique=true)
     private String Pagina_web;
 
-    public Empresa(String nombre, String razon_social, String NIF, String pagina_web) {
+    public Empresa(Integer identificador, String activo, String correo, Integer telefono, Date fecha_apertura, Date fecha_cierre, Collection<Cuenta_eBury> cuentas_ebury, Direccion direccion, String nombre, String razon_social, String NIF, String pagina_web) {
+        super(identificador, activo, correo, telefono, fecha_apertura, fecha_cierre, cuentas_ebury, direccion);
         Nombre = nombre;
         Razon_social = razon_social;
         this.NIF = NIF;

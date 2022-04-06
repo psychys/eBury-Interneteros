@@ -51,6 +51,9 @@ public class Cliente {
 
     }
 
+    public Cliente(Integer identificador, String activo, String correo, Integer telefono, Date fecha_apertura, Date fecha_cierre, Collection<Cuenta_eBury> cuentas_ebury, Direccion direccion) {
+    }
+
     public Collection<Cuenta_eBury> getCuentas_ebury() {
         return cuentas_ebury;
     }
