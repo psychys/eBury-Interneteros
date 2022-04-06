@@ -23,6 +23,8 @@
 		<class>eBury_project.Datos_Id</class>
 		<class>eBury_project.Saldo</class>
 		<class>eBury_project.Saldo_Id</class>
+		<class>eBury_project.Persona_autorizada</class>
+
 		<properties>
 			<property name="javax.persistence.jdbc.url" value="jdbc:h2:mem:test"/>
 			<property name="javax.persistence.jdbc.user" value=""/>
