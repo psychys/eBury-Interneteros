@@ -16,7 +16,7 @@ public class Direccion {
     private String calle;
     @Column(nullable = false)
     private int numero;
-    @OneToOne
+    @OneToOne (mappedBy = "direccion")
     private Banco banco;
     @OneToMany (mappedBy = "direccion")
     private List<Cliente> cliente;

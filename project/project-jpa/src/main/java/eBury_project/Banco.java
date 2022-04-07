@@ -1,10 +1,6 @@
 package eBury_project;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 import java.util.List;
 
 @Entity
@@ -12,6 +8,8 @@ public class Banco {
     @Id
     private String nombre_banco;
     private String tipo_banco;
+
+    @JoinColumn( name = "direccion_id" )
     @OneToOne
     private Direccion direccion;
     @OneToMany (mappedBy = "banco")
