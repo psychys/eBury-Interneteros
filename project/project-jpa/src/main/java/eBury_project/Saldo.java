@@ -64,4 +64,13 @@ public class Saldo {
 	public void setCantidad(int cantidad) {
 		Cantidad = cantidad;
 	}
+
+	@Override
+	public String toString() {
+		return "Saldo{" +
+				"nombre_divisa='" + nombre_divisa + '\'' +
+				", n_cuenta=" + n_cuenta +
+				", Cantidad=" + Cantidad +
+				'}';
+	}
 }

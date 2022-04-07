@@ -57,4 +57,13 @@ public class Persona_autorizada {
         Apellidos = apellidos;
     }
 
+    @Override
+    public String toString() {
+        return "Persona_autorizada{" +
+                "DNI='" + DNI + '\'' +
+                ", Nombre='" + Nombre + '\'' +
+                ", Apellidos='" + Apellidos + '\'' +
+                ", direccion=" + direccion +
+                '}';
+    }
 }

@@ -94,4 +94,16 @@ public class Transaccion {
         this.transacciones = transacciones;
     }
 
+    @Override
+    public String toString() {
+        return "Transaccion{" +
+                "Numero_Transaccion=" + Numero_Transaccion +
+                ", fecha_realizacion=" + fecha_realizacion +
+                ", fecha_ejecucion=" + fecha_ejecucion +
+                ", cantidad_enviada=" + cantidad_enviada +
+                ", cantidad_recibida=" + cantidad_recibida +
+                ", transacciones=" + transacciones +
+                ", cuenta=" + cuenta +
+                '}';
+    }
 }

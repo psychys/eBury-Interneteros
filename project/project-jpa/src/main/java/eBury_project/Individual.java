@@ -74,4 +74,14 @@ public class Individual extends Cliente{
         Ocupacion = ocupacion;
     }
 
+    @Override
+    public String toString() {
+        return "Individual{" +
+                "Nombre='" + Nombre + '\'' +
+                ", Apellidos='" + Apellidos + '\'' +
+                ", DNI='" + DNI + '\'' +
+                ", Fecha_nacimiento=" + Fecha_nacimiento +
+                ", Ocupacion='" + Ocupacion + '\'' +
+                '}';
+    }
 }

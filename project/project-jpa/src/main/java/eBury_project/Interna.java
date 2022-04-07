@@ -32,5 +32,12 @@ public class Interna extends Transaccion{
 	public void setCuenta(Cuenta_eBury cuenta) {
 		this.cuenta = cuenta;
 	}
-    
+
+	@Override
+	public String toString() {
+		return "Interna{" +
+				"Comision=" + Comision +
+				", cuenta=" + cuenta +
+				'}';
+	}
 }

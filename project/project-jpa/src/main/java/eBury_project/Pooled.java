@@ -35,4 +35,11 @@ public class Pooled extends Cuenta_eBury{
 	public void setC_ref(List<Cuenta_referencia> c_ref) {
 		this.c_ref = c_ref;
 	}
+
+	@Override
+	public String toString() {
+		return "Pooled{" +
+				"c_ref=" + c_ref +
+				'}';
+	}
 }

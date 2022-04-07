@@ -29,4 +29,11 @@ public class Segregated extends Cuenta_eBury{
 	public void setC_ref(Cuenta_referencia c_ref) {
 		this.c_ref = c_ref;
 	}
+
+	@Override
+	public String toString() {
+		return "Segregated{" +
+				"c_ref=" + c_ref +
+				'}';
+	}
 }

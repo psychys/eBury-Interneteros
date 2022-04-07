@@ -16,4 +16,10 @@ public class Externa extends Transaccion{
 		this.c_ext = c_ext;
 	}
 
+	@Override
+	public String toString() {
+		return "Externa{" +
+				"c_ext=" + c_ext +
+				'}';
+	}
 }

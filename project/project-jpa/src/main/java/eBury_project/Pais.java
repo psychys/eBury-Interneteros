@@ -61,5 +61,13 @@ public class Pais {
 
     public void setNombre_pais(String nombre_pais) { this.nombre_pais = nombre_pais; }
 
-    
+    @Override
+    public String toString() {
+        return "Pais{" +
+                "abreviatura='" + abreviatura + '\'' +
+                ", nombre_pais='" + nombre_pais + '\'' +
+                ", banco=" + banco +
+                ", divisas=" + divisas +
+                '}';
+    }
 }
