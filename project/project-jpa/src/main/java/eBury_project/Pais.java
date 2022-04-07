@@ -3,8 +3,11 @@ package eBury_project;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Column;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.OneToMany;
 import javax.persistence.ManyToMany;
+
 import java.util.Collection;
 import java.util.List;
 
@@ -14,7 +17,10 @@ public class Pais {
     private String abreviatura;
     @Column(nullable = false)
     private String nombre_pais;
-    @OneToMany (mappedBy = "pais")
+    @OneToMany //(mappedBy = "pais")
+    @JoinTable(name = "pais_banco", 
+	joinColumns = @JoinColumn(name = "abreviatura_pais"), 
+	inverseJoinColumns = @JoinColumn(name = "nombre_banco"))
     private List<Banco> banco;
 
     @ManyToMany(mappedBy = "paises")
