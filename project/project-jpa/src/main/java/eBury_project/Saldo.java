@@ -4,6 +4,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.IdClass;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 
 @Entity
@@ -11,8 +13,12 @@ import javax.persistence.IdClass;
 public class Saldo {
 
 	@Id
+	@ManyToOne
+	@JoinColumn(name = "n_divisa" ,referencedColumnName = "nombre_divisa")
 	private String nombre_divisa;
 	@Id
+	@ManyToOne
+	@JoinColumn(name = "cuenta" ,referencedColumnName = "n_cuenta")
 	private int n_cuenta;
 	@Column(nullable = false)
 	private int Cantidad;

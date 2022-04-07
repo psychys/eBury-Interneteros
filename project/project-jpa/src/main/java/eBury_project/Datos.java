@@ -9,10 +9,15 @@ public class Datos {
 
     
 	@Id
+	
 	private String Tipo_autorizacion;
     @Id
+    @ManyToOne
+	@JoinColumn(name = "datos_empresa" ,referencedColumnName = "Identificador")
     private Integer Identificador;
     @Id
+    @ManyToOne
+	@JoinColumn(name = "datos_persona_autorizada" ,referencedColumnName = "DNI")
     private String DNI;
     
     
