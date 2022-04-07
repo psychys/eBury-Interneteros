@@ -14,11 +14,11 @@ public class Datos {
     @Id
     @ManyToOne
 	@JoinColumn(name = "datos_empresa" ,referencedColumnName = "Identificador")
-    private Integer Identificador;
+    private Empresa Identificador;
     @Id
     @ManyToOne
 	@JoinColumn(name = "datos_persona_autorizada" ,referencedColumnName = "DNI")
-    private String DNI;
+    private Persona_autorizada DNI;
     
     
 
@@ -31,19 +31,19 @@ public class Datos {
         Tipo_autorizacion = tipo_autorizacion;
     }
 
-    public Integer getIdentificador() {
+    public Empresa getIdentificador() {
         return Identificador;
     }
 
-    public void setIdentificador(Integer identificador) {
+    public void setIdentificador(Empresa identificador) {
         Identificador = identificador;
     }
 
-    public String getDNI() {
+    public Persona_autorizada getDNI() {
         return DNI;
     }
 
-    public void setDNI(String DNI) {
+    public void setDNI(Persona_autorizada DNI) {
         this.DNI = DNI;
     }
 

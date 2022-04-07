@@ -15,15 +15,15 @@ public class Saldo {
 	@Id
 	@ManyToOne
 	@JoinColumn(name = "n_divisa" ,referencedColumnName = "nombre_divisa")
-	private String nombre_divisa;
+	private Divisa nombre_divisa;
 	@Id
 	@ManyToOne
 	@JoinColumn(name = "cuenta" ,referencedColumnName = "n_cuenta")
-	private int n_cuenta;
+	private Cuenta_eBury n_cuenta;
 	@Column(nullable = false)
 	private int Cantidad;
 
-	public Saldo(String nombre_divisa, int n_cuenta, int cantidad) {
+	public Saldo(Divisa nombre_divisa, Cuenta_eBury n_cuenta, int cantidad) {
 		this.nombre_divisa = nombre_divisa;
 		this.n_cuenta = n_cuenta;
 		Cantidad = cantidad;
@@ -41,19 +41,19 @@ public class Saldo {
 		Cantidad = x;
 	}
 
-	public String getNombre_divisa() {
+	public Divisa getNombre_divisa() {
 		return nombre_divisa;
 	}
 
-	public void setNombre_divisa(String nombre_divisa) {
+	public void setNombre_divisa(Divisa nombre_divisa) {
 		this.nombre_divisa = nombre_divisa;
 	}
 
-	public int getN_cuenta() {
+	public Cuenta_eBury getN_cuenta() {
 		return n_cuenta;
 	}
 
-	public void setN_cuenta(int n_cuenta) {
+	public void setN_cuenta(Cuenta_eBury n_cuenta) {
 		this.n_cuenta = n_cuenta;
 	}
 
