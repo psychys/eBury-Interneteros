@@ -1,6 +1,7 @@
 package eBury_project;
 
 import javax.persistence.*;
+
 import java.util.List;
 
 @Entity
@@ -12,7 +13,10 @@ public class Banco {
     @JoinColumn( name = "direccion_id" )
     @OneToOne
     private Direccion direccion;
-    @OneToMany (mappedBy = "banco")
+    @OneToMany //(mappedBy = "banco")
+    @JoinTable(name = "banco_referencia", 
+	joinColumns = @JoinColumn(name = "nombre_banco"), 
+	inverseJoinColumns = @JoinColumn(name = "c_ref_iban"))
     private List<Cuenta_referencia> c_ref;
     @ManyToOne
     private Pais pais;
