@@ -1,28 +1,3 @@
-<<<<<<< HEAD
-/mnt/c/Users/edu-a/OneDrive - Universidad de Málaga/SI Internet Definitivo/eBury-Interneteros/project/project-jpa/src/main/java/eBury_project/Cuenta_Externa.java
-/mnt/c/Users/edu-a/OneDrive - Universidad de Málaga/SI Internet Definitivo/eBury-Interneteros/project/project-jpa/src/main/java/eBury_project/Empresa.java
-/mnt/c/Users/edu-a/OneDrive - Universidad de Málaga/SI Internet Definitivo/eBury-Interneteros/project/project-jpa/src/main/java/eBury_project/Main.java
-/mnt/c/Users/edu-a/OneDrive - Universidad de Málaga/SI Internet Definitivo/eBury-Interneteros/project/project-jpa/src/main/java/eBury_project/Pooled.java
-/mnt/c/Users/edu-a/OneDrive - Universidad de Málaga/SI Internet Definitivo/eBury-Interneteros/project/project-jpa/src/main/java/eBury_project/Individual.java
-/mnt/c/Users/edu-a/OneDrive - Universidad de Málaga/SI Internet Definitivo/eBury-Interneteros/project/project-jpa/src/main/java/eBury_project/Cuenta_eBury.java
-/mnt/c/Users/edu-a/OneDrive - Universidad de Málaga/SI Internet Definitivo/eBury-Interneteros/project/project-jpa/src/main/java/eBury_project/Banco.java
-/mnt/c/Users/edu-a/OneDrive - Universidad de Málaga/SI Internet Definitivo/eBury-Interneteros/project/project-jpa/src/main/java/eBury_project/Externa.java
-/mnt/c/Users/edu-a/OneDrive - Universidad de Málaga/SI Internet Definitivo/eBury-Interneteros/project/project-jpa/src/main/java/eBury_project/Segregated.java
-/mnt/c/Users/edu-a/OneDrive - Universidad de Málaga/SI Internet Definitivo/eBury-Interneteros/project/project-jpa/src/main/java/eBury_project/Interna.java
-/mnt/c/Users/edu-a/OneDrive - Universidad de Málaga/SI Internet Definitivo/eBury-Interneteros/project/project-jpa/src/main/java/eBury_project/Currency_Account.java
-/mnt/c/Users/edu-a/OneDrive - Universidad de Málaga/SI Internet Definitivo/eBury-Interneteros/project/project-jpa/src/main/java/eBury_project/Cliente.java
-/mnt/c/Users/edu-a/OneDrive - Universidad de Málaga/SI Internet Definitivo/eBury-Interneteros/project/project-jpa/src/main/java/eBury_project/Datos.java
-/mnt/c/Users/edu-a/OneDrive - Universidad de Málaga/SI Internet Definitivo/eBury-Interneteros/project/project-jpa/src/main/java/eBury_project/Pais.java
-/mnt/c/Users/edu-a/OneDrive - Universidad de Málaga/SI Internet Definitivo/eBury-Interneteros/project/project-jpa/src/main/java/eBury_project/Saldo.java
-/mnt/c/Users/edu-a/OneDrive - Universidad de Málaga/SI Internet Definitivo/eBury-Interneteros/project/project-jpa/src/main/java/eBury_project/Transaccion.java
-/mnt/c/Users/edu-a/OneDrive - Universidad de Málaga/SI Internet Definitivo/eBury-Interneteros/project/project-jpa/src/main/java/eBury_project/Datos_Id.java
-/mnt/c/Users/edu-a/OneDrive - Universidad de Málaga/SI Internet Definitivo/eBury-Interneteros/project/project-jpa/src/main/java/eBury_project/Direccion.java
-/mnt/c/Users/edu-a/OneDrive - Universidad de Málaga/SI Internet Definitivo/eBury-Interneteros/project/project-jpa/src/main/java/eBury_project/Cuenta_referencia.java
-/mnt/c/Users/edu-a/OneDrive - Universidad de Málaga/SI Internet Definitivo/eBury-Interneteros/project/project-jpa/src/main/java/eBury_project/Persona_autorizada.java
-/mnt/c/Users/edu-a/OneDrive - Universidad de Málaga/SI Internet Definitivo/eBury-Interneteros/project/project-jpa/src/main/java/eBury_project/Saldo_Id.java
-/mnt/c/Users/edu-a/OneDrive - Universidad de Málaga/SI Internet Definitivo/eBury-Interneteros/project/project-jpa/src/main/java/eBury_project/Divisa.java
-/mnt/c/Users/edu-a/OneDrive - Universidad de Málaga/SI Internet Definitivo/eBury-Interneteros/project/project-jpa/src/main/java/eBury_project/Item.java
-=======
 /home/alumno/Desktop/eBury-Interneteros/project/project-jpa/src/main/java/eBury_project/Banco.java
 /home/alumno/Desktop/eBury-Interneteros/project/project-jpa/src/main/java/eBury_project/Pais.java
 /home/alumno/Desktop/eBury-Interneteros/project/project-jpa/src/main/java/eBury_project/Divisa.java
@@ -45,4 +20,3 @@
 /home/alumno/Desktop/eBury-Interneteros/project/project-jpa/src/main/java/eBury_project/Main.java
 /home/alumno/Desktop/eBury-Interneteros/project/project-jpa/src/main/java/eBury_project/Cuenta_eBury.java
 /home/alumno/Desktop/eBury-Interneteros/project/project-jpa/src/main/java/eBury_project/Segregated.java
->>>>>>> Pedro

@@ -8,7 +8,6 @@ import java.util.Collection;
 import java.util.Date;
 
 @Entity
-@IdClass(Datos_Id.class )
 public class Empresa extends Cliente{
 
     @Column(unique=true)

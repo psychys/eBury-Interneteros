@@ -14,7 +14,14 @@ public class Datos_Id implements Serializable {
 
     
     
-    public String getTipo_autorizacion() {
+    public Datos_Id(String tipo_autorizacion, Integer identificador, String dNI) {
+		super();
+		Tipo_autorizacion = tipo_autorizacion;
+		Identificador = identificador;
+		DNI = dNI;
+	}
+
+	public String getTipo_autorizacion() {
 		return Tipo_autorizacion;
 	}
 

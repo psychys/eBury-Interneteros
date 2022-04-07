@@ -3,7 +3,6 @@ package eBury_project;
 import javax.persistence.*;
 
 @Entity
-@IdClass(Datos_Id.class)
 public class Persona_autorizada {
 
     @Id

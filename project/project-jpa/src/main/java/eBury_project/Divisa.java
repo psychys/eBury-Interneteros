@@ -7,7 +7,6 @@ import java.util.Collection;
 
 @Entity
 @Table(name = "divisa")
-@IdClass(Saldo_Id.class)
 public class Divisa {
     @Id
     @Column(name = "nombre_divisa", nullable = false)
