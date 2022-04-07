@@ -18,8 +18,20 @@ public class Divisa {
     @Column(nullable = false)
     private double tipo_cambio_dolar;
     @ManyToMany
+    @JoinTable(
+            name = "divisa_pais",
+            joinColumns = @JoinColumn(name = "divisa_id"),
+            inverseJoinColumns = @JoinColumn (name="pais_id")
+    )
+
     private Collection<Pais> paises;
     @ManyToMany
+    @JoinTable(
+            name = "divisa_transaccion",
+            joinColumns = @JoinColumn(name = "divisa_id"),
+            inverseJoinColumns = @JoinColumn (name="transaccion_id")
+    )
+
     private Collection<Transaccion> divisas;
 
     public Divisa(String nombre_divisa, String abreviatura, String simbolo, double tipo_cambio_dolar, Collection<Pais> paises, Collection<Transaccion> divisas) {

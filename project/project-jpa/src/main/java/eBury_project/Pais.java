@@ -16,6 +16,7 @@ public class Pais {
     private String nombre_pais;
     @OneToMany (mappedBy = "pais")
     private List<Banco> banco;
+
     @ManyToMany(mappedBy = "paises")
     private Collection<Divisa> divisas;
 
