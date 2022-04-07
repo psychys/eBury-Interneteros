@@ -20,19 +20,19 @@ public class Cuenta_eBury {
 	@ManyToOne
 	private Cliente cliente;
 	//preguntar entidad debil
-	@OneToOne
-	private Saldo saldo;
+	//@OneToOne
+	//private Saldo saldo;
 	@OneToMany(mappedBy = "cuenta")
 	private List<Transaccion> transacciones;
 	@OneToMany
 	private List<Interna> internas;
 
-	public Cuenta_eBury(int n_cuenta, Date fecha_alta, Date fecha_baja, Cliente cliente, Saldo saldo, List<Transaccion> transacciones, List<Interna> internas) {
+	public Cuenta_eBury(int n_cuenta, Date fecha_alta, Date fecha_baja, Cliente cliente, /*Saldo saldo,*/ List<Transaccion> transacciones, List<Interna> internas) {
 		this.n_cuenta = n_cuenta;
 		this.fecha_alta = fecha_alta;
 		this.fecha_baja = fecha_baja;
 		this.cliente = cliente;
-		this.saldo = saldo;
+		//this.saldo = saldo;
 		this.transacciones = transacciones;
 		this.internas = internas;
 	}
@@ -41,14 +41,14 @@ public class Cuenta_eBury {
 
 	}
 
-	public Saldo getSaldo() {
+	/*public Saldo getSaldo() {
 		return saldo;
 	}
 
 
 	public void setSaldo(Saldo saldo) {
 		this.saldo = saldo;
-	}
+	}*/
 
 
 	public List<Transaccion> getTransacciones() {

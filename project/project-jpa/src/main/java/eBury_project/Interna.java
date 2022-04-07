@@ -10,6 +10,10 @@ public class Interna extends Transaccion{
     private double Comision;
     @ManyToOne
     private Cuenta_eBury cuenta;
+    
+    public Interna(){
+    	
+    }
 
 	public Interna(double comision, Cuenta_eBury cuenta) {
 		Comision = comision;
