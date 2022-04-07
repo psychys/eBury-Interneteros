@@ -13,7 +13,7 @@ import javax.persistence.OneToOne;
 public class Cuenta_referencia {
 	@Id
 	private String iban;
-	@ManyToMany
+	@ManyToMany(mappedBy = "c_ref")
 	private List<Pooled> pooled;
 	@OneToMany
 	private List<Segregated> segregated;
