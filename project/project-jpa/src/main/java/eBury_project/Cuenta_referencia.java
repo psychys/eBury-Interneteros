@@ -4,6 +4,8 @@ import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
@@ -16,6 +18,9 @@ public class Cuenta_referencia {
 	@ManyToMany(mappedBy = "c_ref")
 	private List<Pooled> pooled;
 	@OneToMany
+	@JoinTable(name = "referencia_segregated", 
+		joinColumns = @JoinColumn(name = "c_ref_iban"), 
+		inverseJoinColumns = @JoinColumn(name = "c_ebury_n_ref"))
 	private List<Segregated> segregated;
 	@OneToOne
 	private Currency_Account c_account;
