@@ -12,15 +12,6 @@ public class Datos_Id implements Serializable {
     private Integer Identificador;
     private String  DNI;
 
-<<<<<<< HEAD
-
-    public Datos_Id(Integer identificador, String DNI) {
-        Identificador = identificador;
-        this.DNI = DNI;
-    }
-
-    public Integer getIdentificador() {
-=======
     
     
     public String getTipo_autorizacion() {
@@ -32,7 +23,6 @@ public class Datos_Id implements Serializable {
 	}
 
 	public Integer getIdentificador() {
->>>>>>> Pedro
         return Identificador;
     }
 
