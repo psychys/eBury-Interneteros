@@ -6,15 +6,40 @@ import javax.persistence.*;
 @IdClass(Datos_Id.class)
 public class Datos {
 //preguntar profesor sobre la clave compuesta
+<<<<<<< HEAD
     @Id
     @Column(nullable = false)
     private String Tipo_autorizacion;
 
+=======
+    
+	@Id
+	private String Tipo_autorizacion;
+>>>>>>> Pedro
     @Id
     private Integer Identificador;
     @Id
     private String DNI;
+    
+    
 
+    public Integer getIdentificador() {
+		return Identificador;
+	}
+
+	public void setIdentificador(Integer identificador) {
+		Identificador = identificador;
+	}
+
+	public String getDNI() {
+		return DNI;
+	}
+
+	public void setDNI(String dNI) {
+		DNI = dNI;
+	}
+
+<<<<<<< HEAD
     public Datos(String tipo_autorizacion, Integer identificador, String DNI) {
         Tipo_autorizacion = tipo_autorizacion;
         Identificador = identificador;
@@ -26,6 +51,9 @@ public class Datos {
     }
 
     public String getTipo_autorizacion() {
+=======
+	public String getTipo_autorizacion() {
+>>>>>>> Pedro
         return Tipo_autorizacion;
     }
 

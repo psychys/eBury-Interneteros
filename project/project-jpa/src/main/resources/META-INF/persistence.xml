@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
 	<persistence-unit name="eBury_project" transaction-type="RESOURCE_LOCAL">
+<<<<<<< HEAD
 		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
 		<class>eBury_project.Item</class>
+=======
+>>>>>>> Pedro
         <class>eBury_project.Cliente</class>
         <class>eBury_project.Cuenta_referencia</class>
         <class>eBury_project.Cuenta_eBury</class>
@@ -20,11 +23,16 @@
 		<class>eBury_project.Direccion</class>
 		<class>eBury_project.Banco</class>
 		<class>eBury_project.Pais</class>
+<<<<<<< HEAD
 		<class>eBury_project.Datos_Id</class>
 		<class>eBury_project.Saldo</class>
 		<class>eBury_project.Saldo_Id</class>
 		<class>eBury_project.Persona_autorizada</class>
 
+=======
+		<class>eBury_project.Persona_autorizada</class>
+		<class>eBury_project.Saldo</class>
+>>>>>>> Pedro
 		<properties>
 			<property name="javax.persistence.jdbc.url" value="jdbc:h2:mem:test"/>
 			<property name="javax.persistence.jdbc.user" value=""/>

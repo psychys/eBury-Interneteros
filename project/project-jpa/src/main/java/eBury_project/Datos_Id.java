@@ -3,11 +3,16 @@ package eBury_project;
 import java.io.Serializable;
 import java.util.Objects;
 
+import javax.persistence.Column;
+import javax.persistence.Id;
+
 public class Datos_Id implements Serializable {
 
+    private String Tipo_autorizacion;
     private Integer Identificador;
     private String  DNI;
 
+<<<<<<< HEAD
 
     public Datos_Id(Integer identificador, String DNI) {
         Identificador = identificador;
@@ -15,6 +20,19 @@ public class Datos_Id implements Serializable {
     }
 
     public Integer getIdentificador() {
+=======
+    
+    
+    public String getTipo_autorizacion() {
+		return Tipo_autorizacion;
+	}
+
+	public void setTipo_autorizacion(String tipo_autorizacion) {
+		Tipo_autorizacion = tipo_autorizacion;
+	}
+
+	public Integer getIdentificador() {
+>>>>>>> Pedro
         return Identificador;
     }
 
