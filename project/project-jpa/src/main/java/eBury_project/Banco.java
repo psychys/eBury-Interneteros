@@ -70,5 +70,16 @@ public class Banco {
     public void setTipo_banco(String tipo_banco) {
         this.tipo_banco = tipo_banco;
     }
+
+    @Override
+    public String toString() {
+        return "Banco{" +
+                "nombre_banco='" + nombre_banco + '\'' +
+                ", tipo_banco='" + tipo_banco + '\'' +
+                ", direccion=" + direccion +
+                ", c_ref=" + c_ref +
+                ", pais=" + pais +
+                '}';
+    }
 }
 

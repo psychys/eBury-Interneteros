@@ -84,4 +84,15 @@ public class Direccion {
         this.numero = numero;
     }
 
+    @Override
+    public String toString() {
+        return "Direccion{" +
+                "codigo_postal=" + codigo_postal +
+                ", calle='" + calle + '\'' +
+                ", numero=" + numero +
+                ", banco=" + banco +
+                ", cliente=" + cliente +
+                ", p_auth=" + p_auth +
+                '}';
+    }
 }

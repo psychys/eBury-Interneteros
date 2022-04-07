@@ -90,4 +90,16 @@ public class Divisa {
     public double cambiodivisa(double cantidad_euros){
         return cantidad_euros*tipo_cambio_dolar;
     }
+
+    @Override
+    public String toString() {
+        return "Divisa{" +
+                "nombre_divisa='" + nombre_divisa + '\'' +
+                ", abreviatura='" + abreviatura + '\'' +
+                ", simbolo='" + simbolo + '\'' +
+                ", tipo_cambio_dolar=" + tipo_cambio_dolar +
+                ", paises=" + paises +
+                ", divisas=" + divisas +
+                '}';
+    }
 }

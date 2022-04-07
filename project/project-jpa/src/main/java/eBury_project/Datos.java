@@ -47,5 +47,12 @@ public class Datos {
         this.DNI = DNI;
     }
 
-
+    @Override
+    public String toString() {
+        return "Datos{" +
+                "Tipo_autorizacion='" + Tipo_autorizacion + '\'' +
+                ", Identificador=" + Identificador +
+                ", DNI='" + DNI + '\'' +
+                '}';
+    }
 }

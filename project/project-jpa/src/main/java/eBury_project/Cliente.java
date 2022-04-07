@@ -125,4 +125,20 @@ public class Cliente {
     public void setContrasena(Integer contrasena) {
         this.contrasena = contrasena;
     }
+
+    @Override
+    public String toString() {
+        return "Cliente{" +
+                "Identificador=" + Identificador +
+                ", Activo='" + Activo + '\'' +
+                ", Correo='" + Correo + '\'' +
+                ", contrasena=" + contrasena +
+                ", Telefono=" + Telefono +
+                ", Fecha_apertura=" + Fecha_apertura +
+                ", Fecha_cierre=" + Fecha_cierre +
+                ", administrador=" + administrador +
+                ", cuentas_ebury=" + cuentas_ebury +
+                ", direccion=" + direccion +
+                '}';
+    }
 }

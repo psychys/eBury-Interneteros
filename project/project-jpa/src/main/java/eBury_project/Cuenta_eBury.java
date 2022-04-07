@@ -104,5 +104,15 @@ public class Cuenta_eBury {
 		this.fecha_baja = fecha_baja;
 	}
 
-
+	@Override
+	public String toString() {
+		return "Cuenta_eBury{" +
+				"n_cuenta=" + n_cuenta +
+				", fecha_alta=" + fecha_alta +
+				", fecha_baja=" + fecha_baja +
+				", cliente=" + cliente +
+				", transacciones=" + transacciones +
+				", internas=" + internas +
+				'}';
+	}
 }

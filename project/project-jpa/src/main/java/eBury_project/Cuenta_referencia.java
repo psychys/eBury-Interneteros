@@ -86,5 +86,15 @@ public class Cuenta_referencia {
 	public void set_iban(String x){
 		iban = x;
 	}
-	
+
+	@Override
+	public String toString() {
+		return "Cuenta_referencia{" +
+				"iban='" + iban + '\'' +
+				", pooled=" + pooled +
+				", segregated=" + segregated +
+				", c_account=" + c_account +
+				", banco=" + banco +
+				'}';
+	}
 }

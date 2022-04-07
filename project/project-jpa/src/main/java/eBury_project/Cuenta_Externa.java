@@ -57,5 +57,13 @@ public class Cuenta_Externa {
         this.beneficiario = beneficiario;
     }
 
-    
+    @Override
+    public String toString() {
+        return "Cuenta_Externa{" +
+                "IBAN='" + IBAN + '\'' +
+                ", SWIFT='" + SWIFT + '\'' +
+                ", beneficiario='" + beneficiario + '\'' +
+                ", externas=" + externas +
+                '}';
+    }
 }
