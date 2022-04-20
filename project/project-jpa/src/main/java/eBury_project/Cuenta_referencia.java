@@ -10,7 +10,8 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 //preguntar si hace falta el mappedBy
 @Entity
-public class Cuenta_referencia extends Cuenta{
+public class
+Cuenta_referencia extends Cuenta{
 	
 	@Column(nullable = false)
 	private String nombre_banco;
@@ -22,7 +23,7 @@ public class Cuenta_referencia extends Cuenta{
 	private Date fecha_apertura;
 	private String estado;
 	@OneToOne(mappedBy ="c_ref")
-	private Segregated c_finetch_segregada;
+	private Segregated c_fintech_segregada;
 	@ManyToOne
 	private Divisa divisa;
 	
@@ -67,11 +68,11 @@ public class Cuenta_referencia extends Cuenta{
 	public void setEstado(String estado) {
 		this.estado = estado;
 	}
-	public Segregated getC_finetch_segregada() {
-		return c_finetch_segregada;
+	public Segregated getC_fintech_segregada() {
+		return c_fintech_segregada;
 	}
-	public void setC_finetch_segregada(Segregated c_finetch_segregada) {
-		this.c_finetch_segregada = c_finetch_segregada;
+	public void setC_fintech_segregada(Segregated c_fintech_segregada) {
+		this.c_fintech_segregada = c_fintech_segregada;
 	}
 	public Divisa getDivisa() {
 		return divisa;
@@ -85,7 +86,7 @@ public class Cuenta_referencia extends Cuenta{
 		int result = super.hashCode();
 		result = prime
 				* result
-				+ ((c_finetch_segregada == null) ? 0 : c_finetch_segregada
+				+ ((c_fintech_segregada == null) ? 0 : c_fintech_segregada
 						.hashCode());
 		result = prime * result + ((divisa == null) ? 0 : divisa.hashCode());
 		result = prime * result + ((estado == null) ? 0 : estado.hashCode());
@@ -108,10 +109,10 @@ public class Cuenta_referencia extends Cuenta{
 		if (getClass() != obj.getClass())
 			return false;
 		Cuenta_referencia other = (Cuenta_referencia) obj;
-		if (c_finetch_segregada == null) {
-			if (other.c_finetch_segregada != null)
+		if (c_fintech_segregada == null) {
+			if (other.c_fintech_segregada != null)
 				return false;
-		} else if (!c_finetch_segregada.equals(other.c_finetch_segregada))
+		} else if (!c_fintech_segregada.equals(other.c_fintech_segregada))
 			return false;
 		if (divisa == null) {
 			if (other.divisa != null)
@@ -152,7 +153,7 @@ public class Cuenta_referencia extends Cuenta{
 		return "Cuenta_referencia [nombre_banco=" + nombre_banco
 				+ ", sucursal=" + sucursal + ", pais=" + pais + ", saldo="
 				+ saldo + ", fecha_apertura=" + fecha_apertura + ", estado="
-				+ estado + ", c_finetch_segregada=" + c_finetch_segregada
+				+ estado + ", c_fintech_segregada=" + c_fintech_segregada
 				+ ", divisa=" + divisa + "]";
 	}
 	

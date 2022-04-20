@@ -8,7 +8,7 @@ import javax.persistence.OneToOne;
 public class Segregated extends Cuenta_Fintech {
 	
 	private int comision;
-	@OneToOne (mappedBy ="c_finetch_segregada")
+	@OneToOne (mappedBy ="c_fintech_segregada")
 	private Cuenta_referencia c_ref;
 
 	public Segregated() {

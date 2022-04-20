@@ -29,10 +29,10 @@ public class Cliente {
     private String Pais;
     
     @OneToMany //(mappedBy = "banco")
-    @JoinTable(name = "cliente_finetch", 
+    @JoinTable(name = "cliente_fintech", 
 	joinColumns = @JoinColumn(name = "Id_cliente"), 
-	inverseJoinColumns = @JoinColumn(name = "finetch_iban"))
-    private List<Cuenta_Fintech> c_finetch;
+	inverseJoinColumns = @JoinColumn(name = "fintech_iban"))
+    private List<Cuenta_Fintech> c_fintech;
 
 	public Cliente() {
 		super();
@@ -111,12 +111,12 @@ public class Cliente {
 		Pais = pais;
 	}
 
-	public List<Cuenta_Fintech> getC_finetch() {
-		return c_finetch;
+	public List<Cuenta_Fintech> getC_fintech() {
+		return c_fintech;
 	}
 
-	public void setC_finetch(List<Cuenta_Fintech> c_finetch) {
-		this.c_finetch = c_finetch;
+	public void setC_fintech(List<Cuenta_Fintech> c_fintech) {
+		this.c_fintech = c_fintech;
 	}
 
 	@Override
@@ -134,7 +134,7 @@ public class Cliente {
 		result = prime * result + Identificacion;
 		result = prime * result + ((Pais == null) ? 0 : Pais.hashCode());
 		result = prime * result
-				+ ((c_finetch == null) ? 0 : c_finetch.hashCode());
+				+ ((c_fintech == null) ? 0 : c_fintech.hashCode());
 		result = prime * result + c_postal;
 		result = prime * result
 				+ ((tipo_cliente == null) ? 0 : tipo_cliente.hashCode());
@@ -179,10 +179,10 @@ public class Cliente {
 				return false;
 		} else if (!Pais.equals(other.Pais))
 			return false;
-		if (c_finetch == null) {
-			if (other.c_finetch != null)
+		if (c_fintech == null) {
+			if (other.c_fintech != null)
 				return false;
-		} else if (!c_finetch.equals(other.c_finetch))
+		} else if (!c_fintech.equals(other.c_fintech))
 			return false;
 		if (c_postal != other.c_postal)
 			return false;
@@ -200,7 +200,7 @@ public class Cliente {
 				+ ", tipo_cliente=" + tipo_cliente + ", Fecha_Alta="
 				+ Fecha_Alta + ", Fecha_Baja=" + Fecha_Baja + ", Direccion="
 				+ Direccion + ", Ciudad=" + Ciudad + ", c_postal=" + c_postal
-				+ ", Pais=" + Pais + ", c_finetch=" + c_finetch + "]";
+				+ ", Pais=" + Pais + ", c_fintech=" + c_fintech + "]";
 	}
     
     
