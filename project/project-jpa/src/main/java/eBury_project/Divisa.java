@@ -1,7 +1,9 @@
 package eBury_project;
 
 import javax.persistence.*;
+
 import java.util.Collection;
+import java.util.List;
 
 //Entidad debil con saldo
 
@@ -9,97 +11,199 @@ import java.util.Collection;
 @Table(name = "divisa")
 public class Divisa {
     @Id
-    @Column(name = "nombre_divisa", nullable = false)
-    private String nombre_divisa;
-    @Column(name= "abreviatura", unique = true, nullable = false)
     private String abreviatura;
-    @Column(name= "simbolo", unique = true, nullable = false)
-    private String simbolo;
     @Column(nullable = false)
-    private double tipo_cambio_dolar;
-    @ManyToMany
-    @JoinTable(
-            name = "divisa_pais",
-            joinColumns = @JoinColumn(name = "divisa_id"),
-            inverseJoinColumns = @JoinColumn (name="pais_id")
-    )
+    private String nombre;
+    private String simbolo;
+    @Column (nullable = false)
+    private double cambio_euro;
+    
+    @OneToMany //(mappedBy = "banco")
+    @JoinTable(name = "divisa_emisor", 
+	joinColumns = @JoinColumn(name = "divisa"), 
+	inverseJoinColumns = @JoinColumn(name = "id_trans"))
+    private List<Transaccion> trans_emsior;
+    
+    @OneToMany //(mappedBy = "banco")
+    @JoinTable(name = "divisa_receptor", 
+	joinColumns = @JoinColumn(name = "divisa"), 
+	inverseJoinColumns = @JoinColumn(name = "id_trans"))
+    private List<Transaccion> trans_receptor;
+    
+    
 
-    private Collection<Pais> paises;
-    @ManyToMany
-    @JoinTable(
-            name = "divisa_transaccion",
-            joinColumns = @JoinColumn(name = "divisa_id"),
-            inverseJoinColumns = @JoinColumn (name="transaccion_id")
-    )
-
-    private Collection<Transaccion> divisas;
-
-    public Divisa(String nombre_divisa, String abreviatura, String simbolo, double tipo_cambio_dolar, Collection<Pais> paises, Collection<Transaccion> divisas) {
-        this.nombre_divisa = nombre_divisa;
-        this.abreviatura = abreviatura;
-        this.simbolo = simbolo;
-        this.tipo_cambio_dolar = tipo_cambio_dolar;
-        this.paises = paises;
-        this.divisas = divisas;
-    }
-
-    public Divisa() {
-
-    }
-
-    public Collection<Pais> getPaises() {
-		return paises;
+    public List<Transaccion> getTrans_emsior() {
+		return trans_emsior;
 	}
-	public void setPaises(Collection<Pais> paises) {
-		this.paises = paises;
+
+
+
+
+	public void setTrans_emsior(List<Transaccion> trans_emsior) {
+		this.trans_emsior = trans_emsior;
 	}
-	public String getNombre_divisa() {
-        return nombre_divisa;
-    }
-    public String getAbreviatura() {
-        return abreviatura;
-    }
-    public String getSimbolo() {return simbolo;}
-    public double getTipo_cambio_dolar() {
-        return tipo_cambio_dolar;
-    }
-
-    public void setNombre_divisa(String nombre_divisa) {
-        this.nombre_divisa = nombre_divisa;
-    }
-    public void setAbreviatura(String abreviatura) {
-        this.abreviatura = abreviatura;
-    }
-    public void setSimbolo(String simbolo) {
-        this.simbolo = simbolo;
-    }
-    public void setTipo_cambio_dolar(double tipo_cambio_dolar) {
-        this.tipo_cambio_dolar = tipo_cambio_dolar;
-    }
 
 
-    public Collection<Transaccion> getDivisas() {
-        return divisas;
-    }
 
-    public void setDivisas(Collection<Transaccion> divisas) {
-        this.divisas = divisas;
-    }
 
-    //Preguntar si con esto cumple el requisito cambio de divisa
+	public List<Transaccion> getTrans_receptor() {
+		return trans_receptor;
+	}
+
+
+
+
+	public void setTrans_receptor(List<Transaccion> trans_receptor) {
+		this.trans_receptor = trans_receptor;
+	}
+
+
+
+
+	public String getAbreviatura() {
+		return abreviatura;
+	}
+
+
+
+
+	public void setAbreviatura(String abreviatura) {
+		this.abreviatura = abreviatura;
+	}
+
+
+
+
+	public String getNombre() {
+		return nombre;
+	}
+
+
+
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+
+
+
+	public String getSimbolo() {
+		return simbolo;
+	}
+
+
+
+
+	public void setSimbolo(String simbolo) {
+		this.simbolo = simbolo;
+	}
+
+
+
+
+	public double getCambio_euro() {
+		return cambio_euro;
+	}
+
+
+
+
+	public void setCambio_euro(double cambio_euro) {
+		this.cambio_euro = cambio_euro;
+	}
+
+
+
+
+	public Divisa() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+
+	
+
+
+
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result
+				+ ((abreviatura == null) ? 0 : abreviatura.hashCode());
+		long temp;
+		temp = Double.doubleToLongBits(cambio_euro);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		result = prime * result + ((nombre == null) ? 0 : nombre.hashCode());
+		result = prime * result + ((simbolo == null) ? 0 : simbolo.hashCode());
+		result = prime * result
+				+ ((trans_emsior == null) ? 0 : trans_emsior.hashCode());
+		result = prime * result
+				+ ((trans_receptor == null) ? 0 : trans_receptor.hashCode());
+		return result;
+	}
+
+
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Divisa other = (Divisa) obj;
+		if (abreviatura == null) {
+			if (other.abreviatura != null)
+				return false;
+		} else if (!abreviatura.equals(other.abreviatura))
+			return false;
+		if (Double.doubleToLongBits(cambio_euro) != Double
+				.doubleToLongBits(other.cambio_euro))
+			return false;
+		if (nombre == null) {
+			if (other.nombre != null)
+				return false;
+		} else if (!nombre.equals(other.nombre))
+			return false;
+		if (simbolo == null) {
+			if (other.simbolo != null)
+				return false;
+		} else if (!simbolo.equals(other.simbolo))
+			return false;
+		if (trans_emsior == null) {
+			if (other.trans_emsior != null)
+				return false;
+		} else if (!trans_emsior.equals(other.trans_emsior))
+			return false;
+		if (trans_receptor == null) {
+			if (other.trans_receptor != null)
+				return false;
+		} else if (!trans_receptor.equals(other.trans_receptor))
+			return false;
+		return true;
+	}
+
+
+
+
+	@Override
+	public String toString() {
+		return "Divisa [abreviatura=" + abreviatura + ", nombre=" + nombre
+				+ ", simbolo=" + simbolo + ", cambio_euro=" + cambio_euro
+				+ ", trans_emsior=" + trans_emsior + ", trans_receptor="
+				+ trans_receptor + "]";
+	}
+
+
+
+
+	//Preguntar si con esto cumple el requisito cambio de divisa
     public double cambiodivisa(double cantidad_euros){
-        return cantidad_euros*tipo_cambio_dolar;
-    }
-
-    @Override
-    public String toString() {
-        return "Divisa{" +
-                "nombre_divisa='" + nombre_divisa + '\'' +
-                ", abreviatura='" + abreviatura + '\'' +
-                ", simbolo='" + simbolo + '\'' +
-                ", tipo_cambio_dolar=" + tipo_cambio_dolar +
-                ", paises=" + paises +
-                ", divisas=" + divisas +
-                '}';
+        return cantidad_euros*cambio_euro;
     }
 }

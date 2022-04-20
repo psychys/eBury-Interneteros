@@ -1,39 +1,85 @@
 package eBury_project;
 
-import javax.persistence.Embeddable;
 import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
-import java.util.Date;
-import java.util.List;
+import javax.persistence.OneToOne;
 
 
 @Entity
-public class Segregated extends Cuenta_eBury{
-
-	@ManyToOne
+public class Segregated extends Cuenta_Finetch{
+	
+	private int comision;
+	@OneToOne
 	private Cuenta_referencia c_ref;
 
-	public Segregated(int n_cuenta, Date fecha_alta, Date fecha_baja, Cliente cliente,/* Saldo saldo,*/ List<Transaccion> transacciones, List<Interna> internas, Cuenta_referencia c_ref) {
-		super(n_cuenta, fecha_alta, fecha_baja, cliente, /*saldo, */transacciones, internas);
-		this.c_ref = c_ref;
-	}
-
 	public Segregated() {
-
+		super();
+		// TODO Auto-generated constructor stub
 	}
+	
+	
 
 	public Cuenta_referencia getC_ref() {
 		return c_ref;
 	}
 
+
+
 	public void setC_ref(Cuenta_referencia c_ref) {
 		this.c_ref = c_ref;
 	}
 
+
+
+	public int getComision() {
+		return comision;
+	}
+
+	public void setComision(int comision) {
+		this.comision = comision;
+	}
+
+
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = super.hashCode();
+		result = prime * result + ((c_ref == null) ? 0 : c_ref.hashCode());
+		result = prime * result + comision;
+		return result;
+	}
+
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (!super.equals(obj))
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Segregated other = (Segregated) obj;
+		if (c_ref == null) {
+			if (other.c_ref != null)
+				return false;
+		} else if (!c_ref.equals(other.c_ref))
+			return false;
+		if (comision != other.comision)
+			return false;
+		return true;
+	}
+
+
+
 	@Override
 	public String toString() {
-		return "Segregated{" +
-				"c_ref=" + c_ref +
-				'}';
+		return "Segregated [comision=" + comision + ", c_ref=" + c_ref + "]";
 	}
+
+	
+	
+	
+
+	
 }

@@ -1,144 +1,209 @@
 package eBury_project;
 
 import javax.persistence.*;
+
 import java.util.Collection;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 public class Cliente {
 
-    @Id
-    @GeneratedValue
+    @Id @GeneratedValue
+    private int ID;
+    @Column(unique = true)
+    private int Identificacion;
     @Column(nullable = false)
-    private Integer Identificador;
-    @Column(nullable = false)
-    private String Activo;
-    //requisito de login cumplido con correo y contrasena
-    @Column(unique=true)
-    private String Correo;
-    @Column(nullable = false)
-    private Integer contrasena;
-    @Column(unique=true)
-    private Integer Telefono;
+    private String tipo_cliente;
     @Temporal(TemporalType.DATE)
-    private Date Fecha_apertura;
-    @Temporal(TemporalType.DATE)
-    private Date Fecha_cierre;
-    //Con el booleano administrador cumplimos el requisito de tener
     @Column(nullable = false)
-    private boolean administrador;
+    private Date Fecha_Alta;
+    @Temporal(TemporalType.DATE)
+    private Date Fecha_Baja;
+    @Column(nullable = false)
+    private String Direccion;
+    @Column(nullable = false)
+    private String Ciudad;
+    @Column(nullable = false)
+    private int c_postal;
+    @Column(nullable = false)
+    private String Pais;
+    
+    @OneToMany //(mappedBy = "banco")
+    @JoinTable(name = "cliente_finetch", 
+	joinColumns = @JoinColumn(name = "Id_cliente"), 
+	inverseJoinColumns = @JoinColumn(name = "finetch_iban"))
+    private List<Cuenta_Finetch> c_finetch;
 
+	public Cliente() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
-    @OneToMany(mappedBy="cliente")
-    private Collection<Cuenta_eBury> cuentas_ebury;
-    @ManyToOne
-    private Direccion direccion;
+	public int getID() {
+		return ID;
+	}
 
-    public Cliente(Integer identificador, String activo, String correo, Integer contrasena, Integer telefono, Date fecha_apertura, Date fecha_cierre, boolean administrador, Collection<Cuenta_eBury> cuentas_ebury, Direccion direccion) {
-        Identificador = identificador;
-        Activo = activo;
-        Correo = correo;
-        this.contrasena = contrasena;
-        Telefono = telefono;
-        Fecha_apertura = fecha_apertura;
-        Fecha_cierre = fecha_cierre;
-        this.administrador = administrador;
-        this.cuentas_ebury = cuentas_ebury;
-        this.direccion = direccion;
-    }
+	public void setID(int iD) {
+		ID = iD;
+	}
 
-    public Cliente() {
+	public int getIdentificacion() {
+		return Identificacion;
+	}
 
-    }
+	public void setIdentificacion(int identificacion) {
+		Identificacion = identificacion;
+	}
 
-    public Cliente(Integer identificador, String activo, String correo, Integer telefono, Date fecha_apertura, Date fecha_cierre, Collection<Cuenta_eBury> cuentas_ebury, Direccion direccion) {
-    }
+	public String getTipo_cliente() {
+		return tipo_cliente;
+	}
 
-    public Collection<Cuenta_eBury> getCuentas_ebury() {
-        return cuentas_ebury;
-    }
+	public void setTipo_cliente(String tipo_cliente) {
+		this.tipo_cliente = tipo_cliente;
+	}
 
-    public Integer getIdentificador() {
-        return Identificador;
-    }
+	public Date getFecha_Alta() {
+		return Fecha_Alta;
+	}
 
-    public void setIdentificador(Integer identificador) {
-        Identificador = identificador;
-    }
+	public void setFecha_Alta(Date fecha_Alta) {
+		Fecha_Alta = fecha_Alta;
+	}
 
-    public String getActivo() {
-        return Activo;
-    }
+	public Date getFecha_Baja() {
+		return Fecha_Baja;
+	}
 
-    public void setActivo(String activo) {
-        Activo = activo;
-    }
+	public void setFecha_Baja(Date fecha_Baja) {
+		Fecha_Baja = fecha_Baja;
+	}
 
-    public String getCorreo() {
-        return Correo;
-    }
+	public String getDireccion() {
+		return Direccion;
+	}
 
-    public void setCorreo(String correo) {
-        Correo = correo;
-    }
+	public void setDireccion(String direccion) {
+		Direccion = direccion;
+	}
 
-    public Integer getTelefono() {
-        return Telefono;
-    }
+	public String getCiudad() {
+		return Ciudad;
+	}
 
-    public void setTelefono(Integer telefono) {
-        Telefono = telefono;
-    }
+	public void setCiudad(String ciudad) {
+		Ciudad = ciudad;
+	}
 
-    public Date getFecha_apertura() {
-        return Fecha_apertura;
-    }
+	public int getC_postal() {
+		return c_postal;
+	}
 
-    public void setFecha_apertura(Date fecha_apertura) {
-        Fecha_apertura = fecha_apertura;
-    }
+	public void setC_postal(int c_postal) {
+		this.c_postal = c_postal;
+	}
 
-    public Date getFecha_cierre() {
-        return Fecha_cierre;
-    }
+	public String getPais() {
+		return Pais;
+	}
 
-    public void setFecha_cierre(Date fecha_cierre) {
-        Fecha_cierre = fecha_cierre;
-    }
+	public void setPais(String pais) {
+		Pais = pais;
+	}
 
-    public void setCuentas_ebury(Collection<Cuenta_eBury> cuentas_ebury) {
-        this.cuentas_ebury = cuentas_ebury;
-    }
+	public List<Cuenta_Finetch> getC_finetch() {
+		return c_finetch;
+	}
 
-    public Direccion getDireccion() {
-        return direccion;
-    }
+	public void setC_finetch(List<Cuenta_Finetch> c_finetch) {
+		this.c_finetch = c_finetch;
+	}
 
-    public void setDireccion(Direccion direccion) {
-        this.direccion = direccion;
-    }
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((Ciudad == null) ? 0 : Ciudad.hashCode());
+		result = prime * result
+				+ ((Direccion == null) ? 0 : Direccion.hashCode());
+		result = prime * result
+				+ ((Fecha_Alta == null) ? 0 : Fecha_Alta.hashCode());
+		result = prime * result
+				+ ((Fecha_Baja == null) ? 0 : Fecha_Baja.hashCode());
+		result = prime * result + ID;
+		result = prime * result + Identificacion;
+		result = prime * result + ((Pais == null) ? 0 : Pais.hashCode());
+		result = prime * result
+				+ ((c_finetch == null) ? 0 : c_finetch.hashCode());
+		result = prime * result + c_postal;
+		result = prime * result
+				+ ((tipo_cliente == null) ? 0 : tipo_cliente.hashCode());
+		return result;
+	}
 
-    public Integer getContrasena() {
-        return contrasena;
-    }
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Cliente other = (Cliente) obj;
+		if (Ciudad == null) {
+			if (other.Ciudad != null)
+				return false;
+		} else if (!Ciudad.equals(other.Ciudad))
+			return false;
+		if (Direccion == null) {
+			if (other.Direccion != null)
+				return false;
+		} else if (!Direccion.equals(other.Direccion))
+			return false;
+		if (Fecha_Alta == null) {
+			if (other.Fecha_Alta != null)
+				return false;
+		} else if (!Fecha_Alta.equals(other.Fecha_Alta))
+			return false;
+		if (Fecha_Baja == null) {
+			if (other.Fecha_Baja != null)
+				return false;
+		} else if (!Fecha_Baja.equals(other.Fecha_Baja))
+			return false;
+		if (ID != other.ID)
+			return false;
+		if (Identificacion != other.Identificacion)
+			return false;
+		if (Pais == null) {
+			if (other.Pais != null)
+				return false;
+		} else if (!Pais.equals(other.Pais))
+			return false;
+		if (c_finetch == null) {
+			if (other.c_finetch != null)
+				return false;
+		} else if (!c_finetch.equals(other.c_finetch))
+			return false;
+		if (c_postal != other.c_postal)
+			return false;
+		if (tipo_cliente == null) {
+			if (other.tipo_cliente != null)
+				return false;
+		} else if (!tipo_cliente.equals(other.tipo_cliente))
+			return false;
+		return true;
+	}
 
-    public void setContrasena(Integer contrasena) {
-        this.contrasena = contrasena;
-    }
-
-    @Override
-    public String toString() {
-        return "Cliente{" +
-                "Identificador=" + Identificador +
-                ", Activo='" + Activo + '\'' +
-                ", Correo='" + Correo + '\'' +
-                ", contrasena=" + contrasena +
-                ", Telefono=" + Telefono +
-                ", Fecha_apertura=" + Fecha_apertura +
-                ", Fecha_cierre=" + Fecha_cierre +
-                ", administrador=" + administrador +
-                ", cuentas_ebury=" + cuentas_ebury +
-                ", direccion=" + direccion +
-                '}';
-    }
+	@Override
+	public String toString() {
+		return "Cliente [ID=" + ID + ", Identificacion=" + Identificacion
+				+ ", tipo_cliente=" + tipo_cliente + ", Fecha_Alta="
+				+ Fecha_Alta + ", Fecha_Baja=" + Fecha_Baja + ", Direccion="
+				+ Direccion + ", Ciudad=" + Ciudad + ", c_postal=" + c_postal
+				+ ", Pais=" + Pais + ", c_finetch=" + c_finetch + "]";
+	}
+    
+    
+    
 }
