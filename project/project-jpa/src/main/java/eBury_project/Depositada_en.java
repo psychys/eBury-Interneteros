@@ -66,4 +66,13 @@ public class Depositada_en{
 	public int hashCode() {
 		return Objects.hash(pooled, cuenta_referencia, Saldo);
 	}
+
+	@Override
+	public String toString() {
+		return "Depositada_en{" +
+				"pooled=" + pooled +
+				", cuenta_referencia=" + cuenta_referencia +
+				", Saldo=" + Saldo +
+				'}';
+	}
 }

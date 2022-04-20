@@ -9,7 +9,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
-public class Cuenta_Finetch extends Cuenta{
+public class Cuenta_Fintech extends Cuenta{
 	
 	@Column(nullable = false)
 	private String estado;
@@ -22,7 +22,7 @@ public class Cuenta_Finetch extends Cuenta{
 	@ManyToOne
 	private Cliente cliente;
 	
-	public Cuenta_Finetch() {
+	public Cuenta_Fintech() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -88,7 +88,7 @@ public class Cuenta_Finetch extends Cuenta{
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Cuenta_Finetch other = (Cuenta_Finetch) obj;
+		Cuenta_Fintech other = (Cuenta_Fintech) obj;
 		if (clasificacion == null) {
 			if (other.clasificacion != null)
 				return false;
@@ -120,7 +120,7 @@ public class Cuenta_Finetch extends Cuenta{
 
 	@Override
 	public String toString() {
-		return "Cuenta_Finetch [estado=" + estado + ", fecha_apertura="
+		return "Cuenta_Fintech [estado=" + estado + ", fecha_apertura="
 				+ fecha_apertura + ", fecha_cierre=" + fecha_cierre
 				+ ", clasificacion=" + clasificacion + ", cliente=" + cliente
 				+ "]";

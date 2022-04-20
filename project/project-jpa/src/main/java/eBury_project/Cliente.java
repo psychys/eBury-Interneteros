@@ -2,7 +2,6 @@ package eBury_project;
 
 import javax.persistence.*;
 
-import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 
@@ -33,7 +32,7 @@ public class Cliente {
     @JoinTable(name = "cliente_finetch", 
 	joinColumns = @JoinColumn(name = "Id_cliente"), 
 	inverseJoinColumns = @JoinColumn(name = "finetch_iban"))
-    private List<Cuenta_Finetch> c_finetch;
+    private List<Cuenta_Fintech> c_finetch;
 
 	public Cliente() {
 		super();
@@ -112,11 +111,11 @@ public class Cliente {
 		Pais = pais;
 	}
 
-	public List<Cuenta_Finetch> getC_finetch() {
+	public List<Cuenta_Fintech> getC_finetch() {
 		return c_finetch;
 	}
 
-	public void setC_finetch(List<Cuenta_Finetch> c_finetch) {
+	public void setC_finetch(List<Cuenta_Fintech> c_finetch) {
 		this.c_finetch = c_finetch;
 	}
 

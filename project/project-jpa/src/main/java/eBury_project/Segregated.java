@@ -5,10 +5,10 @@ import javax.persistence.OneToOne;
 
 
 @Entity
-public class Segregated extends Cuenta_Finetch{
+public class Segregated extends Cuenta_Fintech {
 	
 	private int comision;
-	@OneToOne
+	@OneToOne (mappedBy ="c_finetch_segregada")
 	private Cuenta_referencia c_ref;
 
 	public Segregated() {
