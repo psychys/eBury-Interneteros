@@ -5,6 +5,7 @@ import javax.persistence.Id;
 import javax.persistence.IdClass;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import java.util.Objects;
 
 @Entity
 @IdClass(DepositadaId.class)
@@ -12,13 +13,13 @@ public class Depositada_en{
 	
 	@Id
 	@ManyToOne
-	@JoinColumn(name = "iban_finetch" ,referencedColumnName = "cuenta_finetch")
-	private String iban_finetch;
+	@JoinColumn(name = "iban_pooled" ,referencedColumnName = "pooled_cuenta")
+	private Pooled pooled;
 	
 	@Id
 	@ManyToOne
 	@JoinColumn(name = "iban_referencia" ,referencedColumnName = "cuenta_referencia")
-	private String iban_referencia;
+	private Cuenta_referencia cuenta_referencia;
 	
 	@Id
 	private int Saldo;
@@ -28,20 +29,21 @@ public class Depositada_en{
 		// TODO Auto-generated constructor stub
 	}
 
-	public String getIban_finetch() {
-		return iban_finetch;
+
+	public Pooled getPooled() {
+		return pooled;
 	}
 
-	public void setIban_finetch(String iban_finetch) {
-		this.iban_finetch = iban_finetch;
+	public void setPooled(Pooled pooled) {
+		this.pooled = pooled;
 	}
 
-	public String getIban_referencia() {
-		return iban_referencia;
+	public Cuenta_referencia getCuenta_referencia() {
+		return cuenta_referencia;
 	}
 
-	public void setIban_referencia(String iban_referencia) {
-		this.iban_referencia = iban_referencia;
+	public void setCuenta_referencia(Cuenta_referencia cuenta_referencia) {
+		this.cuenta_referencia = cuenta_referencia;
 	}
 
 	public int getSaldo() {
@@ -53,49 +55,15 @@ public class Depositada_en{
 	}
 
 	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+		Depositada_en that = (Depositada_en) o;
+		return Saldo == that.Saldo && Objects.equals(pooled, that.pooled) && Objects.equals(cuenta_referencia, that.cuenta_referencia);
+	}
+
+	@Override
 	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + Saldo;
-		result = prime * result
-				+ ((iban_finetch == null) ? 0 : iban_finetch.hashCode());
-		result = prime * result
-				+ ((iban_referencia == null) ? 0 : iban_referencia.hashCode());
-		return result;
+		return Objects.hash(pooled, cuenta_referencia, Saldo);
 	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Depositada_en other = (Depositada_en) obj;
-		if (Saldo != other.Saldo)
-			return false;
-		if (iban_finetch == null) {
-			if (other.iban_finetch != null)
-				return false;
-		} else if (!iban_finetch.equals(other.iban_finetch))
-			return false;
-		if (iban_referencia == null) {
-			if (other.iban_referencia != null)
-				return false;
-		} else if (!iban_referencia.equals(other.iban_referencia))
-			return false;
-		return true;
-	}
-
-	@Override
-	public String toString() {
-		return "Depositada_en [iban_finetch=" + iban_finetch
-				+ ", iban_referencia=" + iban_referencia + ", Saldo=" + Saldo
-				+ "]";
-	}
-	
-	
-	
-
 }

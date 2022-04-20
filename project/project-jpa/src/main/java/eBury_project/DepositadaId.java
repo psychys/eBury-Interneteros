@@ -5,7 +5,7 @@ import java.io.Serializable;
 public class DepositadaId implements Serializable {
 
 	private int saldo;
-	private String iban_finetch;
+	private String iban_pooled;
 	private String iban_referencia;
 	public DepositadaId() {
 		super();
@@ -18,10 +18,10 @@ public class DepositadaId implements Serializable {
 		this.saldo = saldo;
 	}
 	public String getIban_finetch() {
-		return iban_finetch;
+		return iban_pooled;
 	}
 	public void setIban_finetch(String iban_finetch) {
-		this.iban_finetch = iban_finetch;
+		this.iban_pooled = iban_finetch;
 	}
 	public String getIban_referencia() {
 		return iban_referencia;
@@ -34,7 +34,7 @@ public class DepositadaId implements Serializable {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result
-				+ ((iban_finetch == null) ? 0 : iban_finetch.hashCode());
+				+ ((iban_pooled == null) ? 0 : iban_pooled.hashCode());
 		result = prime * result
 				+ ((iban_referencia == null) ? 0 : iban_referencia.hashCode());
 		result = prime * result + saldo;
@@ -49,10 +49,10 @@ public class DepositadaId implements Serializable {
 		if (getClass() != obj.getClass())
 			return false;
 		DepositadaId other = (DepositadaId) obj;
-		if (iban_finetch == null) {
-			if (other.iban_finetch != null)
+		if (iban_pooled == null) {
+			if (other.iban_pooled != null)
 				return false;
-		} else if (!iban_finetch.equals(other.iban_finetch))
+		} else if (!iban_pooled.equals(other.iban_pooled))
 			return false;
 		if (iban_referencia == null) {
 			if (other.iban_referencia != null)
@@ -66,7 +66,7 @@ public class DepositadaId implements Serializable {
 	@Override
 	public String toString() {
 		return "DeposidataId [saldo=" + saldo + ", iban_finetch="
-				+ iban_finetch + ", iban_referencia=" + iban_referencia + "]";
+				+ iban_pooled + ", iban_referencia=" + iban_referencia + "]";
 	}
 	
 	

@@ -12,21 +12,21 @@ public class Autorizacion {
 	
 	@Id
 	@ManyToOne
-	@JoinColumn(name = "ID_cliente" ,referencedColumnName = "ID_Cliente")
-	private String Id_cliente;
+	@JoinColumn(name = "ID_empresa" ,referencedColumnName = "ID_empresa")
+	private Empresa empresa;
 	
 	@Id
 	@ManyToOne
 	@JoinColumn(name = "ID_autorizado" ,referencedColumnName = "ID_Autorizado")
-	private String Id_autorizado;
+	private Persona_autorizada persona_autorizada;
 	
 	@Id
 	private String tipo;
 
 	public Autorizacion(String id_cliente, String id_autorizado, String tipo) {
 		super();
-		Id_cliente = id_cliente;
-		Id_autorizado = id_autorizado;
+		empresa = empresa;
+		persona_autorizada = persona_autorizada;
 		this.tipo = tipo;
 	}
 
@@ -34,20 +34,20 @@ public class Autorizacion {
 
 	}
 
-	public String getId_cliente() {
-		return Id_cliente;
+	public Empresa liente() {
+		return empresa;
 	}
 
 	public void setId_cliente(String id_cliente) {
-		Id_cliente = id_cliente;
+		empresa = empresa;
 	}
 
-	public String getId_autorizado() {
-		return Id_autorizado;
+	public Persona_autorizada getId_autorizado() {
+		return persona_autorizada;
 	}
 
 	public void setId_autorizado(String id_autorizado) {
-		Id_autorizado = id_autorizado;
+		persona_autorizada = persona_autorizada;
 	}
 
 	public String getTipo() {
@@ -63,9 +63,9 @@ public class Autorizacion {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result
-				+ ((Id_autorizado == null) ? 0 : Id_autorizado.hashCode());
+				+ ((persona_autorizada == null) ? 0 : persona_autorizada.hashCode());
 		result = prime * result
-				+ ((Id_cliente == null) ? 0 : Id_cliente.hashCode());
+				+ ((empresa == null) ? 0 : empresa.hashCode());
 		result = prime * result + ((tipo == null) ? 0 : tipo.hashCode());
 		return result;
 	}
@@ -79,15 +79,15 @@ public class Autorizacion {
 		if (getClass() != obj.getClass())
 			return false;
 		Autorizacion other = (Autorizacion) obj;
-		if (Id_autorizado == null) {
-			if (other.Id_autorizado != null)
+		if (persona_autorizada == null) {
+			if (other.persona_autorizada != null)
 				return false;
-		} else if (!Id_autorizado.equals(other.Id_autorizado))
+		} else if (!persona_autorizada.equals(other.persona_autorizada))
 			return false;
-		if (Id_cliente == null) {
-			if (other.Id_cliente != null)
+		if (empresa == null) {
+			if (other.empresa != null)
 				return false;
-		} else if (!Id_cliente.equals(other.Id_cliente))
+		} else if (!empresa.equals(other.empresa))
 			return false;
 		if (tipo == null) {
 			if (other.tipo != null)
@@ -99,8 +99,8 @@ public class Autorizacion {
 
 	@Override
 	public String toString() {
-		return "Autorizacion [Id_cliente=" + Id_cliente + ", Id_autorizado="
-				+ Id_autorizado + ", tipo=" + tipo + "]";
+		return "Autorizacion [Id_cliente=" + empresa + ", Id_autorizado="
+				+ persona_autorizada + ", tipo=" + tipo + "]";
 	}
 	
 	

@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 public class AutorizacionId implements Serializable {
 	
-	private int ID_cliente;
+	private int ID_empresa;
 	private int ID_autorizado;
 	private String tipo;
 	
@@ -14,11 +14,11 @@ public class AutorizacionId implements Serializable {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public int getID_cliente() {
-		return ID_cliente;
+	public int getID_empresa() {
+		return ID_empresa;
 	}
 	public void setID_cliente(int iD_cliente) {
-		ID_cliente = iD_cliente;
+		ID_empresa = iD_cliente;
 	}
 	public int getID_autorizado() {
 		return ID_autorizado;
@@ -37,7 +37,7 @@ public class AutorizacionId implements Serializable {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ID_autorizado;
-		result = prime * result + ID_cliente;
+		result = prime * result + ID_empresa;
 		result = prime * result + ((tipo == null) ? 0 : tipo.hashCode());
 		return result;
 	}
@@ -52,7 +52,7 @@ public class AutorizacionId implements Serializable {
 		AutorizacionId other = (AutorizacionId) obj;
 		if (ID_autorizado != other.ID_autorizado)
 			return false;
-		if (ID_cliente != other.ID_cliente)
+		if (ID_empresa != other.ID_empresa)
 			return false;
 		if (tipo == null) {
 			if (other.tipo != null)
@@ -63,7 +63,7 @@ public class AutorizacionId implements Serializable {
 	}
 	@Override
 	public String toString() {
-		return "AutorizacionId [ID_cliente=" + ID_cliente + ", ID_autorizado="
+		return "AutorizacionId [ID_cliente=" + ID_empresa + ", ID_autorizado="
 				+ ID_autorizado + ", tipo=" + tipo + "]";
 	}
 	
