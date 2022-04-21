@@ -123,6 +123,14 @@ public class Cliente {
 		this.c_fintech = c_fintech;
 	}
 
+	public Usuario getU_usuario() {
+		return u_usuario;
+	}
+
+	public void setU_usuario(Usuario u_usuario) {
+		this.u_usuario = u_usuario;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;

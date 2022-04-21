@@ -2,11 +2,7 @@ package eBury_project;
 
 import java.util.Date;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+import javax.persistence.*;
 
 @Entity
 public class Persona_autorizada {
@@ -28,7 +24,10 @@ public class Persona_autorizada {
     private Date fecha_inicio;
     @Temporal(TemporalType.DATE)
     private Date fecha_fin;
-    
+
+	@OneToOne(mappedBy ="persona_autorizada")
+	private Usuario uu_usuario;
+
 	public Persona_autorizada() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -104,6 +103,14 @@ public class Persona_autorizada {
 
 	public void setFecha_fin(Date fecha_fin) {
 		this.fecha_fin = fecha_fin;
+	}
+
+	public Usuario getUu_usuario() {
+		return uu_usuario;
+	}
+
+	public void setUu_usuario(Usuario uu_usuario) {
+		this.uu_usuario = uu_usuario;
 	}
 
 	@Override
