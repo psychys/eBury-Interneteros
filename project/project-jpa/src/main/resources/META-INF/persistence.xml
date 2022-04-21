@@ -14,7 +14,8 @@
 		<class>eBury_project.Transaccion</class>
 		<class>eBury_project.Divisa</class>
 		<class>eBury_project.Persona_autorizada</class>
-		<properties>
+        <class>eBury_project.Usuario</class>
+        <properties>
 			<property name="javax.persistence.jdbc.url" value="jdbc:h2:mem:test"/>
 			<property name="javax.persistence.jdbc.user" value=""/>
 			<property name="javax.persistence.jdbc.password" value=""/>

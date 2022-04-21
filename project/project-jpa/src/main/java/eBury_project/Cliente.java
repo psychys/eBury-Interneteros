@@ -34,6 +34,10 @@ public class Cliente {
 	inverseJoinColumns = @JoinColumn(name = "fintech_iban"))
     private List<Cuenta_Fintech> c_fintech;
 
+	@OneToOne(mappedBy ="c_cliente")
+	private Usuario u_usuario;
+
+
 	public Cliente() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -202,7 +206,5 @@ public class Cliente {
 				+ Direccion + ", Ciudad=" + Ciudad + ", c_postal=" + c_postal
 				+ ", Pais=" + Pais + ", c_fintech=" + c_fintech + "]";
 	}
-    
-    
-    
+
 }
