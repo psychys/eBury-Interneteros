@@ -6,7 +6,6 @@ import java.util.Date;
 import java.util.List;
 
 @Entity
-//anotacion
 public class Cliente {
 
     @Id @GeneratedValue

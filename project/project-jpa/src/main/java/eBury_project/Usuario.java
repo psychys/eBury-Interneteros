@@ -9,7 +9,8 @@ public class Usuario {
     @Id
     @GeneratedValue
     private int id;
-
+    @Column(nullable = false)
+    private String contrasena;
     @Column(nullable = false)
     private boolean administrador;
 
@@ -61,23 +62,32 @@ public class Usuario {
         this.persona_autorizada = persona_autorizada;
     }
 
+    public String getContrasena() {
+        return contrasena;
+    }
+
+    public void setContrasena(String contrasena) {
+        this.contrasena = contrasena;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Usuario usuario = (Usuario) o;
-        return id == usuario.id && administrador == usuario.administrador && Objects.equals(c_cliente, usuario.c_cliente) && Objects.equals(persona_autorizada, usuario.persona_autorizada);
+        return id == usuario.id && administrador == usuario.administrador && Objects.equals(contrasena, usuario.contrasena) && Objects.equals(c_cliente, usuario.c_cliente) && Objects.equals(persona_autorizada, usuario.persona_autorizada);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, administrador, c_cliente, persona_autorizada);
+        return Objects.hash(id, contrasena, administrador, c_cliente, persona_autorizada);
     }
 
     @Override
     public String toString() {
         return "Usuario{" +
                 "id=" + id +
+                ", contrasena='" + contrasena + '\'' +
                 ", administrador=" + administrador +
                 ", c_cliente=" + c_cliente +
                 ", persona_autorizada=" + persona_autorizada +
