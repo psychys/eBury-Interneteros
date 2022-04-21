@@ -19,6 +19,8 @@
   		</dependency>
   	</dependencies>
   </dependencyManagement>
-<modules>  <module>project-jpa</module>
-  </modules>
+<modules>
+	<module>project-jpa</module>
+    <module>project-ejb</module>
+</modules>
 </project>

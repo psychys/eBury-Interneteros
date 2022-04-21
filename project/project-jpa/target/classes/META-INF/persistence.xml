@@ -10,7 +10,7 @@
         <class>eBury_project.Segregated</class>
 		<class>eBury_project.Empresa</class>
 		<class>eBury_project.Individual</class>
-		<class>eBury_project.Cuenta_Finetch</class>
+		<class>eBury_project.Cuenta_Fintech</class>
 		<class>eBury_project.Transaccion</class>
 		<class>eBury_project.Divisa</class>
 		<class>eBury_project.Persona_autorizada</class>
