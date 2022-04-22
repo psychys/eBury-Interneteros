@@ -7,7 +7,7 @@ public interface GestionCliente {
     public void CrearCliente(Cliente c);
 
     //Requisito 3
-    public void ActualizarCliente(Cliente c);
+    public void ActualizarCliente(Cliente c) throws ClienteException;
 
     public Cliente BuscarCliente(int id) throws ClienteException;
 

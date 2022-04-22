@@ -1,3 +1,4 @@
+
 import eBury_project.Cliente;
 import exceptions.ClienteException;
 
@@ -15,7 +16,13 @@ public class ClienteEJB implements GestionCliente{
     }
 
     @Override
-    public void ActualizarCliente(Cliente c) {
+    public void ActualizarCliente(Cliente c) throws ClienteException {
+        Cliente clienteExiste = em.find(Cliente.class, c);
+        if (clienteExiste == null) {
+            throw new ClienteException("Cliente no existente");
+        }
+
+        em.merge(c);
 
     }
 
