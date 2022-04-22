@@ -1,4 +1,5 @@
 import eBury_project.Cliente;
+import exceptions.ClienteException;
 
 public interface GestionCliente {
 
@@ -8,10 +9,11 @@ public interface GestionCliente {
     //Requisito 3
     public void ActualizarCliente(Cliente c);
 
-    public void LeerCliente(Cliente c);
+    public Cliente BuscarCliente(int id) throws ClienteException;
+
 
     //Requisito 4
-    public void MarcarCliente(Cliente c);
+    public void MarcarCliente(Cliente c,String s) throws ClienteException;
 
 
 

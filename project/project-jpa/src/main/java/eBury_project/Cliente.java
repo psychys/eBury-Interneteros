@@ -4,6 +4,7 @@ import javax.persistence.*;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Objects;
 
 @Entity
 public class Cliente {
@@ -27,6 +28,7 @@ public class Cliente {
     private int c_postal;
     @Column(nullable = false)
     private String Pais;
+	private String Estado;
     
     @OneToMany //(mappedBy = "banco")
     @JoinTable(name = "cliente_fintech", 
@@ -131,88 +133,42 @@ public class Cliente {
 		this.u_usuario = u_usuario;
 	}
 
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((Ciudad == null) ? 0 : Ciudad.hashCode());
-		result = prime * result
-				+ ((Direccion == null) ? 0 : Direccion.hashCode());
-		result = prime * result
-				+ ((Fecha_Alta == null) ? 0 : Fecha_Alta.hashCode());
-		result = prime * result
-				+ ((Fecha_Baja == null) ? 0 : Fecha_Baja.hashCode());
-		result = prime * result + ID;
-		result = prime * result + Identificacion;
-		result = prime * result + ((Pais == null) ? 0 : Pais.hashCode());
-		result = prime * result
-				+ ((c_fintech == null) ? 0 : c_fintech.hashCode());
-		result = prime * result + c_postal;
-		result = prime * result
-				+ ((tipo_cliente == null) ? 0 : tipo_cliente.hashCode());
-		return result;
+	public String getEstado() {
+		return Estado;
+	}
+
+	public void setEstado(String estado) {
+		Estado = estado;
 	}
 
 	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Cliente other = (Cliente) obj;
-		if (Ciudad == null) {
-			if (other.Ciudad != null)
-				return false;
-		} else if (!Ciudad.equals(other.Ciudad))
-			return false;
-		if (Direccion == null) {
-			if (other.Direccion != null)
-				return false;
-		} else if (!Direccion.equals(other.Direccion))
-			return false;
-		if (Fecha_Alta == null) {
-			if (other.Fecha_Alta != null)
-				return false;
-		} else if (!Fecha_Alta.equals(other.Fecha_Alta))
-			return false;
-		if (Fecha_Baja == null) {
-			if (other.Fecha_Baja != null)
-				return false;
-		} else if (!Fecha_Baja.equals(other.Fecha_Baja))
-			return false;
-		if (ID != other.ID)
-			return false;
-		if (Identificacion != other.Identificacion)
-			return false;
-		if (Pais == null) {
-			if (other.Pais != null)
-				return false;
-		} else if (!Pais.equals(other.Pais))
-			return false;
-		if (c_fintech == null) {
-			if (other.c_fintech != null)
-				return false;
-		} else if (!c_fintech.equals(other.c_fintech))
-			return false;
-		if (c_postal != other.c_postal)
-			return false;
-		if (tipo_cliente == null) {
-			if (other.tipo_cliente != null)
-				return false;
-		} else if (!tipo_cliente.equals(other.tipo_cliente))
-			return false;
-		return true;
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+		Cliente cliente = (Cliente) o;
+		return ID == cliente.ID && Identificacion == cliente.Identificacion && c_postal == cliente.c_postal && Objects.equals(tipo_cliente, cliente.tipo_cliente) && Objects.equals(Fecha_Alta, cliente.Fecha_Alta) && Objects.equals(Fecha_Baja, cliente.Fecha_Baja) && Objects.equals(Direccion, cliente.Direccion) && Objects.equals(Ciudad, cliente.Ciudad) && Objects.equals(Pais, cliente.Pais) && Objects.equals(Estado, cliente.Estado) && Objects.equals(c_fintech, cliente.c_fintech) && Objects.equals(u_usuario, cliente.u_usuario);
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(ID, Identificacion, tipo_cliente, Fecha_Alta, Fecha_Baja, Direccion, Ciudad, c_postal, Pais, Estado, c_fintech, u_usuario);
 	}
 
 	@Override
 	public String toString() {
-		return "Cliente [ID=" + ID + ", Identificacion=" + Identificacion
-				+ ", tipo_cliente=" + tipo_cliente + ", Fecha_Alta="
-				+ Fecha_Alta + ", Fecha_Baja=" + Fecha_Baja + ", Direccion="
-				+ Direccion + ", Ciudad=" + Ciudad + ", c_postal=" + c_postal
-				+ ", Pais=" + Pais + ", c_fintech=" + c_fintech + "]";
+		return "Cliente{" +
+				"ID=" + ID +
+				", Identificacion=" + Identificacion +
+				", tipo_cliente='" + tipo_cliente + '\'' +
+				", Fecha_Alta=" + Fecha_Alta +
+				", Fecha_Baja=" + Fecha_Baja +
+				", Direccion='" + Direccion + '\'' +
+				", Ciudad='" + Ciudad + '\'' +
+				", c_postal=" + c_postal +
+				", Pais='" + Pais + '\'' +
+				", Estado='" + Estado + '\'' +
+				", c_fintech=" + c_fintech +
+				", u_usuario=" + u_usuario +
+				'}';
 	}
-
 }
