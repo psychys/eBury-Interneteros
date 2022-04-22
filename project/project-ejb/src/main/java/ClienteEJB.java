@@ -19,11 +19,6 @@ public class ClienteEJB implements GestionCliente{
     private EntityManager em;
 
     @Override
-    public void CrearCliente(Cliente c) {
-
-    }
-
-    @Override
     public void ActualizarCliente(Cliente c) throws ClienteException {
         Cliente clienteExiste = em.find(Cliente.class, c);
         if (clienteExiste == null) {
