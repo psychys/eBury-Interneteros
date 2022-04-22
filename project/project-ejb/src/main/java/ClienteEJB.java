@@ -55,7 +55,7 @@ public class ClienteEJB implements GestionCliente{
     public void CrearCliente(Cliente c, UriBuilder uriBuilder) throws ClienteException{
         Cliente cliente = em.find(Cliente.class, c.getID());
         if(cliente!= null){
-            //throw new ClienteRepetidoException();
+            throw new ClienteException("Cliente repetido");
         }
 
         c.setID(generarIdAleatorio());
