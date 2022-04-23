@@ -1,5 +1,7 @@
 import eBury_project.Cliente;
+import eBury_project.Persona_autorizada;
 import exceptions.ClienteException;
+import exceptions.PersonaAutorizadaException;
 
 import javax.persistence.EntityManager;
 
@@ -9,15 +11,15 @@ public class PersonaAutorizadaEJB implements GestionPersonaAutorizada{
     private EntityManager em;
 
     @Override
-    public void CrearCliente(Cliente c) {
+    public void CrearPersonaAutorizada(Persona_autorizada c) {
 
     }
 
     @Override
-    public void ActualizarCliente(Cliente c) throws ClienteException {
-        Cliente clienteExiste = em.find(Cliente.class, c);
-        if (clienteExiste == null) {
-            throw new ClienteException("Cliente no existente");
+    public void ActualizarPersonaAutorizada(Persona_autorizada c) throws PersonaAutorizadaException {
+        Persona_autorizada personaExiste = em.find(Persona_autorizada.class, c);
+        if (personaExiste == null) {
+            throw new PersonaAutorizadaException("PersonaAutorizada no existente");
         }
 
         em.merge(c);
@@ -25,21 +27,21 @@ public class PersonaAutorizadaEJB implements GestionPersonaAutorizada{
     }
 
     @Override
-    public Cliente BuscarCliente(int id) throws ClienteException {
-        Cliente c = em.find(Cliente.class, id);
+    public Persona_autorizada BuscarPersonaAutorizada(int id) throws PersonaAutorizadaException {
+        Persona_autorizada c = em.find(Persona_autorizada.class, id);
         if(c == null){
-            throw new ClienteException("Cliente no existente");
+            throw new PersonaAutorizadaException("Persona autorizada no existente");
         }
         return c;
     }
 
     @Override
-    public void MarcarCliente(Cliente c, String estado) throws ClienteException {
+    public void MarcarPersonaAutorizada(Persona_autorizada c, String estado) throws PersonaAutorizadaException {
 
-        Cliente clienteExistente = em.find(Cliente.class, c);
+        Persona_autorizada personaExiste = em.find(Persona_autorizada.class, c);
 
         if(c == null) {
-            throw new ClienteException("CLiente no existente");
+            throw new PersonaAutorizadaException("Persona autorizada no existente");
         }
 
         c.setEstado(estado);
