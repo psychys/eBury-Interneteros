@@ -1,14 +1,14 @@
-import eBury_project.Cliente;
-import exceptions.ClienteException;
+import eBury_project.Cuenta;
+import exceptions.CuentaException;
 
 public interface GestionCuenta {
 
-    public void CrearCliente(Cliente c);
+    public void CrearCuenta(Cuenta c) throws CuentaException;
 
-    public void ActualizarCliente(Cliente c) throws ClienteException;
+    public void ActualizarCuenta(Cuenta c) throws CuentaException;
 
-    public Cliente BuscarCliente(int id) throws ClienteException;
+    public Cuenta BuscarCuenta(int id) throws CuentaException;
 
-    public void MarcarCliente(Cliente c,String s) throws ClienteException;
+    public void MarcarCuenta(Cuenta c,String s) throws CuentaException;
 
 }
