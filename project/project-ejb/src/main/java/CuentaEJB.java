@@ -1,23 +1,39 @@
 import eBury_project.*;
-import exceptions.ClienteException;
 import exceptions.CuentaException;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import javax.persistence.TypedQuery;
+import javax.ws.rs.core.UriBuilder;
+import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Logger;
 
 public class CuentaEJB implements GestionCuenta{
 
     //@PersistenceContext(name="Trazabilidad")
     private EntityManager em;
 
+    private static final Logger LOGGER =java.util.logging.Logger.getLogger(CuentaEJB.class.getCanonicalName());
 
     @Override
-    public void CrearCuenta(Cuenta c) throws CuentaException {
+    public void CrearCuenta(Cuenta c, Usuario u, UriBuilder uriBuilder) throws CuentaException {
+        if(u.isAdministrador()==true) {//Comprueba si eres administrador
+            Cuenta cuenta = em.find(Cuenta.class, c.getIBAN());
 
+            if(cuenta!= null){
+                throw new CuentaException("Cuenta repetida");
+            }
+
+            em.persist(c);
+
+        }else{
+            throw new CuentaException("NO ERES ADMINISTRADOR");
+        }
     }
+
+
 
     @Override
     public void ActualizarCuenta(Cuenta c) throws CuentaException {
@@ -31,7 +47,7 @@ public class CuentaEJB implements GestionCuenta{
 
     @Override
     public void MarcarCuenta(Cuenta c, String estado,Usuario u) throws CuentaException {
-       if(u.isAdministrador()==true){
+       if(u.isAdministrador()==true){//Comprueba si eres administrador
            //comprobar que tiene saldo 0 en todas sus divisas
 
            List<Cuenta_referencia> lista = pedirCuentaRef(c);
@@ -51,7 +67,7 @@ public class CuentaEJB implements GestionCuenta{
                throw new CuentaException("No tiene todas sus divisas a cero");
            }
        }else{
-
+           throw new CuentaException("NO ERES ADMINISTRADOR");
        }
        }
 

@@ -2,9 +2,11 @@ import eBury_project.Cuenta;
 import eBury_project.Usuario;
 import exceptions.CuentaException;
 
-public interface GestionCuenta {
+import javax.ws.rs.core.UriBuilder;
 
-    public void CrearCuenta(Cuenta c) throws CuentaException;
+public interface GestionCuenta {
+    //Requisito 5
+    public void CrearCuenta(Cuenta c,Usuario u, UriBuilder uriBuilder) throws CuentaException;
 
     public void ActualizarCuenta(Cuenta c) throws CuentaException;
 
