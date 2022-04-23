@@ -1,14 +1,16 @@
 import eBury_project.Cliente;
+import eBury_project.Persona_autorizada;
 import exceptions.ClienteException;
+import exceptions.PersonaAutorizadaException;
 
 public interface GestionPersonaAutorizada {
 
-    public void CrearCliente(Cliente c);
+    public void CrearPersonaAutorizada(Persona_autorizada c);
 
-    public void ActualizarCliente(Cliente c) throws ClienteException;
+    public void ActualizarPersonaAutorizada(Persona_autorizada c) throws PersonaAutorizadaException;
 
-    public Cliente BuscarCliente(int id) throws ClienteException;
+    public Persona_autorizada BuscarPersonaAutorizada(int id) throws PersonaAutorizadaException;
 
-    public void MarcarCliente(Cliente c,String s) throws ClienteException;
+    public void MarcarPersonaAutorizada(Persona_autorizada c, String s) throws PersonaAutorizadaException;
 
 }
