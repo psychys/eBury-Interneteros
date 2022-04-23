@@ -1,6 +1,8 @@
 package eBury_project;
 
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 import javax.persistence.*;
 
@@ -25,7 +27,10 @@ public class Persona_autorizada {
     @Temporal(TemporalType.DATE)
     private Date fecha_fin;
 
-	@OneToOne(mappedBy ="persona_autorizada")
+	@OneToMany(mappedBy = "empresa")
+	private Set<AutorizacionEmpresaAutorizado> AutorizacionSet = new HashSet<AutorizacionEmpresaAutorizado>();
+
+	@OneToOne//(mappedBy ="persona_autorizada")
 	private Usuario uu_usuario;
 
 	public Persona_autorizada() {

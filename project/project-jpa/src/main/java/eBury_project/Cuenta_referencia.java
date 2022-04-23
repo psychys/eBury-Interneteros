@@ -1,13 +1,11 @@
 package eBury_project;
 
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+import javax.persistence.*;
+
 //preguntar si hace falta el mappedBy
 @Entity
 public class
@@ -26,6 +24,9 @@ Cuenta_referencia extends Cuenta{
 	private Segregated c_fintech_segregada;
 	@ManyToOne
 	private Divisa divisa;
+
+	@OneToMany(mappedBy = "cuenta_pooled")
+	private Set<DepositadaPooledReferencia> DepositadaReferencia = new HashSet<DepositadaPooledReferencia>();
 	
 	
 	public Cuenta_referencia() {

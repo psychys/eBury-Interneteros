@@ -1,7 +1,9 @@
 package eBury_project;
 
+import javax.persistence.Embeddable;
 import java.io.Serializable;
 
+@Embeddable
 public class DepositadaId implements Serializable {
 
 	private int saldo;

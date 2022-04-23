@@ -1,7 +1,9 @@
 package eBury_project;
 
+import javax.persistence.Embeddable;
 import java.io.Serializable;
 
+@Embeddable
 public class AutorizacionId implements Serializable {
 	
 	private int ID_empresa;
@@ -17,6 +19,7 @@ public class AutorizacionId implements Serializable {
 	public int getID_empresa() {
 		return ID_empresa;
 	}
+	public void setID_empresa(int id){ ID_empresa = id;}
 	public void setID_cliente(int iD_cliente) {
 		ID_empresa = iD_cliente;
 	}

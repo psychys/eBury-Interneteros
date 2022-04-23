@@ -1,13 +1,16 @@
 package eBury_project;
 
-import javax.persistence.Entity;
+import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
-
-import javax.persistence.JoinTable;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToMany;
 @Entity
 public class Pooled extends Cuenta_Fintech {
-	
+
+
+    @OneToMany(mappedBy = "cuenta_referencia")
+    private Set<DepositadaPooledReferencia> DepositadaPooled = new HashSet<DepositadaPooledReferencia>();
+
+
 	
 }
