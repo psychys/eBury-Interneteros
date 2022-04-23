@@ -1,14 +1,15 @@
-import eBury_project.Cliente;
-import exceptions.ClienteException;
+
+import eBury_project.Divisa;
+import exceptions.DivisaException;
+
+import javax.ws.rs.core.UriBuilder;
 
 public interface GestionDivisa {
 
-    public void CrearCliente(Cliente c);
+    public void CrearDivisa(Divisa d, UriBuilder uriBuilder) throws DivisaException;
 
-    public void ActualizarCliente(Cliente c) throws ClienteException;
+    public void ActualizarDivisa(Divisa d) throws DivisaException;
 
-    public Cliente BuscarCliente(int id) throws ClienteException;
-
-    public void MarcarCliente(Cliente c,String s) throws ClienteException;
+    public Divisa BuscarDivisa(String abreviatura) throws DivisaException;
 
 }

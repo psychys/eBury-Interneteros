@@ -1,50 +1,51 @@
-import eBury_project.Cliente;
-import exceptions.ClienteException;
+
+import eBury_project.Divisa;
+import exceptions.DivisaException;
 
 import javax.persistence.EntityManager;
+import javax.ws.rs.core.UriBuilder;
+import java.net.URI;
+import java.util.logging.Logger;
 
 public class DivisaEJB implements GestionDivisa{
+
+    private static final Logger LOGGER = java.util.logging.Logger.getLogger(DivisaEJB.class.getCanonicalName());
 
     //@PersistenceContext(name="Trazabilidad")
     private EntityManager em;
 
     @Override
-    public void CrearCliente(Cliente c) {
+    public void CrearDivisa(Divisa d, UriBuilder uriBuilder) throws DivisaException{
+        Divisa divisa = em.find(Divisa.class, d.getAbreviatura());
+        if(divisa!= null){
+            throw new DivisaException("Cliente repetido");
+        }
+
+        em.persist(d);
+
+        URI uriValidacion = uriBuilder.build(d.getAbreviatura());
+        LOGGER.info(uriValidacion.toString());
 
     }
 
     @Override
-    public void ActualizarCliente(Cliente c) throws ClienteException {
-        Cliente clienteExiste = em.find(Cliente.class, c);
-        if (clienteExiste == null) {
-            throw new ClienteException("Cliente no existente");
+    public void ActualizarDivisa(Divisa d) throws DivisaException {
+        Divisa divisaExiste = em.find(Divisa.class, d);
+        if (divisaExiste == null) {
+            throw new DivisaException("Divisa no existente");
         }
 
-        em.merge(c);
+        em.merge(d);
 
     }
 
     @Override
-    public Cliente BuscarCliente(int id) throws ClienteException {
-        Cliente c = em.find(Cliente.class, id);
-        if(c == null){
-            throw new ClienteException("Cliente no existente");
+    public Divisa BuscarDivisa(String abreviatura) throws DivisaException {
+        Divisa d = em.find(Divisa.class, abreviatura);
+        if(d == null){
+            throw new DivisaException("Divisa no existente");
         }
-        return c;
-    }
-
-    @Override
-    public void MarcarCliente(Cliente c, String estado) throws ClienteException {
-
-        Cliente clienteExistente = em.find(Cliente.class, c);
-
-        if(c == null) {
-            throw new ClienteException("CLiente no existente");
-        }
-
-        c.setEstado(estado);
-        em.merge(c);
-
+        return d;
     }
 
 }
