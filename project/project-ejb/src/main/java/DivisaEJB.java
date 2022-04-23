@@ -18,7 +18,7 @@ public class DivisaEJB implements GestionDivisa{
     public void CrearDivisa(Divisa d, UriBuilder uriBuilder) throws DivisaException{
         Divisa divisa = em.find(Divisa.class, d.getAbreviatura());
         if(divisa!= null){
-            throw new DivisaException("Cliente repetido");
+            throw new DivisaException("Divisa repetida");
         }
 
         em.persist(d);
