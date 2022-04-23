@@ -44,7 +44,7 @@ public class ClienteEJB implements GestionCliente{
         Cliente clienteExistente = em.find(Cliente.class, c);
 
         if(c == null) {
-            throw new ClienteException("CLiente no existente");
+            throw new ClienteException("Cliente no existente");
         }
 
         c.setEstado(estado);

@@ -1,13 +1,9 @@
 package eBury_project;
 
 import java.util.List;
+import java.util.Objects;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 
 @Entity
 public class Cuenta {
@@ -15,6 +11,8 @@ public class Cuenta {
 	@Id @GeneratedValue
 	private String IBAN;
 	private String SWIFT;
+	@Column(nullable = false)
+	private String estado;
 	@OneToMany //(mappedBy = "banco")
 	@JoinTable(name = "cuenta_origen", 
 	joinColumns = @JoinColumn(name = "cuenta"), 
@@ -43,40 +41,33 @@ public class Cuenta {
 	public void setSWIFT(String sWIFT) {
 		SWIFT = sWIFT;
 	}
+
+	public String getEstado() {
+		return estado;
+	}
+
+	public void setEstado(String estado) {
+		this.estado = estado;
+	}
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+		Cuenta cuenta = (Cuenta) o;
+		return Objects.equals(IBAN, cuenta.IBAN) && Objects.equals(SWIFT, cuenta.SWIFT) && Objects.equals(estado, cuenta.estado) && Objects.equals(cuenta_emsior, cuenta.cuenta_emsior) && Objects.equals(cuenta_receptor, cuenta.cuenta_receptor);
+	}
+
 	@Override
 	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((IBAN == null) ? 0 : IBAN.hashCode());
-		result = prime * result + ((SWIFT == null) ? 0 : SWIFT.hashCode());
-		return result;
+		return Objects.hash(IBAN, SWIFT, estado, cuenta_emsior, cuenta_receptor);
 	}
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Cuenta other = (Cuenta) obj;
-		if (IBAN == null) {
-			if (other.IBAN != null)
-				return false;
-		} else if (!IBAN.equals(other.IBAN))
-			return false;
-		if (SWIFT == null) {
-			if (other.SWIFT != null)
-				return false;
-		} else if (!SWIFT.equals(other.SWIFT))
-			return false;
-		return true;
-	}
+
 	@Override
 	public String toString() {
-		return "Cuenta [IBAN=" + IBAN + ", SWIFT=" + SWIFT + "]";
+		return "Cuenta{" +
+				"IBAN='" + IBAN + '\'' +
+				", SWIFT='" + SWIFT + '\'' +
+				", estado='" + estado + '\'' ;
 	}
-	
-	
-
 }
