@@ -1,4 +1,5 @@
 import eBury_project.*;
+import exceptions.ClienteException;
 import exceptions.CuentaException;
 
 import javax.persistence.EntityManager;
@@ -37,12 +38,21 @@ public class CuentaEJB implements GestionCuenta{
 
     @Override
     public void ActualizarCuenta(Cuenta c) throws CuentaException {
+        Cliente cuentaExistente = em.find(Cliente.class, c);
+        if (cuentaExistente == null) {
+            throw new CuentaException("Cuenta no existente");
+        }
 
+        em.merge(c);
     }
 
     @Override
     public Cuenta BuscarCuenta(int id) throws CuentaException {
-        return null;
+        Cuenta c = em.find(Cuenta.class, id);
+        if(c == null){
+            throw new CuentaException("Cuenta no existente");
+        }
+        return c;
     }
 
     @Override
