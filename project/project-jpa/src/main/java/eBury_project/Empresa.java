@@ -19,5 +19,4 @@ public class Empresa extends Cliente{
 	@OneToMany(mappedBy = "autorizado")
 	private Set<AutorizacionEmpresaAutorizado> empresaAutorizadoSet = new HashSet<AutorizacionEmpresaAutorizado>();
 
-
 }

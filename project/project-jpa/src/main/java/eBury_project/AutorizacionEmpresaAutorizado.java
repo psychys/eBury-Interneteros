@@ -9,7 +9,7 @@ public class AutorizacionEmpresaAutorizado {
     private AutorizacionId id;
 
     @ManyToOne
-    @MapsId("ID_Empresa")
+    @MapsId("ID_empresa")
     @JoinColumn(name = "EMPRESA_ID")
     private Empresa empresa;
 
