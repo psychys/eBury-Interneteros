@@ -30,7 +30,7 @@ public class Cliente {
     private String Pais;
 	private String Estado;
     
-    @OneToMany //(mappedBy = "banco")
+    @OneToMany (mappedBy = "banco")
     @JoinTable(name = "cliente_fintech", 
 	joinColumns = @JoinColumn(name = "Id_cliente"), 
 	inverseJoinColumns = @JoinColumn(name = "fintech_iban"))
