@@ -39,6 +39,7 @@ public class ClienteEJB implements GestionCliente{
         return c;
     }
 
+    //@Requisito 4
     @Override
     public void MarcarCliente(Cliente c, String estado, Usuario u) throws ClienteException {
 
@@ -63,7 +64,6 @@ public class ClienteEJB implements GestionCliente{
         if(cliente!= null){
             throw new ClienteException("Cliente repetido");
         }
-
         c.setID(generarIdAleatorio());
         em.persist(c);
 

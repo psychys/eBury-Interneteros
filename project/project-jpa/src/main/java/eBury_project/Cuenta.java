@@ -29,6 +29,13 @@ public class Cuenta {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+
+	public Cuenta(String IBAN, String SWIFT, String estado) {
+		this.IBAN = IBAN;
+		this.SWIFT = SWIFT;
+		this.estado = estado;
+	}
+
 	public String getIBAN() {
 		return IBAN;
 	}

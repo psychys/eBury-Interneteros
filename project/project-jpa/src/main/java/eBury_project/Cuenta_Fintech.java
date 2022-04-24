@@ -26,8 +26,16 @@ public class Cuenta_Fintech extends Cuenta{
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	
-	
+
+	public Cuenta_Fintech(String IBAN, String SWIFT, String estado, String estado1,
+						  Date fecha_apertura, Date fecha_cierre, String clasificacion) {
+		super(IBAN, SWIFT, estado);
+		this.estado = estado1;
+		this.fecha_apertura = fecha_apertura;
+		this.fecha_cierre = fecha_cierre;
+		this.clasificacion = clasificacion;
+	}
+
 	public Cliente getCliente() {
 		return cliente;
 	}

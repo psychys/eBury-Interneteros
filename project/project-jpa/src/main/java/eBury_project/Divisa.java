@@ -128,10 +128,12 @@ public class Divisa {
 	}
 
 
-	
-
-
-
+	public Divisa(String abreviatura, String nombre, String simbolo, double cambio_euro) {
+		this.abreviatura = abreviatura;
+		this.nombre = nombre;
+		this.simbolo = simbolo;
+		this.cambio_euro = cambio_euro;
+	}
 
 	@Override
 	public int hashCode() {
