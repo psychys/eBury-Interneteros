@@ -23,10 +23,10 @@ public class Usuario {
 
     }
 
-    @OneToOne (mappedBy ="u_usuario")
+    @OneToOne //(mappedBy ="u_usuario")
     private Cliente c_cliente;
 
-    @OneToOne (mappedBy ="uu_usuario")
+    @OneToOne //(mappedBy ="uu_usuario")
     private Persona_autorizada persona_autorizada;
 
 

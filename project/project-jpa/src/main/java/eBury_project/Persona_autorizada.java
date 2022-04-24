@@ -30,7 +30,7 @@ public class Persona_autorizada {
 	@OneToMany(mappedBy = "empresa")
 	private Set<AutorizacionEmpresaAutorizado> AutorizacionSet = new HashSet<AutorizacionEmpresaAutorizado>();
 
-	@OneToOne//(mappedBy ="persona_autorizada")
+	@OneToOne(mappedBy ="persona_autorizada")
 	private Usuario uu_usuario;
 
 	public Persona_autorizada() {
