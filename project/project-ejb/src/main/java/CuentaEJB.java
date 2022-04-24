@@ -20,7 +20,7 @@ public class CuentaEJB implements GestionCuenta{
 
     @Override
     public void CrearCuenta(Cuenta c, Usuario u, UriBuilder uriBuilder) throws CuentaException {
-        if(u.isAdministrador()==true) {//Comprueba si eres administrador
+        if(u.isAdministrador()) {//Comprueba si eres administrador
             Cuenta cuenta = em.find(Cuenta.class, c.getIBAN());
 
             if(cuenta!= null){
@@ -57,7 +57,7 @@ public class CuentaEJB implements GestionCuenta{
 
     @Override
     public void MarcarCuenta(Cuenta c, String estado,Usuario u) throws CuentaException {
-       if(u.isAdministrador()==true){//Comprueba si eres administrador
+       if(u.isAdministrador()){//Comprueba si eres administrador
            //comprobar que tiene saldo 0 en todas sus divisas
 
            List<Cuenta_referencia> lista = pedirCuentaRef(c);
@@ -65,9 +65,9 @@ public class CuentaEJB implements GestionCuenta{
            boolean x = comprobarSaldo(lista);
 
            if(x){//tiene todas las divisas a 0
-               Cuenta CuentaException = em.find(Cuenta.class, c);
+               Cuenta c1 = em.find(Cuenta.class, c);
 
-               if(c == null) {
+               if(c1 == null) {
                    throw new CuentaException("Cuenta no existente");
                }
 
@@ -96,7 +96,6 @@ public class CuentaEJB implements GestionCuenta{
         for(int i=0;i<lista.size();i++){
             if(lista.get(i).getSaldo()!=0){
                 sol=false;
-                break;
             }
         }
         return sol;
