@@ -1,14 +1,18 @@
 import eBury_project.Cliente;
+import eBury_project.Usuario;
 import exceptions.ClienteException;
+import exceptions.UsuarioException;
+
+import javax.ws.rs.core.UriBuilder;
 
 public interface GestionUsuario {
 
-    public void CrearCliente(Cliente c);
+    public void CrearUsuario(Usuario c, UriBuilder uriBuilder) throws UsuarioException;
 
-    public void ActualizarCliente(Cliente c) throws ClienteException;
+    public void ActualizarUsuario(Usuario c) throws UsuarioException;
 
-    public Cliente BuscarCliente(int id) throws ClienteException;
+    public Usuario BuscarUsuario(int id) throws UsuarioException;
 
-    public void MarcarCliente(Cliente c,String s) throws ClienteException;
+    public void BorrarUsuario(Usuario c) throws UsuarioException;
 
 }
