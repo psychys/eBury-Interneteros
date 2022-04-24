@@ -13,13 +13,14 @@ public class Cuenta {
 	private String SWIFT;
 	@Column(nullable = false)
 	private String estado;
-	@OneToMany (mappedBy = "banco")
+
+	@OneToMany (mappedBy = "origen")
 	@JoinTable(name = "cuenta_origen", 
 	joinColumns = @JoinColumn(name = "cuenta"), 
 	inverseJoinColumns = @JoinColumn(name = "id_trans"))
 	private List<Transaccion> cuenta_emsior;
 	
-	@OneToMany (mappedBy = "banco")
+	@OneToMany (mappedBy = "destino")
 	@JoinTable(name = "cuenta_receptor", 
 	joinColumns = @JoinColumn(name = "divisa"), 
 	inverseJoinColumns = @JoinColumn(name = "id_trans"))
