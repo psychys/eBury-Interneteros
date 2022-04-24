@@ -1,5 +1,6 @@
 
 import eBury_project.Cliente;
+import eBury_project.Usuario;
 import exceptions.ClienteException;
 
 import javax.persistence.EntityManager;
@@ -39,17 +40,22 @@ public class ClienteEJB implements GestionCliente{
     }
 
     @Override
-    public void MarcarCliente(Cliente c, String estado) throws ClienteException {
+    public void MarcarCliente(Cliente c, String estado, Usuario u) throws ClienteException {
 
-        Cliente clienteExistente = em.find(Cliente.class, c);
+        if(u.isAdministrador()) {
 
-        if(c == null) {
-            throw new ClienteException("Cliente no existente");
+            Cliente clienteExistente = em.find(Cliente.class, c);
+
+            if (c == null) {
+                throw new ClienteException("Cliente no existente");
+            }
+
+            c.setEstado(estado);
+            em.merge(c);
+
+        }else{
+            throw new ClienteException("NO ERES ADMINISTRADOR");
         }
-
-        c.setEstado(estado);
-        em.merge(c);
-
     }
     
     public void CrearCliente(Cliente c, UriBuilder uriBuilder) throws ClienteException{

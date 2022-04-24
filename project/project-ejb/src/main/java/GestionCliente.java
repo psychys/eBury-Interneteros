@@ -1,4 +1,5 @@
 import eBury_project.Cliente;
+import eBury_project.Usuario;
 import exceptions.ClienteException;
 
 import javax.ws.rs.core.UriBuilder;
@@ -15,7 +16,7 @@ public interface GestionCliente {
 
 
     //Requisito 4
-    public void MarcarCliente(Cliente c,String s) throws ClienteException;
+    public void MarcarCliente(Cliente c,String s, Usuario u) throws ClienteException;
 
 
 

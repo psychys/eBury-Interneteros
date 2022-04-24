@@ -9,7 +9,7 @@ import java.util.Objects;
 @Entity
 public class Cliente {
 
-    @Id @GeneratedValue
+    @Id @GeneratedValue(strategy = GenerationType.AUTO)
     private int ID;
     @Column(unique = true)
     private int Identificacion;
