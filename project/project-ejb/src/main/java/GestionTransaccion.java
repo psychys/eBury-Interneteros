@@ -1,14 +1,14 @@
-import eBury_project.Cliente;
-import exceptions.ClienteException;
+import eBury_project.Transaccion;
+import exceptions.TransaccionException;
 
 public interface GestionTransaccion {
 
-    public void CrearCliente(Cliente c);
+    public void CrearTransaccion(Transaccion t);
 
-    public void ActualizarCliente(Cliente c) throws ClienteException;
+    public void ActualizarTransaccion(Transaccion t) throws TransaccionException;
 
-    public Cliente BuscarCliente(int id) throws ClienteException;
+    public Transaccion BuscarTransaccion(int id) throws TransaccionException;
 
-    public void MarcarCliente(Cliente c,String s) throws ClienteException;
+    public void BorrarTransaccion(Transaccion t,String s) throws TransaccionException;
 
 }

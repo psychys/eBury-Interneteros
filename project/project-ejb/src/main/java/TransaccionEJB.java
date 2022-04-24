@@ -1,5 +1,6 @@
-import eBury_project.Cliente;
-import exceptions.ClienteException;
+import eBury_project.Cuenta;
+import eBury_project.Transaccion;
+import exceptions.TransaccionException;
 
 import javax.persistence.EntityManager;
 
@@ -9,41 +10,41 @@ public class TransaccionEJB implements GestionTransaccion{
     private EntityManager em;
 
     @Override
-    public void CrearCliente(Cliente c) {
+    public void CrearTransaccion(Transaccion t) {
 
     }
 
     @Override
-    public void ActualizarCliente(Cliente c) throws ClienteException {
-        Cliente clienteExiste = em.find(Cliente.class, c);
-        if (clienteExiste == null) {
-            throw new ClienteException("Cliente no existente");
+    public Transaccion BuscarTransaccion(int id) throws TransaccionException {
+
+        Transaccion t = em.find(Transaccion.class, id);
+        if(t == null){
+            throw new TransaccionException("Transaccion no existente");
         }
 
-        em.merge(c);
+        Cuenta c1 = t.getOrigen();
+        Cuenta c2 = t.getDestino();
+
+       /* if(){
+            return t;
+        }else{
+            throw new TransaccionException("No tienes permiso para consultar");
+        }
+        */
 
     }
 
     @Override
-    public Cliente BuscarCliente(int id) throws ClienteException {
-        Cliente c = em.find(Cliente.class, id);
-        if(c == null){
-            throw new ClienteException("Cliente no existente");
-        }
-        return c;
-    }
+    public void BorrarTransaccion(Transaccion t, String estado) throws TransaccionException {
 
-    @Override
-    public void MarcarCliente(Cliente c, String estado) throws ClienteException {
+        Transaccion TransaccionExistente = em.find(Transaccion.class, t);
 
-        Cliente clienteExistente = em.find(Cliente.class, c);
-
-        if(c == null) {
-            throw new ClienteException("CLiente no existente");
+        if(t == null) {
+            throw new TransaccionException("CLiente no existente");
         }
 
-        c.setEstado(estado);
-        em.merge(c);
+        t.setEstado(estado);
+        em.merge(t);
 
     }
 
