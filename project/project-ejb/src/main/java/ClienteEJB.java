@@ -19,8 +19,13 @@ public class ClienteEJB implements GestionCliente{
     //@PersistenceContext(name="Trazabilidad")
     private EntityManager em;
 
+    // @Requisito 3
     @Override
-    public void ActualizarCliente(Cliente c) throws ClienteException {
+    public void ActualizarCliente(Cliente c, Usuario u) throws ClienteException {
+        if (!u.isAdministrador()) {
+            throw new ClienteException("No eres administrador");
+        }
+
         Cliente clienteExiste = em.find(Cliente.class, c);
         if (clienteExiste == null) {
             throw new ClienteException("Cliente no existente");
