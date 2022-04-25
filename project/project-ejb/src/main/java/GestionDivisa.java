@@ -1,6 +1,5 @@
 
 import eBury_project.Divisa;
-import eBury_project.Transaccion;
 import eBury_project.Usuario;
 import exceptions.DivisaException;
 
