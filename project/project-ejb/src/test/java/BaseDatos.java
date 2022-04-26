@@ -6,7 +6,9 @@ import eBury_project.Divisa;
 
 import java.math.BigDecimal;
 import java.sql.Date;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -21,26 +23,30 @@ public class BaseDatos {
 		EntityManager em = emf.createEntityManager();
 		
 		em.getTransaction().begin();
+		Date d = new Date(22,2,23);
+		Date d1 = new Date(20,5,18);
+		Cuenta_Fintech cuentafin1 = new Cuenta_Fintech("1234567", "1234567","activo", d, d1, "Pooled");
+		Cuenta_Fintech cuentafin2 = new Cuenta_Fintech("0987654","0987654", "activo", d , d1, "Pooled");
 
-		Cuenta_Fintech cuentafin1 = new Cuenta_Fintech("activo", 23.3.22, 0.0.0, "Pooled")
-		Cuenta_Fintech cuentafin2 = new Cuenta_Fintech("activo", 18.5.21 , 0.0.0, "Pooled");
+		em.persist(cuentafin1);
+		em.persist(cuentafin2);
 
-		Cliente cliente1 = new Cliente(1, 1234567, "cliente", 2.23.21, 0.0.0, "Calle palillo 23",
-				"Malaga", 29650, "España", "Activo", cuentafin1);
-		Cliente cliente2 = new Cliente(2, 87654321, "cliente", 18.5.20, 0.0.0, "Calle paco 23",
-				"Malaga", 29651, "España", "Activo", cuentafin2);
+		List<Cuenta_Fintech> l = new ArrayList<Cuenta_Fintech>();
+		l.add(cuentafin1);
+		List<Cuenta_Fintech> l2 = new ArrayList<Cuenta_Fintech>();
+		l.add(cuentafin2);
+		Cliente cliente1 = new Cliente(1, 1234567, "cliente", d, d1, "Calle palillo 23",
+				"Malaga", 29650, "España", "Activo", l);
+		Cliente cliente2 = new Cliente(2, 87654321, "cliente", d, d1, "Calle paco 23",
+				"Malaga", 29651, "España", "Activo", l2);
 
 		em.persist(cliente1);
 		em.persist(cliente2);
 
 
-
-		em.persist(cuenta1);
-		em.persist(cuenta2);
-
 		Divisa dolar = new Divisa("USD", "Dolar", "$", 1.07 );
 		Divisa yen = new Divisa("JPY" , "Yen", "¥", 0.007);
-		Divisa libra = new Divisa("GBP", "Libra Esterlina", "£",1.18 )
+		Divisa libra = new Divisa("GBP", "Libra Esterlina", "£",1.18 );
 
 		em.persist(dolar);
 		em.persist(yen);

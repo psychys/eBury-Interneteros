@@ -5,6 +5,7 @@ import exceptions.ClienteException;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
+import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 import javax.ws.rs.core.UriBuilder;
 import java.net.URI;
@@ -16,7 +17,7 @@ public class ClienteEJB implements GestionCliente{
 
     private static final Logger LOGGER =java.util.logging.Logger.getLogger(ClienteEJB.class.getCanonicalName());
 
-    //@PersistenceContext(name="Trazabilidad")
+    @PersistenceContext(name="ClienteTest")
     private EntityManager em;
 
     // @Requisito 3
