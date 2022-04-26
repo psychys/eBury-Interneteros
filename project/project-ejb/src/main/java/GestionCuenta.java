@@ -6,7 +6,7 @@ import javax.ws.rs.core.UriBuilder;
 
 public interface GestionCuenta {
     //Requisito 5
-    public void CrearCuenta(Cuenta c,Usuario u, UriBuilder uriBuilder) throws CuentaException;
+    public void CrearCuenta(Cuenta c,Usuario u) throws CuentaException;
 
     public void ActualizarCuenta(Cuenta c) throws CuentaException;
 

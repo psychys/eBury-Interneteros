@@ -19,7 +19,7 @@ public class CuentaEJB implements GestionCuenta{
     private static final Logger LOGGER =java.util.logging.Logger.getLogger(CuentaEJB.class.getCanonicalName());
 
     @Override
-    public void CrearCuenta(Cuenta c, Usuario u, UriBuilder uriBuilder) throws CuentaException {
+    public void CrearCuenta(Cuenta c, Usuario u) throws CuentaException {
         if(u.isAdministrador()) {//Comprueba si eres administrador
             Cuenta cuenta = em.find(Cuenta.class, c.getIBAN());
 
