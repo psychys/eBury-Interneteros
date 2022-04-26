@@ -20,25 +20,42 @@ public class ClienteEJB implements GestionCliente{
     @PersistenceContext(name="ClienteTest")
     private EntityManager em;
 
+    //@Requisito 2
+    public void AltaCliente(Usuario admin, Usuario u ) throws ClienteException{
+        if(admin.isAdministrador()) {
+
+            Usuario usuario = em.find(Usuario.class, u.getId());
+            if (usuario != null) {
+                throw new ClienteException("Cliente repetido");
+            }
+
+            em.persist(u);
+
+        }else  {
+            throw new ClienteException("NO ERES ADMINISTRADOR");
+        }
+
+    }
     // @Requisito 3
     @Override
-    public void ActualizarCliente(Cliente c, Usuario u) throws ClienteException {
+    public void ActualizarCliente(Usuario admin, Usuario u) throws ClienteException {
         if (!u.isAdministrador()) {
-            throw new ClienteException("No eres administrador");
+            Usuario cliente = BuscarCliente(u.getC_cliente().getID());
+            cliente.getC_cliente().setDireccion(u.getC_cliente().getDireccion());
+            cliente.getC_cliente().setC_postal(u.getC_cliente().getC_postal());
+            cliente.getC_cliente().setPais(u.getC_cliente().getPais());
+            cliente.getC_cliente().setCiudad(u.getC_cliente().getCiudad());
+            em.merge(cliente);
+
+
+        }else{
+            throw new ClienteException("NO ERES ADMINISTRADOR");
         }
-
-        Cliente clienteExiste = em.find(Cliente.class, c);
-        if (clienteExiste == null) {
-            throw new ClienteException("Cliente no existente");
-        }
-
-        em.merge(c);
-
     }
 
     @Override
-    public Cliente BuscarCliente(int id) throws ClienteException {
-        Cliente c = em.find(Cliente.class, id);
+    public Usuario BuscarCliente(int id) throws ClienteException {
+        Usuario c = em.find(Usuario.class, id);
         if(c == null){
             throw new ClienteException("Cliente no existente");
         }
@@ -63,21 +80,6 @@ public class ClienteEJB implements GestionCliente{
         }else{
             throw new ClienteException("NO ERES ADMINISTRADOR");
         }
-    }
-    
-    public void AltaCliente(Cliente c, Usuario u) throws ClienteException{
-        if(u.isAdministrador()) {
-
-            Cliente cliente = em.find(Cliente.class, c.getID());
-            if (cliente != null) {
-                throw new ClienteException("Cliente repetido");
-            }
-            em.persist(c);
-
-        }else  {
-            throw new ClienteException("NO ERES ADMINISTRADOR");
-        }
-
     }
 
     /*public List<Cliente> getListaClientes() {

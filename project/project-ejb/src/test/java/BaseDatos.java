@@ -1,8 +1,5 @@
 
-import eBury_project.Cliente;
-import eBury_project.Cuenta;
-import eBury_project.Cuenta_Fintech;
-import eBury_project.Divisa;
+import eBury_project.*;
 
 import java.math.BigDecimal;
 import java.sql.Date;
@@ -21,7 +18,9 @@ public class BaseDatos {
 	public static void inicializaBaseDatos(String nombreUnidadPersistencia) {
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory(nombreUnidadPersistencia);
 		EntityManager em = emf.createEntityManager();
-		
+
+
+
 		em.getTransaction().begin();
 		Date d = new Date(22,2,23);
 		Date d1 = new Date(20,5,18);
@@ -35,13 +34,20 @@ public class BaseDatos {
 		l.add(cuentafin1);
 		List<Cuenta_Fintech> l2 = new ArrayList<Cuenta_Fintech>();
 		l.add(cuentafin2);
-		Cliente cliente1 = new Cliente(1, 1234567, "cliente", d, d1, "Calle palillo 23",
+		Cliente cliente1 = new Cliente(23, 1234567, "cliente", d, d1, "Calle palillo 23",
 				"Malaga", 29650, "España", "Activo", l);
-		Cliente cliente2 = new Cliente(2, 87654321, "cliente", d, d1, "Calle paco 23",
+		Cliente cliente2 = new Cliente(24, 87654321, "cliente", d, d1, "Calle paco 23",
 				"Malaga", 29651, "España", "Activo", l2);
+
+		Usuario admin = new Usuario(1 ,"123", true );
+		Usuario usu = new Usuario(2, "123", false, cliente1);
+		Usuario usu2 = new Usuario(2, "123", false, cliente2);
 
 		em.persist(cliente1);
 		em.persist(cliente2);
+		em.persist(usu);
+		em.persist(usu2);
+		em.persist(admin);
 
 
 		Divisa dolar = new Divisa("USD", "Dolar", "$", 1.07 );

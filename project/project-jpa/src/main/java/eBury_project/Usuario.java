@@ -14,10 +14,17 @@ public class Usuario {
     @Column(nullable = false)
     private boolean administrador;
 
+    public Usuario(int id, String contrasena ,boolean administrador, Cliente cliente) {
+        this.id = id;
+        this.contrasena = contrasena;
+        this.administrador = administrador;
+        this.c_cliente = cliente;
+    }
     public Usuario(int id, String contrasena ,boolean administrador) {
         this.id = id;
         this.contrasena = contrasena;
         this.administrador = administrador;
+
     }
 
     public Usuario() {

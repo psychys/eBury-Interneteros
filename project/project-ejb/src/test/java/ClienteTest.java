@@ -1,7 +1,3 @@
-import static org.junit.Assert.assertEquals;
-
-import static org.junit.Assert.fail;
-
 import java.sql.Date;
 import java.util.ArrayList;
 
@@ -14,8 +10,11 @@ import eBury_project.Cliente;
 import eBury_project.Cuenta_Fintech;
 import eBury_project.Usuario;
 import exceptions.ClienteException;
+import exceptions.UsuarioException;
 import org.junit.Before;
 import org.junit.Test;
+
+import static org.junit.Assert.*;
 
 
 public class ClienteTest {
@@ -33,6 +32,7 @@ public class ClienteTest {
 		BaseDatos.inicializaBaseDatos(UNIDAD_PERSITENCIA_PRUEBAS);
 	}
 
+	//@Requisito 2
 	@Test
 	public void testAltaCliente() {
 
@@ -46,26 +46,53 @@ public class ClienteTest {
 		final int  c_postal = 20749;
 		final String pais = "España";
 		final String estado = "activo";
-		final List<Cuenta_Fintech> l = new ArrayList<Cuenta_Fintech>();
-		final int idUsuario = 000;
+		final List<Cuenta_Fintech> l = new ArrayList<>();
+		final int idadmin = 000;
+		final String cont = "1234";
+		final boolean es = true;
+
+		final int idusuario = 111;
+		final String contusu = "1234";
+		final boolean es1 = false;
+		try {
+			Usuario admin = new Usuario(idadmin,cont, es);
+
+			Cliente cliente = new Cliente(id,ident, tipoCliente,d,d2,direccion, ciudad, c_postal, pais, estado,l);
+			Usuario usuario = new Usuario(idusuario, contusu, es1, cliente);
+
+			gestionCliente.AltaCliente(admin, usuario);
+
+			assertEquals("No es el mismo cliente", usuario, gestionUsuario.BuscarUsuario(111));
+
+			} catch(ClienteException | UsuarioException e){
+				fail("Lanzó excepción al dar de Alta");
+			}
+	 }
+
+	 //@Requisito 3
+	@Test
+	public void testActualizarCliente() {
+
+		final int idadmin = 000;
 		final String cont = "1234";
 		final boolean es = true;
 
 		try {
-			Usuario u = new Usuario(idUsuario,cont, es);
+			Usuario admin = new Usuario(idadmin,cont,es);
 
-			Cliente cliente = new Cliente(id,ident, tipoCliente,d,d2,direccion, ciudad, c_postal, pais, estado,l);
-			gestionCliente.AltaCliente(cliente, u);
+			Usuario cliente = gestionCliente.BuscarCliente(1);
 
-			assertEquals("No es el mismo cliente", cliente, gestionCliente.BuscarCliente(1) );
+			String direccion = cliente.getC_cliente().getDireccion();
+			cliente.getC_cliente().setDireccion("calle coco 25");
+			gestionCliente.ActualizarCliente(admin, cliente);
 
-			} catch(ClienteException e){
-				fail("Lanzó excepción al dar de Alta");
-			}
+			assertNotEquals("No se ha modificado", cliente.getC_cliente().getDireccion(), direccion);
 
-	 }
-	
+		} catch(ClienteException e){
+			fail("Lanzó excepción al actualizar el cliente");
+		}
 
+	}
 	
 
 }
