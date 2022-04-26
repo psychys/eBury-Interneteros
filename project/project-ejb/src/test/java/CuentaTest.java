@@ -8,7 +8,7 @@ import javax.naming.NamingException;
 import javax.persistence.Column;
 import java.util.logging.Logger;
 
-import static org.junit.Assert.fail;
+import static org.junit.Assert.*;
 
 public class CuentaTest {
 
@@ -24,7 +24,7 @@ public class CuentaTest {
         gestionCuenta = (GestionCuenta) SuiteTest.ctx.lookup(CUENTA_EJB);
         BaseDatos.inicializaBaseDatos(UNIDAD_PERSITENCIA_PRUEBAS);
     }
-
+    //@Requisitos({"RF5"})
     @Test
     public void testCrearCuenta(){
         final String iban="12345A";
@@ -40,10 +40,45 @@ public class CuentaTest {
 
             gestionCuenta.CrearCuenta(c1, u);
 
+            assertEquals("No es la cuenta", c1, gestionCuenta.BuscarCuenta("12345A"));
+
         }catch (CuentaException e) {
            fail("Lanzó excepción al dar de Alta");
         }
+    }
 
+    @Test
+    public void testBuscarCuenta(){
+        try{
+            gestionCuenta.BuscarCuenta("12345A");
+        }catch (CuentaException e) {
+            fail("Lanzó excepción al buscar cliente");
+        }
+    }
+
+    @Test
+    public void testactualizarCuenta(){
+        final int idUsuario = 000;
+        final String cont = "1234";
+        final boolean es = true;
+
+        try{
+            Usuario u = new Usuario(idUsuario, cont, es);
+            Cuenta c1 = gestionCuenta.BuscarCuenta("12345A");
+
+            assertEquals(c1.getSWIFT() ,"123");
+            String swift = c1.getSWIFT();
+            c1.setSWIFT("456");
+            gestionCuenta.ActualizarCuenta(c1,u);
+            assertNotEquals("Deberia haberse actualizado la cuenta", swift , c1.getSWIFT());
+
+        }catch (CuentaException e) {
+            fail("Lanzó excepción al actualizar cliente");
+        }
+    }
+
+    @Test
+    public void testMarcarCuenta(){
 
     }
 }

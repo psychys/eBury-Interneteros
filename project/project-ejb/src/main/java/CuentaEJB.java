@@ -37,18 +37,22 @@ public class CuentaEJB implements GestionCuenta{
 
 
     @Override
-    public void ActualizarCuenta(Cuenta c) throws CuentaException {
-        Cliente cuentaExistente = em.find(Cliente.class, c);
-        if (cuentaExistente == null) {
-            throw new CuentaException("Cuenta no existente");
-        }
+    public void ActualizarCuenta(Cuenta c,Usuario u) throws CuentaException {
+        if(u.isAdministrador()) {//Comprueba si eres administrador
+            LOGGER.info("DENTRO DEL EJB :--------------> " + c.toString());
+            Cuenta cu = BuscarCuenta(c.getIBAN());
+            cu.setSWIFT(c.getSWIFT());
+            em.merge(cu);
 
-        em.merge(c);
+
+        }else{
+            throw new CuentaException("NO ERES ADMINISTRADOR");
+        }
     }
 
     @Override
-    public Cuenta BuscarCuenta(int id) throws CuentaException {
-        Cuenta c = em.find(Cuenta.class, id);
+    public Cuenta BuscarCuenta(String IBAN) throws CuentaException {
+        Cuenta c = em.find(Cuenta.class, IBAN);
         if(c == null){
             throw new CuentaException("Cuenta no existente");
         }
