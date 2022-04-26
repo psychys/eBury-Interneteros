@@ -18,6 +18,7 @@ public class CuentaEJB implements GestionCuenta{
 
     private static final Logger LOGGER =java.util.logging.Logger.getLogger(CuentaEJB.class.getCanonicalName());
 
+    //@Requisitos({"RF5"})
     @Override
     public void CrearCuenta(Cuenta c, Usuario u) throws CuentaException {
         if(u.isAdministrador()) {//Comprueba si eres administrador
@@ -59,6 +60,7 @@ public class CuentaEJB implements GestionCuenta{
         return c;
     }
 
+    //@Requisitos({"RF9"})
     @Override
     public void MarcarCuenta(Cuenta c, String estado,Usuario u) throws CuentaException {
        if(u.isAdministrador()){//Comprueba si eres administrador
