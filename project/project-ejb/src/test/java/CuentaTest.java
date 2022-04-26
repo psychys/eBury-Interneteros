@@ -77,8 +77,24 @@ public class CuentaTest {
         }
     }
 
+    //@Requisitos({"RF9"})
     @Test
     public void testMarcarCuenta(){
+        final int idUsuario = 000;
+        final String cont = "1234";
+        final boolean es = true;
+        final String iban="12345A";
+        final String swift="123";
+        final String estado="abierta";
 
+        try{
+            Usuario u = new Usuario(idUsuario, cont, es);
+            Cuenta c1 = new Cuenta(iban,swift,estado);
+            gestionCuenta.MarcarCuenta(c1,"cerrado",u);
+            assertNotEquals("No se ha marcado",c1.getEstado(),estado);
+
+        }catch (CuentaException e) {
+            fail("Lanzó excepción al marcar cliente");
+        }
     }
 }
