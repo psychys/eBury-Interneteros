@@ -4,6 +4,7 @@ import eBury_project.Usuario;
 import exceptions.DivisaException;
 
 import javax.persistence.EntityManager;
+import javax.persistence.EntityTransaction;
 import java.util.logging.Logger;
 
 public class DivisaEJB implements GestionDivisa{
@@ -19,8 +20,8 @@ public class DivisaEJB implements GestionDivisa{
             throw new DivisaException("No eres administrador");
         }
 
-        Divisa divisa = em.find(Divisa.class, d.getAbreviatura());
-        if(divisa!= null){
+        Divisa divisaExiste = em.find(Divisa.class, d);
+        if(divisaExiste != null){
             throw new DivisaException("Divisa repetida");
         }
 
@@ -54,6 +55,24 @@ public class DivisaEJB implements GestionDivisa{
             throw new DivisaException("Divisa no existente");
         }
         return d;
+    }
+
+    @Override
+    public void EliminarDivisa(Divisa d, Usuario u) throws DivisaException {
+        if(!u.isAdministrador()){
+            throw new DivisaException("No eres administrador");
+        }
+
+        Divisa divisaExiste = em.find(Divisa.class, d);
+        if(divisaExiste == null){
+            throw new DivisaException("Divisa no existente");
+        }
+
+        EntityTransaction tx = em.getTransaction();
+        tx.begin();
+        em.remove(d);
+        tx.commit();
+
     }
 
 }
