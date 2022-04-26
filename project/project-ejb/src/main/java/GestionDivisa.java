@@ -7,7 +7,7 @@ import javax.ws.rs.core.UriBuilder;
 
 public interface GestionDivisa {
 
-    public void CrearDivisa(Divisa d, UriBuilder uriBuilder, Usuario u) throws DivisaException;
+    public void CrearDivisa(Divisa d, Usuario u) throws DivisaException;
 
     public void ActualizarDivisa(Divisa d, Usuario u) throws DivisaException;
 

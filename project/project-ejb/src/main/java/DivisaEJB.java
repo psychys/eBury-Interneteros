@@ -4,8 +4,6 @@ import eBury_project.Usuario;
 import exceptions.DivisaException;
 
 import javax.persistence.EntityManager;
-import javax.ws.rs.core.UriBuilder;
-import java.net.URI;
 import java.util.logging.Logger;
 
 public class DivisaEJB implements GestionDivisa{
@@ -16,7 +14,7 @@ public class DivisaEJB implements GestionDivisa{
     private EntityManager em;
 
     @Override
-    public void CrearDivisa(Divisa d, UriBuilder uriBuilder, Usuario u) throws DivisaException{
+    public void CrearDivisa(Divisa d, Usuario u) throws DivisaException{
         if(!u.isAdministrador()){
             throw new DivisaException("No eres administrador");
         }
@@ -27,9 +25,6 @@ public class DivisaEJB implements GestionDivisa{
         }
 
         em.persist(d);
-
-        URI uriValidacion = uriBuilder.build(d.getAbreviatura());
-        LOGGER.info(uriValidacion.toString());
 
     }
 
