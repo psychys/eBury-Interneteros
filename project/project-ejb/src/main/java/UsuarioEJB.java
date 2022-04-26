@@ -13,9 +13,9 @@ import java.util.logging.Logger;
 
 public class UsuarioEJB implements GestionUsuario{
 
-    //@PersistenceContext(name="Trazabilidad")
+
     private EntityManager em;
-    private static final Logger LOGGER =java.util.logging.Logger.getLogger(ClienteEJB.class.getCanonicalName());
+    private static final Logger LOGGER =java.util.logging.Logger.getLogger(UsuarioEJB.class.getCanonicalName());
 
     @Override
     public void CrearUsuario(Usuario c, UriBuilder uriBuilder) throws UsuarioException {
@@ -23,7 +23,7 @@ public class UsuarioEJB implements GestionUsuario{
         if(u1!= null){
             throw new UsuarioException("Cliente repetido");
         }
-        c.setId(generarIdAleatorio());
+        //c.setId(generarIdAleatorio());
         em.persist(c);
 
         URI uriValidacion = uriBuilder.build(c.getId());
@@ -34,9 +34,9 @@ public class UsuarioEJB implements GestionUsuario{
 
     @Override
     public void ActualizarUsuario(Usuario c) throws UsuarioException {
-        Usuario clienteExiste = em.find(Usuario.class, c);
-        if (clienteExiste == null) {
-            throw new UsuarioException("Cliente no existente");
+        Usuario usuarioExiste = em.find(Usuario.class, c);
+        if (usuarioExiste == null) {
+            throw new UsuarioException("Usuario no existente");
         }
 
         em.merge(c);
@@ -45,20 +45,20 @@ public class UsuarioEJB implements GestionUsuario{
 
     @Override
     public Usuario BuscarUsuario(int id) throws UsuarioException {
-        Usuario c = em.find(Usuario.class, id);
-        if(c == null){
-            throw new UsuarioException("Cliente no existente");
+        Usuario u = em.find(Usuario.class, id);
+        if(u == null){
+            throw new UsuarioException("Usuario no existente");
         }
-        return c;
+        return u;
     }
 
     @Override
     public void BorrarUsuario(Usuario c) throws UsuarioException {
 
-        Usuario clienteExistente = em.find(Usuario.class, c);
+        Usuario usuarioExistente = em.find(Usuario.class, c);
 
-        if(c == null) {
-            throw new UsuarioException("CLiente no existente");
+        if(usuarioExistente == null) {
+            throw new UsuarioException("Usuario no existente");
         }
 
         EntityTransaction tx = em.getTransaction();
@@ -68,7 +68,7 @@ public class UsuarioEJB implements GestionUsuario{
 
     }
 
-    public List<Usuario> getListaUsuarios() {
+    /*public List<Usuario> getListaUsuarios() {
         // TODO
         EntityTransaction tx=em.getTransaction();
         tx.begin();
@@ -81,6 +81,6 @@ public class UsuarioEJB implements GestionUsuario{
         List lista = new ArrayList();
         lista = getListaUsuarios();
         return lista.size()+1;
-    }
+    }*/
 
 }

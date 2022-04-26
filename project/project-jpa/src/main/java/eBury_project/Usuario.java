@@ -14,14 +14,17 @@ public class Usuario {
     @Column(nullable = false)
     private boolean administrador;
 
-    public Usuario(int id, boolean administrador) {
+    public Usuario(int id, String contrasena ,boolean administrador) {
         this.id = id;
+        this.contrasena = contrasena;
         this.administrador = administrador;
     }
 
     public Usuario() {
 
     }
+
+
 
     @OneToOne //(mappedBy ="u_usuario")
     private Cliente c_cliente;

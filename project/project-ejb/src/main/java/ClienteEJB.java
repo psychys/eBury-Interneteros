@@ -65,27 +65,22 @@ public class ClienteEJB implements GestionCliente{
         }
     }
     
-    public void CrearCliente(Cliente c, UriBuilder uriBuilder) throws ClienteException{
-        Cliente cliente = em.find(Cliente.class, c.getID());
-        if(cliente!= null){
-            throw new ClienteException("Cliente repetido");
+    public void AltaCliente(Cliente c, Usuario u) throws ClienteException{
+        if(u.isAdministrador()) {
+
+            Cliente cliente = em.find(Cliente.class, c.getID());
+            if (cliente != null) {
+                throw new ClienteException("Cliente repetido");
+            }
+            em.persist(c);
+
+        }else  {
+            throw new ClienteException("NO ERES ADMINISTRADOR");
         }
-        c.setID(generarIdAleatorio());
-        em.persist(c);
-
-        URI uriValidacion = uriBuilder.build(c.getID());
-
-        LOGGER.info(uriValidacion.toString());
 
     }
 
-    private int generarIdAleatorio() {
-        List lista = new ArrayList();
-        lista = getListaClientes();
-        return lista.size()+1;
-    }
-
-    public List<Cliente> getListaClientes() {
+    /*public List<Cliente> getListaClientes() {
         // TODO
         EntityTransaction tx=em.getTransaction();
         tx.begin();
@@ -94,5 +89,5 @@ public class ClienteEJB implements GestionCliente{
         tx.commit();
         return listaProductos;
 
-    }
+    }*/
 }

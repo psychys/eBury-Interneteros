@@ -7,7 +7,7 @@ import javax.ws.rs.core.UriBuilder;
 public interface GestionCliente {
 
     //Requisito 2
-    public void CrearCliente(Cliente c, UriBuilder u) throws ClienteException;
+    public void AltaCliente(Cliente c, Usuario u) throws ClienteException;
 
     //Requisito 3
     public void ActualizarCliente(Cliente c, Usuario u) throws ClienteException;
