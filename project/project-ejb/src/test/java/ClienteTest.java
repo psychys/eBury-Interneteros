@@ -25,6 +25,7 @@ public class ClienteTest {
 	private static final String CLIENTE_EJB = "java:global/classes/AlumnosEJB";
 
 	private GestionCliente gestionCliente;
+	private GestionUsuario gestionUsuario;
 
 	@Before
 	public void setup() throws NamingException  {
