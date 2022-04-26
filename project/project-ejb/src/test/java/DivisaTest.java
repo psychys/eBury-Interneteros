@@ -51,7 +51,7 @@ public class DivisaTest {
     }
 
     @Test
-    public void testBuscarCuenta(){
+    public void testBuscarDivisa(){
 
         final int idUser = 000;
         final String pw = "1234";
@@ -88,6 +88,27 @@ public class DivisaTest {
 
         } catch (DivisaException e) {
             fail("Error al actualizar la divisa");
+        }
+
+    }
+
+    @Test
+    public void testEliminarDivisa() {
+
+        final int idUser = 000;
+        final String pw = "1234";
+        final boolean isAdmin = true;
+
+        try {
+            Usuario u = new Usuario(idUser, pw, isAdmin);
+            Divisa d = gestionDivisa.BuscarDivisa("USD",u);
+
+            gestionDivisa.EliminarDivisa(d,u);
+
+            assertEquals("Sigue existiendo la divisa", d, gestionDivisa.BuscarDivisa("USD",u));
+
+        } catch (DivisaException e) {
+            fail("Error al eliminar la divisa");
         }
 
     }
