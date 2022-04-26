@@ -7,11 +7,9 @@ import java.util.logging.Logger;
 import javax.naming.NamingException;
 
 import eBury_project.Cliente;
-import eBury_project.Cuenta;
 import eBury_project.Cuenta_Fintech;
 import eBury_project.Usuario;
 import exceptions.ClienteException;
-import exceptions.CuentaException;
 import exceptions.UsuarioException;
 import org.junit.Before;
 import org.junit.Test;
@@ -25,13 +23,16 @@ public class ClienteTest {
 
 	private static final String UNIDAD_PERSITENCIA_PRUEBAS = "eBuryTest";
 	private static final String CLIENTE_EJB = "java:global/classes/ClienteEJB";
+	private static final String USUARIO_EJB = "java:global/classes/UsuarioEJB";
 
 	private GestionCliente gestionCliente;
 	private GestionUsuario gestionUsuario;
 
+
 	@Before
 	public void setup() throws NamingException  {
 		gestionCliente = (GestionCliente) SuiteTest.ctx.lookup(CLIENTE_EJB);
+		gestionUsuario = (GestionUsuario) SuiteTest.ctx.lookup(USUARIO_EJB);
 		BaseDatos.inicializaBaseDatos(UNIDAD_PERSITENCIA_PRUEBAS);
 	}
 

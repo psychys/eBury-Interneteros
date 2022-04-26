@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="7" failures="0" name="SuiteTest" time="0.04" errors="7" skipped="0">
+<testsuite tests="7" failures="0" name="SuiteTest" time="0.045" errors="7" skipped="0">
   <properties>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="java.vm.version" value="11.0.11+9-Ubuntu-0ubuntu2.20.04"/>
@@ -60,13 +60,9 @@
     <property name="sun.cpu.endian" value="little"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="ClienteTest" name="testActualizarCliente" time="0.029">
-    <error message="Lookup failed for &apos;java:global/classes/ClienteEJB&apos; in SerialContext[myEnv={java.naming.factory.initial=com.sun.enterprise.naming.impl.SerialInitContextFactory, java.naming.factory.url.pkgs=com.sun.enterprise.naming, java.naming.factory.state=com.sun.corba.ee.impl.presentation.rmi.JNDIStateFactoryImpl}" type="javax.naming.NamingException">javax.naming.NamingException: Lookup failed for &apos;java:global/classes/ClienteEJB&apos; in SerialContext[myEnv={java.naming.factory.initial=com.sun.enterprise.naming.impl.SerialInitContextFactory, java.naming.factory.url.pkgs=com.sun.enterprise.naming, java.naming.factory.state=com.sun.corba.ee.impl.presentation.rmi.JNDIStateFactoryImpl} [Root exception is javax.naming.NameNotFoundException: classes]
-	at com.sun.enterprise.naming.impl.SerialContext.lookup(SerialContext.java:467)
-	at com.sun.enterprise.naming.impl.SerialContext.lookup(SerialContext.java:414)
-	at java.naming/javax.naming.InitialContext.lookup(InitialContext.java:409)
-	at java.naming/javax.naming.InitialContext.lookup(InitialContext.java:409)
-	at ClienteTest.setup(ClienteTest.java:34)
+  <testcase classname="ClienteTest" name="testActualizarCliente" time="0.004">
+    <error type="java.lang.NullPointerException">java.lang.NullPointerException
+	at ClienteTest.testActualizarCliente(ClienteTest.java:87)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -74,8 +70,7 @@
 	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
 	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
 	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
-	at org.junit.internal.runners.statements.RunBefores.invokeMethod(RunBefores.java:33)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
 	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
 	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
 	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
@@ -111,32 +106,24 @@
 	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
-Caused by: javax.naming.NameNotFoundException: classes
-	at com.sun.enterprise.naming.impl.TransientContext.resolveContext(TransientContext.java:275)
-	at com.sun.enterprise.naming.impl.TransientContext.lookup(TransientContext.java:183)
-	at com.sun.enterprise.naming.impl.TransientContext.lookup(TransientContext.java:184)
-	at com.sun.enterprise.naming.impl.SerialContextProviderImpl.lookup(SerialContextProviderImpl.java:42)
-	at com.sun.enterprise.naming.impl.LocalSerialContextProviderImpl.lookup(LocalSerialContextProviderImpl.java:90)
-	at com.sun.enterprise.naming.impl.SerialContext.lookup(SerialContext.java:454)
-	... 48 more
 </error>
-    <system-err>Apr 26, 2022 5:36:26 PM org.glassfish.ejb.embedded.EJBContainerProviderImpl getValidFile
+    <system-err>Apr 26, 2022 6:02:33 PM org.glassfish.ejb.embedded.EJBContainerProviderImpl getValidFile
 WARNING: EJB6008:Specified or calculated application server instance [/home/edu/.m2/repository/org/glassfish/main/extras/glassfish-embedded-all/domains/domain1] does not exist.
-Apr 26, 2022 5:36:26 PM org.glassfish.ejb.embedded.EJBContainerProviderImpl getValidFile
+Apr 26, 2022 6:02:33 PM org.glassfish.ejb.embedded.EJBContainerProviderImpl getValidFile
 WARNING: EJB6009:Specified or calculated application server configuration file [target/test-classes/META-INF/domain.xml] does not exist.
-Apr 26, 2022 5:36:26 PM org.glassfish.ejb.embedded.EJBContainerProviderImpl createContainer
+Apr 26, 2022 6:02:34 PM org.glassfish.ejb.embedded.EJBContainerProviderImpl createContainer
 INFO: [EJBContainerProviderImpl] Using runtime class: class com.sun.enterprise.glassfish.bootstrap.StaticGlassFishRuntime
-Apr 26, 2022 5:36:30 PM com.sun.enterprise.v3.server.CommonClassLoaderServiceImpl findDerbyClient
+Apr 26, 2022 6:02:36 PM com.sun.enterprise.v3.server.CommonClassLoaderServiceImpl findDerbyClient
 INFO: Cannot find javadb client jar file, derby jdbc driver will not be available by default.
-Apr 26, 2022 5:36:31 PM com.sun.enterprise.v3.services.impl.GrizzlyService createNetworkProxy
+Apr 26, 2022 6:02:37 PM com.sun.enterprise.v3.services.impl.GrizzlyService createNetworkProxy
 INFO: Network listener http-listener on port 0 disabled per domain.xml
-Apr 26, 2022 5:36:31 PM com.sun.enterprise.v3.services.impl.GrizzlyService createNetworkProxy
+Apr 26, 2022 6:02:37 PM com.sun.enterprise.v3.services.impl.GrizzlyService createNetworkProxy
 INFO: Network listener https-listener on port 0 disabled per domain.xml
-Apr 26, 2022 5:36:31 PM org.hibernate.validator.internal.util.Version &lt;clinit&gt;
+Apr 26, 2022 6:02:37 PM org.hibernate.validator.internal.util.Version &lt;clinit&gt;
 INFO: HV000001: Hibernate Validator null
-Apr 26, 2022 5:36:33 PM org.glassfish.security.services.impl.authorization.AuthorizationServiceImpl initialize
+Apr 26, 2022 6:02:38 PM org.glassfish.security.services.impl.authorization.AuthorizationServiceImpl initialize
 INFO: Authorization Service has successfully initialized.
-Apr 26, 2022 5:36:33 PM com.sun.enterprise.security.ssl.impl.SecuritySupportImpl checkCertificateDates
+Apr 26, 2022 6:02:39 PM com.sun.enterprise.security.ssl.impl.SecuritySupportImpl checkCertificateDates
 SEVERE: The SSL certificate has expired: [
 [
   Version: V3
@@ -174,7 +161,7 @@ KeyIdentifier [
 0070: 04 90 F3 2C C5 FA E4 A2   DC 16 17 4A 02 A7 ED 94  ...,.......J....
 
 ]
-Apr 26, 2022 5:36:34 PM com.sun.enterprise.security.ssl.impl.SecuritySupportImpl checkCertificateDates
+Apr 26, 2022 6:02:39 PM com.sun.enterprise.security.ssl.impl.SecuritySupportImpl checkCertificateDates
 SEVERE: The SSL certificate has expired: [
 [
   Version: V3
@@ -212,29 +199,25 @@ KeyIdentifier [
 0070: 04 90 F3 2C C5 FA E4 A2   DC 16 17 4A 02 A7 ED 94  ...,.......J....
 
 ]
-Apr 26, 2022 5:36:34 PM com.sun.enterprise.v3.server.AppServerStartup postStartupJob
-INFO: Undefined Product Name - define product and version info in config/branding  0.0.0  (0) startup time : Embedded (2,951ms), startup services(3,650ms), total(6,601ms)
-Apr 26, 2022 5:36:34 PM com.sun.jts.CosTransactions.DefaultTransactionService setServerName
+Apr 26, 2022 6:02:39 PM com.sun.enterprise.v3.server.AppServerStartup postStartupJob
+INFO: Undefined Product Name - define product and version info in config/branding  0.0.0  (0) startup time : Embedded (1,943ms), startup services(2,781ms), total(4,724ms)
+Apr 26, 2022 6:02:39 PM com.sun.jts.CosTransactions.DefaultTransactionService setServerName
 INFO: JTS5014: Recoverable JTS instance, serverId = [100]
-Apr 26, 2022 5:36:34 PM org.glassfish.admin.mbeanserver.JMXStartupService$JMXConnectorsStarterThread run
+Apr 26, 2022 6:02:40 PM org.glassfish.admin.mbeanserver.JMXStartupService$JMXConnectorsStarterThread run
 INFO: JMXStartupService has disabled JMXConnector system
-Apr 26, 2022 5:36:34 PM com.sun.enterprise.connectors.jms.util.JmsRaUtil getInstalledMqVersion
-WARNING: Check for a new version of MQ installation failed : /tmp/gfembed1090382080207723966tmp/lib/install/applications/jmsra/../imqjmsra.rar:/tmp/gfembed1090382080207723966tmp/lib/install/applications/jmsra/imqjmsra.rar
-Apr 26, 2022 5:36:36 PM org.glassfish.ejb.embedded.EJBContainerProviderImpl skipJar
+Apr 26, 2022 6:02:40 PM com.sun.enterprise.connectors.jms.util.JmsRaUtil getInstalledMqVersion
+WARNING: Check for a new version of MQ installation failed : /tmp/gfembed12790774792337561788tmp/lib/install/applications/jmsra/../imqjmsra.rar:/tmp/gfembed12790774792337561788tmp/lib/install/applications/jmsra/imqjmsra.rar
+Apr 26, 2022 6:02:41 PM org.glassfish.ejb.embedded.EJBContainerProviderImpl skipJar
 INFO: ... skipping entry with a Manifest file with a special attribute: glassfish-embedded-all-5.1.0.jar
-Apr 26, 2022 5:36:36 PM org.glassfish.deployment.common.GenericAnnotationDetector scanArchive
+Apr 26, 2022 6:02:41 PM org.glassfish.deployment.common.GenericAnnotationDetector scanArchive
 WARNING: NCLS-DEPLOYMENT-00009
-Apr 26, 2022 5:36:36 PM org.glassfish.ejb.embedded.EJBContainerProviderImpl createEJBContainer
+Apr 26, 2022 6:02:41 PM org.glassfish.ejb.embedded.EJBContainerProviderImpl createEJBContainer
 SEVERE: EJB6005:No EJB modules found
 </system-err>
   </testcase>
   <testcase classname="ClienteTest" name="testMarcarCuenta" time="0.003">
-    <error message="Lookup failed for &apos;java:global/classes/ClienteEJB&apos; in SerialContext[myEnv={java.naming.factory.initial=com.sun.enterprise.naming.impl.SerialInitContextFactory, java.naming.factory.url.pkgs=com.sun.enterprise.naming, java.naming.factory.state=com.sun.corba.ee.impl.presentation.rmi.JNDIStateFactoryImpl}" type="javax.naming.NamingException">javax.naming.NamingException: Lookup failed for &apos;java:global/classes/ClienteEJB&apos; in SerialContext[myEnv={java.naming.factory.initial=com.sun.enterprise.naming.impl.SerialInitContextFactory, java.naming.factory.url.pkgs=com.sun.enterprise.naming, java.naming.factory.state=com.sun.corba.ee.impl.presentation.rmi.JNDIStateFactoryImpl} [Root exception is javax.naming.NameNotFoundException: classes]
-	at com.sun.enterprise.naming.impl.SerialContext.lookup(SerialContext.java:467)
-	at com.sun.enterprise.naming.impl.SerialContext.lookup(SerialContext.java:414)
-	at java.naming/javax.naming.InitialContext.lookup(InitialContext.java:409)
-	at java.naming/javax.naming.InitialContext.lookup(InitialContext.java:409)
-	at ClienteTest.setup(ClienteTest.java:34)
+    <error type="java.lang.NullPointerException">java.lang.NullPointerException
+	at ClienteTest.testMarcarCuenta(ClienteTest.java:120)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -242,8 +225,7 @@ SEVERE: EJB6005:No EJB modules found
 	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
 	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
 	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
-	at org.junit.internal.runners.statements.RunBefores.invokeMethod(RunBefores.java:33)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
 	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
 	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
 	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
@@ -279,23 +261,11 @@ SEVERE: EJB6005:No EJB modules found
 	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
-Caused by: javax.naming.NameNotFoundException: classes
-	at com.sun.enterprise.naming.impl.TransientContext.resolveContext(TransientContext.java:275)
-	at com.sun.enterprise.naming.impl.TransientContext.lookup(TransientContext.java:183)
-	at com.sun.enterprise.naming.impl.TransientContext.lookup(TransientContext.java:184)
-	at com.sun.enterprise.naming.impl.SerialContextProviderImpl.lookup(SerialContextProviderImpl.java:42)
-	at com.sun.enterprise.naming.impl.LocalSerialContextProviderImpl.lookup(LocalSerialContextProviderImpl.java:90)
-	at com.sun.enterprise.naming.impl.SerialContext.lookup(SerialContext.java:454)
-	... 48 more
 </error>
   </testcase>
-  <testcase classname="ClienteTest" name="testAltaCliente" time="0.001">
-    <error message="Lookup failed for &apos;java:global/classes/ClienteEJB&apos; in SerialContext[myEnv={java.naming.factory.initial=com.sun.enterprise.naming.impl.SerialInitContextFactory, java.naming.factory.url.pkgs=com.sun.enterprise.naming, java.naming.factory.state=com.sun.corba.ee.impl.presentation.rmi.JNDIStateFactoryImpl}" type="javax.naming.NamingException">javax.naming.NamingException: Lookup failed for &apos;java:global/classes/ClienteEJB&apos; in SerialContext[myEnv={java.naming.factory.initial=com.sun.enterprise.naming.impl.SerialInitContextFactory, java.naming.factory.url.pkgs=com.sun.enterprise.naming, java.naming.factory.state=com.sun.corba.ee.impl.presentation.rmi.JNDIStateFactoryImpl} [Root exception is javax.naming.NameNotFoundException: classes]
-	at com.sun.enterprise.naming.impl.SerialContext.lookup(SerialContext.java:467)
-	at com.sun.enterprise.naming.impl.SerialContext.lookup(SerialContext.java:414)
-	at java.naming/javax.naming.InitialContext.lookup(InitialContext.java:409)
-	at java.naming/javax.naming.InitialContext.lookup(InitialContext.java:409)
-	at ClienteTest.setup(ClienteTest.java:34)
+  <testcase classname="ClienteTest" name="testAltaCliente" time="0">
+    <error type="java.lang.NullPointerException">java.lang.NullPointerException
+	at ClienteTest.testAltaCliente(ClienteTest.java:67)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -303,8 +273,7 @@ Caused by: javax.naming.NameNotFoundException: classes
 	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
 	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
 	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
-	at org.junit.internal.runners.statements.RunBefores.invokeMethod(RunBefores.java:33)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
 	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
 	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
 	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
@@ -340,17 +309,9 @@ Caused by: javax.naming.NameNotFoundException: classes
 	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
-Caused by: javax.naming.NameNotFoundException: classes
-	at com.sun.enterprise.naming.impl.TransientContext.resolveContext(TransientContext.java:275)
-	at com.sun.enterprise.naming.impl.TransientContext.lookup(TransientContext.java:183)
-	at com.sun.enterprise.naming.impl.TransientContext.lookup(TransientContext.java:184)
-	at com.sun.enterprise.naming.impl.SerialContextProviderImpl.lookup(SerialContextProviderImpl.java:42)
-	at com.sun.enterprise.naming.impl.LocalSerialContextProviderImpl.lookup(LocalSerialContextProviderImpl.java:90)
-	at com.sun.enterprise.naming.impl.SerialContext.lookup(SerialContext.java:454)
-	... 48 more
 </error>
   </testcase>
-  <testcase classname="CuentaTest" name="testBuscarCuenta" time="0.001">
+  <testcase classname="CuentaTest" name="testBuscarCuenta" time="0.03">
     <error message="Lookup failed for &apos;java:global/classes/CuentaEJB&apos; in SerialContext[myEnv={java.naming.factory.initial=com.sun.enterprise.naming.impl.SerialInitContextFactory, java.naming.factory.url.pkgs=com.sun.enterprise.naming, java.naming.factory.state=com.sun.corba.ee.impl.presentation.rmi.JNDIStateFactoryImpl}" type="javax.naming.NamingException">javax.naming.NamingException: Lookup failed for &apos;java:global/classes/CuentaEJB&apos; in SerialContext[myEnv={java.naming.factory.initial=com.sun.enterprise.naming.impl.SerialInitContextFactory, java.naming.factory.url.pkgs=com.sun.enterprise.naming, java.naming.factory.state=com.sun.corba.ee.impl.presentation.rmi.JNDIStateFactoryImpl} [Root exception is javax.naming.NameNotFoundException: classes]
 	at com.sun.enterprise.naming.impl.SerialContext.lookup(SerialContext.java:467)
 	at com.sun.enterprise.naming.impl.SerialContext.lookup(SerialContext.java:414)
@@ -411,7 +372,7 @@ Caused by: javax.naming.NameNotFoundException: classes
 	... 48 more
 </error>
   </testcase>
-  <testcase classname="CuentaTest" name="testCrearCuenta" time="0.002">
+  <testcase classname="CuentaTest" name="testCrearCuenta" time="0.005">
     <error message="Lookup failed for &apos;java:global/classes/CuentaEJB&apos; in SerialContext[myEnv={java.naming.factory.initial=com.sun.enterprise.naming.impl.SerialInitContextFactory, java.naming.factory.url.pkgs=com.sun.enterprise.naming, java.naming.factory.state=com.sun.corba.ee.impl.presentation.rmi.JNDIStateFactoryImpl}" type="javax.naming.NamingException">javax.naming.NamingException: Lookup failed for &apos;java:global/classes/CuentaEJB&apos; in SerialContext[myEnv={java.naming.factory.initial=com.sun.enterprise.naming.impl.SerialInitContextFactory, java.naming.factory.url.pkgs=com.sun.enterprise.naming, java.naming.factory.state=com.sun.corba.ee.impl.presentation.rmi.JNDIStateFactoryImpl} [Root exception is javax.naming.NameNotFoundException: classes]
 	at com.sun.enterprise.naming.impl.SerialContext.lookup(SerialContext.java:467)
 	at com.sun.enterprise.naming.impl.SerialContext.lookup(SerialContext.java:414)
@@ -533,7 +494,7 @@ Caused by: javax.naming.NameNotFoundException: classes
 	... 48 more
 </error>
   </testcase>
-  <testcase classname="CuentaTest" name="testactualizarCuenta" time="0.002">
+  <testcase classname="CuentaTest" name="testactualizarCuenta" time="0.001">
     <error message="Lookup failed for &apos;java:global/classes/CuentaEJB&apos; in SerialContext[myEnv={java.naming.factory.initial=com.sun.enterprise.naming.impl.SerialInitContextFactory, java.naming.factory.url.pkgs=com.sun.enterprise.naming, java.naming.factory.state=com.sun.corba.ee.impl.presentation.rmi.JNDIStateFactoryImpl}" type="javax.naming.NamingException">javax.naming.NamingException: Lookup failed for &apos;java:global/classes/CuentaEJB&apos; in SerialContext[myEnv={java.naming.factory.initial=com.sun.enterprise.naming.impl.SerialInitContextFactory, java.naming.factory.url.pkgs=com.sun.enterprise.naming, java.naming.factory.state=com.sun.corba.ee.impl.presentation.rmi.JNDIStateFactoryImpl} [Root exception is javax.naming.NameNotFoundException: classes]
 	at com.sun.enterprise.naming.impl.SerialContext.lookup(SerialContext.java:467)
 	at com.sun.enterprise.naming.impl.SerialContext.lookup(SerialContext.java:414)

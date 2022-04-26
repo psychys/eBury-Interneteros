@@ -60,7 +60,7 @@
     <property name="sun.cpu.endian" value="little"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="CuentaTest" name="testBuscarCuenta" time="0.002">
+  <testcase classname="CuentaTest" name="testBuscarCuenta" time="0">
     <error type="java.lang.NullPointerException">java.lang.NullPointerException
 	at CuentaTest.setup(CuentaTest.java:24)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -136,7 +136,7 @@
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 </error>
   </testcase>
-  <testcase classname="CuentaTest" name="testMarcarCuenta" time="0">
+  <testcase classname="CuentaTest" name="testMarcarCuenta" time="0.001">
     <error type="java.lang.NullPointerException">java.lang.NullPointerException
 	at CuentaTest.setup(CuentaTest.java:24)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -174,7 +174,7 @@
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 </error>
   </testcase>
-  <testcase classname="CuentaTest" name="testactualizarCuenta" time="0">
+  <testcase classname="CuentaTest" name="testactualizarCuenta" time="0.001">
     <error type="java.lang.NullPointerException">java.lang.NullPointerException
 	at CuentaTest.setup(CuentaTest.java:24)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
