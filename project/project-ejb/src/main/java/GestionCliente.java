@@ -14,11 +14,7 @@ public interface GestionCliente {
 
     public Usuario BuscarCliente(int id) throws ClienteException;
 
-
     //Requisito 4
     public void MarcarCliente(Cliente c,String s, Usuario u) throws ClienteException;
-
-
-
 
 }

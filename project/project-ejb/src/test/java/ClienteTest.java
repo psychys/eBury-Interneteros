@@ -7,9 +7,11 @@ import java.util.logging.Logger;
 import javax.naming.NamingException;
 
 import eBury_project.Cliente;
+import eBury_project.Cuenta;
 import eBury_project.Cuenta_Fintech;
 import eBury_project.Usuario;
 import exceptions.ClienteException;
+import exceptions.CuentaException;
 import exceptions.UsuarioException;
 import org.junit.Before;
 import org.junit.Test;
@@ -22,7 +24,7 @@ public class ClienteTest {
 	private static final Logger LOG = Logger.getLogger(ClienteTest.class.getCanonicalName());
 
 	private static final String UNIDAD_PERSITENCIA_PRUEBAS = "eBuryTest";
-	private static final String CLIENTE_EJB = "java:global/classes/AlumnosEJB";
+	private static final String CLIENTE_EJB = "java:global/classes/ClienteEJB";
 
 	private GestionCliente gestionCliente;
 	private GestionUsuario gestionUsuario;
@@ -94,6 +96,32 @@ public class ClienteTest {
 		}
 
 	}
-	
+	@Test
+	public void testMarcarCuenta(){
+		final int id = 1;
+		final int ident = 222222;
+		final String tipoCliente = "cliente";
+		final Date d = new Date(22,2,23);
+		final Date d2 = new Date(20,5, 18);
+		final String direccion = "calle platano 5";
+		final String ciudad = "Malaga";
+		final int  c_postal = 20749;
+		final String pais = "España";
+		final String estado = "activo";
+		final List<Cuenta_Fintech> l = new ArrayList<>();
+		final int idUsuario = 000;
+		final String cont = "1234";
+		final boolean es = true;
+
+		try{
+			Usuario u = new Usuario(idUsuario, cont, es);
+			Cliente c1 = new Cliente(id,ident, tipoCliente,d,d2,direccion, ciudad, c_postal, pais, estado,l);;
+			gestionCliente.MarcarCliente(c1,"baja",u);
+			assertNotEquals("No se ha marcado",c1.getEstado(),estado);
+
+		} catch (ClienteException e) {
+			e.printStackTrace();
+		}
+	}
 
 }
