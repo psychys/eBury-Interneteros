@@ -15,7 +15,8 @@
 		<class>es.uma.jpa.Divisa</class>
 		<class>es.uma.jpa.Persona_autorizada</class>
 		<class>es.uma.jpa.Usuario</class>
-        <properties>
+		<class>es.uma.jpa.Cuenta</class>
+		<properties>
 			<property name="javax.persistence.jdbc.url" value="jdbc:h2:mem:test"/>
 			<property name="javax.persistence.jdbc.user" value=""/>
 			<property name="javax.persistence.jdbc.password" value=""/>
