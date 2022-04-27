@@ -1,8 +1,8 @@
 package es.uma.ejb;
 
 
-import eBury_project.Cuenta;
-import eBury_project.Transaccion;
+import es.uma.jpa.Cuenta;
+import es.uma.jpa.Transaccion;
 import es.uma.exceptions.TransaccionException;
 
 import javax.ejb.Stateless;

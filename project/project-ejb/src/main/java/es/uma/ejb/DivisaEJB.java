@@ -1,7 +1,7 @@
 package es.uma.ejb;
 
-import eBury_project.Divisa;
-import eBury_project.Usuario;
+import es.uma.jpa.Divisa;
+import es.uma.jpa.Usuario;
 import es.uma.exceptions.DivisaException;
 
 import javax.ejb.Stateless;

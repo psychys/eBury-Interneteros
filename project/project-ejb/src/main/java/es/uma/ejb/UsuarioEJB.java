@@ -1,6 +1,6 @@
 package es.uma.ejb;
 
-import eBury_project.Usuario;
+import es.uma.jpa.Usuario;
 import es.uma.exceptions.UsuarioException;
 
 import javax.ejb.Stateless;

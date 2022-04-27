@@ -1,7 +1,6 @@
 package es.uma.ejb;
 
-import eBury_project.Cliente;
-import eBury_project.Persona_autorizada;
+import es.uma.jpa.Persona_autorizada;
 import es.uma.exceptions.PersonaAutorizadaException;
 
 public interface GestionPersonaAutorizada {

@@ -1,6 +1,6 @@
 package es.uma.ejb;
 
-import eBury_project.Transaccion;
+import es.uma.jpa.Transaccion;
 import es.uma.exceptions.TransaccionException;
 
 public interface GestionTransaccion {

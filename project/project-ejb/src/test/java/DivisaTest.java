@@ -5,8 +5,8 @@ import es.uma.exceptions.DivisaException;
 import org.junit.Before;
 import org.junit.Test;
 
-import eBury_project.Divisa;
-import eBury_project.Usuario;
+import es.uma.jpa.Divisa;
+import es.uma.jpa.Usuario;
 
 import javax.naming.NamingException;
 import java.util.logging.Logger;

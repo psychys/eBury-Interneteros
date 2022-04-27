@@ -1,7 +1,7 @@
 package es.uma.ejb;
 
-import eBury_project.Cuenta;
-import eBury_project.Usuario;
+import es.uma.jpa.Cuenta;
+import es.uma.jpa.Usuario;
 import es.uma.exceptions.CuentaException;
 
 public interface GestionCuenta {

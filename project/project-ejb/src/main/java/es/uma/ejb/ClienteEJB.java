@@ -1,8 +1,8 @@
 package es.uma.ejb;
 
 
-import eBury_project.Cliente;
-import eBury_project.Usuario;
+import es.uma.jpa.Cliente;
+import es.uma.jpa.Usuario;
 import es.uma.exceptions.ClienteException;
 
 import javax.ejb.Stateless;

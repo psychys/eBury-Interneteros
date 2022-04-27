@@ -1,7 +1,7 @@
 package es.uma.ejb;
 
 
-import eBury_project.Persona_autorizada;
+import es.uma.jpa.Persona_autorizada;
 import es.uma.exceptions.PersonaAutorizadaException;
 
 import javax.ejb.Stateless;
