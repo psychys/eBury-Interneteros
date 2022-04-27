@@ -38,17 +38,25 @@ Cuenta_referencia extends Cuenta{
 		// TODO Auto-generated constructor stub
 	}
 
-	public Cuenta_referencia(String IBAN, String SWIFT, String estado, String rowId, String nombre_banco, String sucursal, String pais, int saldo, Date fecha_apertura, String estado1, Segregated c_fintech_segregada, Divisa divisa, Set<DepositadaPooledReferencia> depositadaReferencia) {
-		super(IBAN, SWIFT, estado);
+	public Cuenta_referencia(String rowId, String nombre_banco, String sucursal, String pais, int saldo, Date fecha_apertura, String estado, Segregated c_fintech_segregada, Divisa divisa, Set<DepositadaPooledReferencia> depositadaReferencia) {
 		this.rowId = rowId;
 		this.nombre_banco = nombre_banco;
 		this.sucursal = sucursal;
 		this.pais = pais;
 		this.saldo = saldo;
 		this.fecha_apertura = fecha_apertura;
-		this.estado = estado1;
+		this.estado = estado;
 		this.c_fintech_segregada = c_fintech_segregada;
 		this.divisa = divisa;
+		DepositadaReferencia = depositadaReferencia;
+
+	}
+
+	public Set<DepositadaPooledReferencia> getDepositadaReferencia() {
+		return DepositadaReferencia;
+	}
+
+	public void setDepositadaReferencia(Set<DepositadaPooledReferencia> depositadaReferencia) {
 		DepositadaReferencia = depositadaReferencia;
 	}
 
