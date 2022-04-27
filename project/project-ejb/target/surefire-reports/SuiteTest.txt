@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: SuiteTest
 -------------------------------------------------------------------------------
-Tests run: 7, Failures: 0, Errors: 7, Skipped: 0, Time elapsed: 7.358 sec <<< FAILURE!
-testActualizarCliente(ClienteTest)  Time elapsed: 0.023 sec  <<< ERROR!
+Tests run: 7, Failures: 0, Errors: 7, Skipped: 0, Time elapsed: 27.125 sec <<< FAILURE!
+testActualizarCliente(ClienteTest)  Time elapsed: 0.028 sec  <<< ERROR!
 javax.naming.NamingException: Lookup failed for 'java:global/classes/ClienteEJB' in SerialContext[myEnv={java.naming.factory.initial=com.sun.enterprise.naming.impl.SerialInitContextFactory, java.naming.factory.url.pkgs=com.sun.enterprise.naming, java.naming.factory.state=com.sun.corba.ee.impl.presentation.rmi.JNDIStateFactoryImpl} [Root exception is javax.naming.NameNotFoundException: classes]
 	at com.sun.enterprise.naming.impl.SerialContext.lookup(SerialContext.java:467)
 	at com.sun.enterprise.naming.impl.SerialContext.lookup(SerialContext.java:414)
@@ -122,7 +122,7 @@ Caused by: javax.naming.NameNotFoundException: classes
 	at com.sun.enterprise.naming.impl.SerialContext.lookup(SerialContext.java:454)
 	... 48 more
 
-testAltaCliente(ClienteTest)  Time elapsed: 0.008 sec  <<< ERROR!
+testAltaCliente(ClienteTest)  Time elapsed: 0.019 sec  <<< ERROR!
 javax.naming.NamingException: Lookup failed for 'java:global/classes/ClienteEJB' in SerialContext[myEnv={java.naming.factory.initial=com.sun.enterprise.naming.impl.SerialInitContextFactory, java.naming.factory.url.pkgs=com.sun.enterprise.naming, java.naming.factory.state=com.sun.corba.ee.impl.presentation.rmi.JNDIStateFactoryImpl} [Root exception is javax.naming.NameNotFoundException: classes]
 	at com.sun.enterprise.naming.impl.SerialContext.lookup(SerialContext.java:467)
 	at com.sun.enterprise.naming.impl.SerialContext.lookup(SerialContext.java:414)
@@ -182,7 +182,7 @@ Caused by: javax.naming.NameNotFoundException: classes
 	at com.sun.enterprise.naming.impl.SerialContext.lookup(SerialContext.java:454)
 	... 48 more
 
-testBuscarCuenta(CuentaTest)  Time elapsed: 0.002 sec  <<< ERROR!
+testBuscarCuenta(CuentaTest)  Time elapsed: 0.011 sec  <<< ERROR!
 javax.naming.NamingException: Lookup failed for 'java:global/classes/CuentaEJB' in SerialContext[myEnv={java.naming.factory.initial=com.sun.enterprise.naming.impl.SerialInitContextFactory, java.naming.factory.url.pkgs=com.sun.enterprise.naming, java.naming.factory.state=com.sun.corba.ee.impl.presentation.rmi.JNDIStateFactoryImpl} [Root exception is javax.naming.NameNotFoundException: classes]
 	at com.sun.enterprise.naming.impl.SerialContext.lookup(SerialContext.java:467)
 	at com.sun.enterprise.naming.impl.SerialContext.lookup(SerialContext.java:414)
@@ -242,7 +242,7 @@ Caused by: javax.naming.NameNotFoundException: classes
 	at com.sun.enterprise.naming.impl.SerialContext.lookup(SerialContext.java:454)
 	... 48 more
 
-testCrearCuenta(CuentaTest)  Time elapsed: 0.004 sec  <<< ERROR!
+testCrearCuenta(CuentaTest)  Time elapsed: 0.006 sec  <<< ERROR!
 javax.naming.NamingException: Lookup failed for 'java:global/classes/CuentaEJB' in SerialContext[myEnv={java.naming.factory.initial=com.sun.enterprise.naming.impl.SerialInitContextFactory, java.naming.factory.url.pkgs=com.sun.enterprise.naming, java.naming.factory.state=com.sun.corba.ee.impl.presentation.rmi.JNDIStateFactoryImpl} [Root exception is javax.naming.NameNotFoundException: classes]
 	at com.sun.enterprise.naming.impl.SerialContext.lookup(SerialContext.java:467)
 	at com.sun.enterprise.naming.impl.SerialContext.lookup(SerialContext.java:414)
@@ -302,7 +302,7 @@ Caused by: javax.naming.NameNotFoundException: classes
 	at com.sun.enterprise.naming.impl.SerialContext.lookup(SerialContext.java:454)
 	... 48 more
 
-testMarcarCuenta(CuentaTest)  Time elapsed: 0.003 sec  <<< ERROR!
+testMarcarCuenta(CuentaTest)  Time elapsed: 0.004 sec  <<< ERROR!
 javax.naming.NamingException: Lookup failed for 'java:global/classes/CuentaEJB' in SerialContext[myEnv={java.naming.factory.initial=com.sun.enterprise.naming.impl.SerialInitContextFactory, java.naming.factory.url.pkgs=com.sun.enterprise.naming, java.naming.factory.state=com.sun.corba.ee.impl.presentation.rmi.JNDIStateFactoryImpl} [Root exception is javax.naming.NameNotFoundException: classes]
 	at com.sun.enterprise.naming.impl.SerialContext.lookup(SerialContext.java:467)
 	at com.sun.enterprise.naming.impl.SerialContext.lookup(SerialContext.java:414)
@@ -362,7 +362,7 @@ Caused by: javax.naming.NameNotFoundException: classes
 	at com.sun.enterprise.naming.impl.SerialContext.lookup(SerialContext.java:454)
 	... 48 more
 
-testactualizarCuenta(CuentaTest)  Time elapsed: 0.001 sec  <<< ERROR!
+testactualizarCuenta(CuentaTest)  Time elapsed: 0.006 sec  <<< ERROR!
 javax.naming.NamingException: Lookup failed for 'java:global/classes/CuentaEJB' in SerialContext[myEnv={java.naming.factory.initial=com.sun.enterprise.naming.impl.SerialInitContextFactory, java.naming.factory.url.pkgs=com.sun.enterprise.naming, java.naming.factory.state=com.sun.corba.ee.impl.presentation.rmi.JNDIStateFactoryImpl} [Root exception is javax.naming.NameNotFoundException: classes]
 	at com.sun.enterprise.naming.impl.SerialContext.lookup(SerialContext.java:467)
 	at com.sun.enterprise.naming.impl.SerialContext.lookup(SerialContext.java:414)

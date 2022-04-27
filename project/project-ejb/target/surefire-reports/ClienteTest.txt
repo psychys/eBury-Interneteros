@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: ClienteTest
 -------------------------------------------------------------------------------
-Tests run: 3, Failures: 0, Errors: 3, Skipped: 0, Time elapsed: 0.232 sec <<< FAILURE!
-testActualizarCliente(ClienteTest)  Time elapsed: 0.037 sec  <<< ERROR!
+Tests run: 3, Failures: 0, Errors: 3, Skipped: 0, Time elapsed: 0.979 sec <<< FAILURE!
+testActualizarCliente(ClienteTest)  Time elapsed: 0.126 sec  <<< ERROR!
 java.lang.NullPointerException
 	at ClienteTest.setup(ClienteTest.java:34)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -39,7 +39,7 @@ java.lang.NullPointerException
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 
-testMarcarCuenta(ClienteTest)  Time elapsed: 0.002 sec  <<< ERROR!
+testMarcarCuenta(ClienteTest)  Time elapsed: 0.003 sec  <<< ERROR!
 java.lang.NullPointerException
 	at ClienteTest.setup(ClienteTest.java:34)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -76,7 +76,7 @@ java.lang.NullPointerException
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 
-testAltaCliente(ClienteTest)  Time elapsed: 0.001 sec  <<< ERROR!
+testAltaCliente(ClienteTest)  Time elapsed: 0.03 sec  <<< ERROR!
 java.lang.NullPointerException
 	at ClienteTest.setup(ClienteTest.java:34)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)

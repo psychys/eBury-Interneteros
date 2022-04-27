@@ -4,8 +4,8 @@
 
         <class>eBury_project.Cliente</class>
         <class>eBury_project.Cuenta_referencia</class>
-        <class>eBury_project.Autorizacion</class>
-        <class>eBury_project.Depositada_en</class>
+		<class>eBury_project.AutorizacionEmpresaAutorizado</class>
+		<class>eBury_project.DepositadaPooledReferencia</class>
         <class>eBury_project.Pooled</class>
         <class>eBury_project.Segregated</class>
 		<class>eBury_project.Empresa</class>
