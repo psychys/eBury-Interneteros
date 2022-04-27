@@ -6,11 +6,13 @@ import java.util.logging.Logger;
 
 import javax.naming.NamingException;
 
-import eBury_project.*;
 import es.uma.ejb.GestionCliente;
 import es.uma.ejb.GestionUsuario;
 import es.uma.exceptions.ClienteException;
 import es.uma.exceptions.UsuarioException;
+import es.uma.jpa.Cliente;
+import es.uma.jpa.Cuenta_Fintech;
+import es.uma.jpa.Usuario;
 import org.junit.Before;
 import org.junit.Test;
 

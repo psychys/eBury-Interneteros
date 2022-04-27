@@ -1,7 +1,9 @@
 package es.uma.ejb;
 
-import eBury_project.*;
 import es.uma.exceptions.CuentaException;
+import es.uma.jpa.Cuenta;
+import es.uma.jpa.Cuenta_referencia;
+import es.uma.jpa.Usuario;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -38,7 +40,7 @@ public class CuentaEJB implements GestionCuenta {
 
 
     @Override
-    public void ActualizarCuenta(Cuenta c,Usuario u) throws CuentaException {
+    public void ActualizarCuenta(Cuenta c, Usuario u) throws CuentaException {
         if(u.isAdministrador()) {//Comprueba si eres administrador
             LOGGER.info("DENTRO DEL EJB :--------------> " + c.toString());
             Cuenta cu = BuscarCuenta(c.getIBAN());

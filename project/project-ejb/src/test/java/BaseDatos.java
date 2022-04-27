@@ -1,8 +1,8 @@
 
-import eBury_project.Cliente;
-import eBury_project.Cuenta_Fintech;
-import eBury_project.Divisa;
-import eBury_project.Usuario;
+import es.uma.jpa.Cliente;
+import es.uma.jpa.Cuenta_Fintech;
+import es.uma.jpa.Divisa;
+import es.uma.jpa.Usuario;
 
 import java.sql.Date;
 import java.util.ArrayList;
