@@ -2,6 +2,7 @@ package es.uma.jpa;
 
 import java.util.Date;
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
 import javax.persistence.*;
@@ -10,7 +11,10 @@ import javax.persistence.*;
 @Entity
 public class
 Cuenta_referencia extends Cuenta{
-	
+
+	@Id
+	@Column(name = "RowId")
+	private String rowId;
 	@Column(nullable = false)
 	private String nombre_banco;
 	private String sucursal;
@@ -33,6 +37,21 @@ Cuenta_referencia extends Cuenta{
 		super();
 		// TODO Auto-generated constructor stub
 	}
+
+	public Cuenta_referencia(String IBAN, String SWIFT, String estado, String rowId, String nombre_banco, String sucursal, String pais, int saldo, Date fecha_apertura, String estado1, Segregated c_fintech_segregada, Divisa divisa, Set<DepositadaPooledReferencia> depositadaReferencia) {
+		super(IBAN, SWIFT, estado);
+		this.rowId = rowId;
+		this.nombre_banco = nombre_banco;
+		this.sucursal = sucursal;
+		this.pais = pais;
+		this.saldo = saldo;
+		this.fecha_apertura = fecha_apertura;
+		this.estado = estado1;
+		this.c_fintech_segregada = c_fintech_segregada;
+		this.divisa = divisa;
+		DepositadaReferencia = depositadaReferencia;
+	}
+
 	public String getNombre_banco() {
 		return nombre_banco;
 	}
@@ -81,83 +100,42 @@ Cuenta_referencia extends Cuenta{
 	public void setDivisa(Divisa divisa) {
 		this.divisa = divisa;
 	}
+
+	public String getRowId() {
+		return rowId;
+	}
+
+	public void setRowId(String rowId) {
+		this.rowId = rowId;
+	}
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+		if (!super.equals(o)) return false;
+		Cuenta_referencia that = (Cuenta_referencia) o;
+		return saldo == that.saldo && Objects.equals(rowId, that.rowId) && Objects.equals(nombre_banco, that.nombre_banco) && Objects.equals(sucursal, that.sucursal) && Objects.equals(pais, that.pais) && Objects.equals(fecha_apertura, that.fecha_apertura) && Objects.equals(estado, that.estado) && Objects.equals(c_fintech_segregada, that.c_fintech_segregada) && Objects.equals(divisa, that.divisa) && Objects.equals(DepositadaReferencia, that.DepositadaReferencia);
+	}
+
 	@Override
 	public int hashCode() {
-		final int prime = 31;
-		int result = super.hashCode();
-		result = prime
-				* result
-				+ ((c_fintech_segregada == null) ? 0 : c_fintech_segregada
-						.hashCode());
-		result = prime * result + ((divisa == null) ? 0 : divisa.hashCode());
-		result = prime * result + ((estado == null) ? 0 : estado.hashCode());
-		result = prime * result
-				+ ((fecha_apertura == null) ? 0 : fecha_apertura.hashCode());
-		result = prime * result
-				+ ((nombre_banco == null) ? 0 : nombre_banco.hashCode());
-		result = prime * result + ((pais == null) ? 0 : pais.hashCode());
-		result = prime * result + saldo;
-		result = prime * result
-				+ ((sucursal == null) ? 0 : sucursal.hashCode());
-		return result;
+		return Objects.hash(super.hashCode(), rowId, nombre_banco, sucursal, pais, saldo, fecha_apertura, estado, c_fintech_segregada, divisa, DepositadaReferencia);
 	}
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (!super.equals(obj))
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Cuenta_referencia other = (Cuenta_referencia) obj;
-		if (c_fintech_segregada == null) {
-			if (other.c_fintech_segregada != null)
-				return false;
-		} else if (!c_fintech_segregada.equals(other.c_fintech_segregada))
-			return false;
-		if (divisa == null) {
-			if (other.divisa != null)
-				return false;
-		} else if (!divisa.equals(other.divisa))
-			return false;
-		if (estado == null) {
-			if (other.estado != null)
-				return false;
-		} else if (!estado.equals(other.estado))
-			return false;
-		if (fecha_apertura == null) {
-			if (other.fecha_apertura != null)
-				return false;
-		} else if (!fecha_apertura.equals(other.fecha_apertura))
-			return false;
-		if (nombre_banco == null) {
-			if (other.nombre_banco != null)
-				return false;
-		} else if (!nombre_banco.equals(other.nombre_banco))
-			return false;
-		if (pais == null) {
-			if (other.pais != null)
-				return false;
-		} else if (!pais.equals(other.pais))
-			return false;
-		if (saldo != other.saldo)
-			return false;
-		if (sucursal == null) {
-			if (other.sucursal != null)
-				return false;
-		} else if (!sucursal.equals(other.sucursal))
-			return false;
-		return true;
-	}
+
 	@Override
 	public String toString() {
-		return "Cuenta_referencia [nombre_banco=" + nombre_banco
-				+ ", sucursal=" + sucursal + ", pais=" + pais + ", saldo="
-				+ saldo + ", fecha_apertura=" + fecha_apertura + ", estado="
-				+ estado + ", c_fintech_segregada=" + c_fintech_segregada
-				+ ", divisa=" + divisa + "]";
+		return "Cuenta_referencia{" +
+				"rowId='" + rowId + '\'' +
+				", nombre_banco='" + nombre_banco + '\'' +
+				", sucursal='" + sucursal + '\'' +
+				", pais='" + pais + '\'' +
+				", saldo=" + saldo +
+				", fecha_apertura=" + fecha_apertura +
+				", estado='" + estado + '\'' +
+				", c_fintech_segregada=" + c_fintech_segregada +
+				", divisa=" + divisa +
+				", DepositadaReferencia=" + DepositadaReferencia +
+				'}';
 	}
-	
-
-	
 }
