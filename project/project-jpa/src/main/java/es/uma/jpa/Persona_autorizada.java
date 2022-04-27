@@ -27,7 +27,7 @@ public class Persona_autorizada {
     @Temporal(TemporalType.DATE)
     private Date fecha_fin;
 
-	@OneToMany(mappedBy = "empresa")
+	@OneToMany(mappedBy = "autorizado")
 	private Set<AutorizacionEmpresaAutorizado> AutorizacionSet = new HashSet<AutorizacionEmpresaAutorizado>();
 
 	@OneToOne(mappedBy ="persona_autorizada")

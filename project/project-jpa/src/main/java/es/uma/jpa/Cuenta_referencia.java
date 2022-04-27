@@ -25,7 +25,7 @@ Cuenta_referencia extends Cuenta{
 	@ManyToOne
 	private Divisa divisa;
 
-	@OneToMany(mappedBy = "cuenta_pooled")
+	@OneToMany(mappedBy = "cuenta_referencia")
 	private Set<DepositadaPooledReferencia> DepositadaReferencia = new HashSet<DepositadaPooledReferencia>();
 	
 	

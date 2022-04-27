@@ -8,7 +8,7 @@ import java.util.Set;
 public class Pooled extends Cuenta_Fintech {
 
 
-    @OneToMany(mappedBy = "cuenta_referencia")
+    @OneToMany(mappedBy = "cuenta_pooled")
     private Set<DepositadaPooledReferencia> DepositadaPooled = new HashSet<DepositadaPooledReferencia>();
 
 

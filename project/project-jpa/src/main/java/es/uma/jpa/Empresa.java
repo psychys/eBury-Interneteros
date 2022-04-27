@@ -13,7 +13,7 @@ public class Empresa extends Cliente{
 	@Column(nullable = false)
 	private String Razon_Social;
 
-	@OneToMany(mappedBy = "autorizado")
+	@OneToMany(mappedBy = "empresa")
 	private Set<AutorizacionEmpresaAutorizado> empresaAutorizadoSet = new HashSet<AutorizacionEmpresaAutorizado>();
 
 }
