@@ -1,21 +1,18 @@
-/mnt/c/Users/edu-a/OneDrive - Universidad de Málaga/SI Internet Definitivo/eBury-Interneteros/project/project-ejb/src/main/java/CuentaEJB.java
-/mnt/c/Users/edu-a/OneDrive - Universidad de Málaga/SI Internet Definitivo/eBury-Interneteros/project/project-ejb/src/main/java/GestionCliente.java
-/mnt/c/Users/edu-a/OneDrive - Universidad de Málaga/SI Internet Definitivo/eBury-Interneteros/project/project-ejb/src/main/java/GestionPersonaAutorizada.java
-/mnt/c/Users/edu-a/OneDrive - Universidad de Málaga/SI Internet Definitivo/eBury-Interneteros/project/project-ejb/src/main/java/GestionCuenta.java
-/mnt/c/Users/edu-a/OneDrive - Universidad de Málaga/SI Internet Definitivo/eBury-Interneteros/project/project-ejb/src/main/java/TransaccionEJB.java
-/mnt/c/Users/edu-a/OneDrive - Universidad de Málaga/SI Internet Definitivo/eBury-Interneteros/project/project-ejb/src/main/java/GestionUsuario.java
-/mnt/c/Users/edu-a/OneDrive - Universidad de Málaga/SI Internet Definitivo/eBury-Interneteros/project/project-ejb/src/main/java/exceptions/CuentaException.java
-/mnt/c/Users/edu-a/OneDrive - Universidad de Málaga/SI Internet Definitivo/eBury-Interneteros/project/project-ejb/src/main/java/exceptions/PersonaAutorizadaException.java
-/mnt/c/Users/edu-a/OneDrive - Universidad de Málaga/SI Internet Definitivo/eBury-Interneteros/project/project-ejb/src/main/java/UsuarioEJB.java
-/mnt/c/Users/edu-a/OneDrive - Universidad de Málaga/SI Internet Definitivo/eBury-Interneteros/project/project-ejb/src/main/java/ClienteEJB.java
-/mnt/c/Users/edu-a/OneDrive - Universidad de Málaga/SI Internet Definitivo/eBury-Interneteros/project/project-ejb/src/main/java/GestionTransaccion.java
-/mnt/c/Users/edu-a/OneDrive - Universidad de Málaga/SI Internet Definitivo/eBury-Interneteros/project/project-ejb/src/main/java/PersonaAutorizadaEJB.java
-/mnt/c/Users/edu-a/OneDrive - Universidad de Málaga/SI Internet Definitivo/eBury-Interneteros/project/project-ejb/src/main/java/DivisaEJB.java
-/mnt/c/Users/edu-a/OneDrive - Universidad de Málaga/SI Internet Definitivo/eBury-Interneteros/project/project-ejb/src/main/java/GestionAutorizacion.java
-/mnt/c/Users/edu-a/OneDrive - Universidad de Málaga/SI Internet Definitivo/eBury-Interneteros/project/project-ejb/src/main/java/GestionDivisa.java
-/mnt/c/Users/edu-a/OneDrive - Universidad de Málaga/SI Internet Definitivo/eBury-Interneteros/project/project-ejb/src/main/java/exceptions/UsuarioException.java
-/mnt/c/Users/edu-a/OneDrive - Universidad de Málaga/SI Internet Definitivo/eBury-Interneteros/project/project-ejb/src/main/java/exceptions/TransaccionException.java
-/mnt/c/Users/edu-a/OneDrive - Universidad de Málaga/SI Internet Definitivo/eBury-Interneteros/project/project-ejb/src/main/java/exceptions/DivisaException.java
-/mnt/c/Users/edu-a/OneDrive - Universidad de Málaga/SI Internet Definitivo/eBury-Interneteros/project/project-ejb/src/main/java/GestionDepositada.java
-/mnt/c/Users/edu-a/OneDrive - Universidad de Málaga/SI Internet Definitivo/eBury-Interneteros/project/project-ejb/src/main/java/AutorizacionEJB.java
-/mnt/c/Users/edu-a/OneDrive - Universidad de Málaga/SI Internet Definitivo/eBury-Interneteros/project/project-ejb/src/main/java/exceptions/ClienteException.java
+/home/alumno/Desktop/eBury-Interneteros/project/project-ejb/src/main/java/GestionUsuario.java
+/home/alumno/Desktop/eBury-Interneteros/project/project-ejb/src/main/java/GestionPersonaAutorizada.java
+/home/alumno/Desktop/eBury-Interneteros/project/project-ejb/src/main/java/exceptions/PersonaAutorizadaException.java
+/home/alumno/Desktop/eBury-Interneteros/project/project-ejb/src/main/java/GestionCliente.java
+/home/alumno/Desktop/eBury-Interneteros/project/project-ejb/src/main/java/exceptions/TransaccionException.java
+/home/alumno/Desktop/eBury-Interneteros/project/project-ejb/src/main/java/ClienteEJB.java
+/home/alumno/Desktop/eBury-Interneteros/project/project-ejb/src/main/java/DivisaEJB.java
+/home/alumno/Desktop/eBury-Interneteros/project/project-ejb/src/main/java/exceptions/DivisaException.java
+/home/alumno/Desktop/eBury-Interneteros/project/project-ejb/src/main/java/GestionTransaccion.java
+/home/alumno/Desktop/eBury-Interneteros/project/project-ejb/src/main/java/exceptions/ClienteException.java
+/home/alumno/Desktop/eBury-Interneteros/project/project-ejb/src/main/java/TransaccionEJB.java
+/home/alumno/Desktop/eBury-Interneteros/project/project-ejb/src/main/java/GestionCuenta.java
+/home/alumno/Desktop/eBury-Interneteros/project/project-ejb/src/main/java/CuentaEJB.java
+/home/alumno/Desktop/eBury-Interneteros/project/project-ejb/src/main/java/exceptions/UsuarioException.java
+/home/alumno/Desktop/eBury-Interneteros/project/project-ejb/src/main/java/PersonaAutorizadaEJB.java
+/home/alumno/Desktop/eBury-Interneteros/project/project-ejb/src/main/java/UsuarioEJB.java
+/home/alumno/Desktop/eBury-Interneteros/project/project-ejb/src/main/java/exceptions/CuentaException.java
+/home/alumno/Desktop/eBury-Interneteros/project/project-ejb/src/main/java/GestionDivisa.java

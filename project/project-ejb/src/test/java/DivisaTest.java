@@ -14,7 +14,7 @@ import static org.junit.Assert.*;
 
 public class DivisaTest {
 
-    private static final Logger LOG = Logger.getLogger(ClienteTest.class.getCanonicalName());
+    private static final Logger LOG = Logger.getLogger(DivisaTest.class.getCanonicalName());
 
     private static final String UNIDAD_PERSITENCIA_PRUEBAS = "eBuryTest";
     private static final String DIVISA_EJB = "java:global/classes/DivisaEJB";
