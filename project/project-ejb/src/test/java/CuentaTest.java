@@ -14,7 +14,7 @@ public class CuentaTest {
 
     private static final Logger LOG = Logger.getLogger(ClienteTest.class.getCanonicalName());
     private static final String UNIDAD_PERSITENCIA_PRUEBAS = "eBuryTest";
-    private static final String CUENTA_EJB = "java:global/classes/eBury_project.CuentaEJB";
+    private static final String CUENTA_EJB = "java:global/classes/CuentaEJB";
 
 
     private GestionCuenta gestionCuenta;

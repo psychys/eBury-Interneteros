@@ -25,8 +25,8 @@ public class ClienteTest {
 	private static final Logger LOG = Logger.getLogger(ClienteTest.class.getCanonicalName());
 
 	private static final String UNIDAD_PERSITENCIA_PRUEBAS = "eBuryTest";
-	private static final String CLIENTE_EJB = "java:global/classes/eBury_project.ClienteEJB";
-	private static final String USUARIO_EJB = "java:global/classes/eBury_project.UsuarioEJB";
+	private static final String CLIENTE_EJB = "java:global/classes/ClienteEJB";
+	private static final String USUARIO_EJB = "java:global/classes/UsuarioEJB";
 
 	private GestionCliente gestionCliente;
 	private GestionUsuario gestionUsuario;
