@@ -1,7 +1,7 @@
 -------------------------------------------------------------------------------
 Test set: DivisaTest
 -------------------------------------------------------------------------------
-Tests run: 4, Failures: 0, Errors: 4, Skipped: 0, Time elapsed: 0.006 sec <<< FAILURE!
+Tests run: 4, Failures: 0, Errors: 4, Skipped: 0, Time elapsed: 0.011 sec <<< FAILURE!
 testBuscarDivisa(DivisaTest)  Time elapsed: 0 sec  <<< ERROR!
 java.lang.NullPointerException
 	at DivisaTest.setup(DivisaTest.java:26)
