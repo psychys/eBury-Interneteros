@@ -19,15 +19,15 @@ public class ClienteEJB implements GestionCliente {
     private EntityManager em;
 
     //@Requisito 2
-    public void AltaCliente(Usuario admin, Usuario u ) throws ClienteException {
+    public void AltaCliente(Usuario admin, Cliente c) throws ClienteException {
         if(admin.isAdministrador()) {
 
-            Usuario usuario = em.find(Usuario.class, u.getId());
-            if (usuario != null) {
+            Cliente cliente = em.find(Cliente.class, c.getID());
+            if (cliente != null) {
                 throw new ClienteException("Cliente repetido");
             }
 
-            em.persist(u);
+            em.persist(cliente);
 
         }else  {
             throw new ClienteException("NO ERES ADMINISTRADOR");
@@ -36,13 +36,14 @@ public class ClienteEJB implements GestionCliente {
     }
     // @Requisito 3
     @Override
-    public void ActualizarCliente(Usuario admin, Usuario u) throws ClienteException {
-        if (!u.isAdministrador()) {
-            Usuario cliente = BuscarCliente(u.getC_cliente().getID());
-            cliente.getC_cliente().setDireccion(u.getC_cliente().getDireccion());
-            cliente.getC_cliente().setC_postal(u.getC_cliente().getC_postal());
-            cliente.getC_cliente().setPais(u.getC_cliente().getPais());
-            cliente.getC_cliente().setCiudad(u.getC_cliente().getCiudad());
+    public void ActualizarCliente(Usuario admin, Cliente c) throws ClienteException {
+        if (!admin.isAdministrador()) {
+
+            Cliente cliente = BuscarCliente(c.getID());
+            cliente.setDireccion(c.getDireccion());
+            cliente.setC_postal(c.getC_postal());
+            cliente.setPais(c.getPais());
+            cliente.setCiudad(c.getCiudad());
             em.merge(cliente);
 
 
@@ -52,8 +53,8 @@ public class ClienteEJB implements GestionCliente {
     }
 
     @Override
-    public Usuario BuscarCliente(int id) throws ClienteException {
-        Usuario c = em.find(Usuario.class, id);
+    public Cliente BuscarCliente(int id) throws ClienteException {
+        Cliente c = em.find(Cliente.class, id);
         if(c == null){
             throw new ClienteException("Cliente no existente");
         }
@@ -62,13 +63,13 @@ public class ClienteEJB implements GestionCliente {
 
     //@Requisito 4
     @Override
-    public void MarcarCliente(Cliente c, String estado, Usuario u) throws ClienteException {
+    public void MarcarCliente(Cliente c, String estado, Usuario admin) throws ClienteException {
 
-        if(u.isAdministrador()) {
+        if(admin.isAdministrador()) {
 
-            Cliente clienteExistente = em.find(Cliente.class, c);
+            Cliente cliente = em.find(Cliente.class, c.getID());
 
-            if (c == null) {
+            if (cliente == null) {
                 throw new ClienteException("Cliente no existente");
             }
 

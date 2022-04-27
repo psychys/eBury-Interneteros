@@ -1,8 +1,5 @@
 
-import es.uma.jpa.Cliente;
-import es.uma.jpa.Cuenta_Fintech;
-import es.uma.jpa.Divisa;
-import es.uma.jpa.Usuario;
+import es.uma.jpa.*;
 
 import java.sql.Date;
 import java.util.ArrayList;
@@ -21,10 +18,19 @@ public class BaseDatos {
 
 
 		em.getTransaction().begin();
+
+		Cuenta c = new Cuenta("12345A","123","activa");
+		em.persist(c);
+
+		Cliente cliente = new Cliente(1, 1234, "persona", null, null, "calle platano", "Malaga", 1234, "España", "activa");
+
+		em.persist(cliente);
+		/*
 		Date d = new Date(22,2,23);
 		Date d1 = new Date(20,5,18);
 		Cuenta_Fintech cuentafin1 = new Cuenta_Fintech("1234567", "1234567","activo", d, d1, "Pooled");
 		Cuenta_Fintech cuentafin2 = new Cuenta_Fintech("0987654","0987654", "activo", d , d1, "Pooled");
+
 
 		em.persist(cuentafin1);
 		em.persist(cuentafin2);
@@ -56,7 +62,7 @@ public class BaseDatos {
 		em.persist(dolar);
 		em.persist(yen);
 		em.persist(libra);
-
+		*/
 
 		em.getTransaction().commit();
 		

@@ -59,6 +59,19 @@ public class Cliente {
 		Estado = estado;
 		this.c_fintech = c_fintech;
 	}
+	public Cliente(int ID, int identificacion, String tipo_cliente, Date fecha_Alta, Date fecha_Baja, String direccion, String ciudad, int c_postal,
+				   String pais, String estado) {
+		this.ID = ID;
+		Identificacion = identificacion;
+		this.tipo_cliente = tipo_cliente;
+		Fecha_Alta = fecha_Alta;
+		Fecha_Baja = fecha_Baja;
+		Direccion = direccion;
+		Ciudad = ciudad;
+		this.c_postal = c_postal;
+		Pais = pais;
+		Estado = estado;
+	}
 
 	public int getID() {
 		return ID;

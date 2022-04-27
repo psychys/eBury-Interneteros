@@ -8,7 +8,7 @@ import javax.persistence.*;
 @Entity
 public class Cuenta {
 	
-	@Id @GeneratedValue
+	@Id @GeneratedValue(strategy = GenerationType.AUTO)
 	private String IBAN;
 	private String SWIFT;
 	@Column(nullable = false)

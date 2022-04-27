@@ -53,25 +53,20 @@ public class ClienteTest {
 		final int  c_postal = 20749;
 		final String pais = "España";
 		final String estado = "activo";
-		final List<Cuenta_Fintech> l = new ArrayList<>();
 		final int idadmin = 000;
 		final String cont = "1234";
 		final boolean es = true;
 
-		final int idusuario = 111;
-		final String contusu = "1234";
-		final boolean es1 = false;
 		try {
 			Usuario admin = new Usuario(idadmin,cont, es);
 
-			Cliente cliente = new Cliente(id,ident, tipoCliente,d,d2,direccion, ciudad, c_postal, pais, estado,l);
-			Usuario usuario = new Usuario(idusuario, contusu, es1, cliente);
+			Cliente cliente = new Cliente(id,ident, tipoCliente,d,d2,direccion, ciudad, c_postal, pais, estado);
 
-			gestionCliente.AltaCliente(admin, usuario);
+			gestionCliente.AltaCliente(admin, cliente);
 
-			assertEquals("No es el mismo cliente", usuario, gestionUsuario.BuscarUsuario(111));
+			assertEquals("No es el mismo cliente", cliente, gestionCliente.BuscarCliente(1));
 
-			} catch(ClienteException | UsuarioException e){
+			} catch(ClienteException e){
 				fail("Lanzó excepción al dar de Alta");
 			}
 	 }
@@ -87,13 +82,13 @@ public class ClienteTest {
 		try {
 			Usuario admin = new Usuario(idadmin,cont,es);
 
-			Usuario cliente = gestionCliente.BuscarCliente(1);
+			Cliente cliente = gestionCliente.BuscarCliente(1);
 
-			String direccion = cliente.getC_cliente().getDireccion();
-			cliente.getC_cliente().setDireccion("calle coco 25");
+			String direccion = cliente.getDireccion();
+			cliente.setDireccion("calle coco 25");
 			gestionCliente.ActualizarCliente(admin, cliente);
 
-			assertNotEquals("No se ha modificado", cliente.getC_cliente().getDireccion(), direccion);
+			assertNotEquals("No se ha modificado", cliente.getDireccion(), direccion);
 
 		} catch(ClienteException e){
 			fail("Lanzó excepción al actualizar el cliente");
@@ -112,14 +107,13 @@ public class ClienteTest {
 		final int  c_postal = 20749;
 		final String pais = "España";
 		final String estado = "activo";
-		final List<Cuenta_Fintech> l = new ArrayList<>();
 		final int idUsuario = 000;
 		final String cont = "1234";
 		final boolean es = true;
 
 		try{
 			Usuario u = new Usuario(idUsuario, cont, es);
-			Cliente c1 = new Cliente(id,ident, tipoCliente,d,d2,direccion, ciudad, c_postal, pais, estado,l);;
+			Cliente c1 = new Cliente(id,ident, tipoCliente,d,d2,direccion, ciudad, c_postal, pais, estado);;
 			gestionCliente.MarcarCliente(c1,"baja",u);
 			assertNotEquals("No se ha marcado",c1.getEstado(),estado);
 
