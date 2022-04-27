@@ -1,6 +1,7 @@
 package es.uma.jpa;
 
 import java.util.Date;
+import java.util.Objects;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,9 +11,7 @@ import javax.persistence.TemporalType;
 
 @Entity
 public class Cuenta_Fintech extends Cuenta{
-	
-	@Column(nullable = false)
-	private String estado;
+
 	@Temporal(TemporalType.DATE)
 	@Column(nullable = false)
 	private Date fecha_apertura;
@@ -45,12 +44,6 @@ public class Cuenta_Fintech extends Cuenta{
 	}
 
 
-	public String getEstado() {
-		return estado;
-	}
-	public void setEstado(String estado) {
-		this.estado = estado;
-	}
 	public Date getFecha_apertura() {
 		return fecha_apertura;
 	}
@@ -70,72 +63,27 @@ public class Cuenta_Fintech extends Cuenta{
 		this.clasificacion = clasificacion;
 	}
 
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+		if (!super.equals(o)) return false;
+		Cuenta_Fintech that = (Cuenta_Fintech) o;
+		return Objects.equals(fecha_apertura, that.fecha_apertura) && Objects.equals(fecha_cierre, that.fecha_cierre) && Objects.equals(clasificacion, that.clasificacion) && Objects.equals(cliente, that.cliente);
+	}
 
 	@Override
 	public int hashCode() {
-		final int prime = 31;
-		int result = super.hashCode();
-		result = prime * result
-				+ ((clasificacion == null) ? 0 : clasificacion.hashCode());
-		result = prime * result + ((cliente == null) ? 0 : cliente.hashCode());
-		result = prime * result + ((estado == null) ? 0 : estado.hashCode());
-		result = prime * result
-				+ ((fecha_apertura == null) ? 0 : fecha_apertura.hashCode());
-		result = prime * result
-				+ ((fecha_cierre == null) ? 0 : fecha_cierre.hashCode());
-		return result;
+		return Objects.hash(super.hashCode(), fecha_apertura, fecha_cierre, clasificacion, cliente);
 	}
-
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (!super.equals(obj))
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Cuenta_Fintech other = (Cuenta_Fintech) obj;
-		if (clasificacion == null) {
-			if (other.clasificacion != null)
-				return false;
-		} else if (!clasificacion.equals(other.clasificacion))
-			return false;
-		if (cliente == null) {
-			if (other.cliente != null)
-				return false;
-		} else if (!cliente.equals(other.cliente))
-			return false;
-		if (estado == null) {
-			if (other.estado != null)
-				return false;
-		} else if (!estado.equals(other.estado))
-			return false;
-		if (fecha_apertura == null) {
-			if (other.fecha_apertura != null)
-				return false;
-		} else if (!fecha_apertura.equals(other.fecha_apertura))
-			return false;
-		if (fecha_cierre == null) {
-			if (other.fecha_cierre != null)
-				return false;
-		} else if (!fecha_cierre.equals(other.fecha_cierre))
-			return false;
-		return true;
-	}
-
 
 	@Override
 	public String toString() {
-		return "Cuenta_Fintech [estado=" + estado + ", fecha_apertura="
-				+ fecha_apertura + ", fecha_cierre=" + fecha_cierre
-				+ ", clasificacion=" + clasificacion + ", cliente=" + cliente
-				+ "]";
+		return "Cuenta_Fintech{" +
+				"fecha_apertura=" + fecha_apertura +
+				", fecha_cierre=" + fecha_cierre +
+				", clasificacion='" + clasificacion + '\'' +
+				", cliente=" + cliente +
+				'}';
 	}
-	
-	
-	
-	
-	
-
 }
