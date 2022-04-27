@@ -1,11 +1,11 @@
 import eBury_project.Cuenta;
 import eBury_project.Usuario;
-import exceptions.CuentaException;
+import es.uma.ejb.GestionCuenta;
+import es.uma.exceptions.CuentaException;
 import org.junit.Before;
 import org.junit.Test;
 
 import javax.naming.NamingException;
-import javax.persistence.Column;
 import java.util.logging.Logger;
 
 import static org.junit.Assert.*;
@@ -14,7 +14,7 @@ public class CuentaTest {
 
     private static final Logger LOG = Logger.getLogger(ClienteTest.class.getCanonicalName());
     private static final String UNIDAD_PERSITENCIA_PRUEBAS = "eBuryTest";
-    private static final String CUENTA_EJB = "java:global/classes/CuentaEJB";
+    private static final String CUENTA_EJB = "java:global/classes/eBury_project.CuentaEJB";
 
 
     private GestionCuenta gestionCuenta;

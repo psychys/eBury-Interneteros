@@ -6,13 +6,14 @@ import java.util.logging.Logger;
 
 import javax.naming.NamingException;
 
-import eBury_project.Cliente;
-import eBury_project.Cuenta_Fintech;
-import eBury_project.Usuario;
-import exceptions.ClienteException;
-import exceptions.UsuarioException;
+import eBury_project.*;
+import es.uma.ejb.GestionCliente;
+import es.uma.ejb.GestionUsuario;
+import es.uma.exceptions.ClienteException;
+import es.uma.exceptions.UsuarioException;
 import org.junit.Before;
 import org.junit.Test;
+
 
 import static org.junit.Assert.*;
 
@@ -22,8 +23,8 @@ public class ClienteTest {
 	private static final Logger LOG = Logger.getLogger(ClienteTest.class.getCanonicalName());
 
 	private static final String UNIDAD_PERSITENCIA_PRUEBAS = "eBuryTest";
-	private static final String CLIENTE_EJB = "java:global/classes/ClienteEJB";
-	private static final String USUARIO_EJB = "java:global/classes/UsuarioEJB";
+	private static final String CLIENTE_EJB = "java:global/classes/eBury_project.ClienteEJB";
+	private static final String USUARIO_EJB = "java:global/classes/eBury_project.UsuarioEJB";
 
 	private GestionCliente gestionCliente;
 	private GestionUsuario gestionUsuario;

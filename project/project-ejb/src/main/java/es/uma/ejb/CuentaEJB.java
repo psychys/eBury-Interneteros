@@ -1,17 +1,17 @@
-import eBury_project.*;
-import exceptions.ClienteException;
-import exceptions.CuentaException;
+package es.uma.ejb;
 
+import eBury_project.*;
+import es.uma.exceptions.CuentaException;
+
+import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import javax.persistence.TypedQuery;
-import javax.ws.rs.core.UriBuilder;
-import java.net.URI;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
 
-public class CuentaEJB implements GestionCuenta{
+@Stateless
+public class CuentaEJB implements GestionCuenta {
 
     //@PersistenceContext(name="Trazabilidad")
     private EntityManager em;

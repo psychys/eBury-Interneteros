@@ -1,19 +1,17 @@
+package es.uma.ejb;
+
 
 import eBury_project.Cliente;
 import eBury_project.Usuario;
-import exceptions.ClienteException;
+import es.uma.exceptions.ClienteException;
 
+import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
-import javax.persistence.EntityTransaction;
 import javax.persistence.PersistenceContext;
-import javax.persistence.TypedQuery;
-import javax.ws.rs.core.UriBuilder;
-import java.net.URI;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.logging.Logger;
 
-public class ClienteEJB implements GestionCliente{
+@Stateless
+public class ClienteEJB implements GestionCliente {
 
     private static final Logger LOGGER =java.util.logging.Logger.getLogger(ClienteEJB.class.getCanonicalName());
 
@@ -21,7 +19,7 @@ public class ClienteEJB implements GestionCliente{
     private EntityManager em;
 
     //@Requisito 2
-    public void AltaCliente(Usuario admin, Usuario u ) throws ClienteException{
+    public void AltaCliente(Usuario admin, Usuario u ) throws ClienteException {
         if(admin.isAdministrador()) {
 
             Usuario usuario = em.find(Usuario.class, u.getId());

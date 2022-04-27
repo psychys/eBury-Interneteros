@@ -1,13 +1,16 @@
+package es.uma.ejb;
+
+
 import eBury_project.Cuenta;
 import eBury_project.Transaccion;
-import eBury_project.Usuario;
-import exceptions.TransaccionException;
-import exceptions.UsuarioException;
+import es.uma.exceptions.TransaccionException;
 
+import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 
-public class TransaccionEJB implements GestionTransaccion{
+@Stateless
+public class TransaccionEJB implements GestionTransaccion {
 
     //@PersistenceContext(name="Trazabilidad")
     private EntityManager em;

@@ -1,17 +1,17 @@
-import eBury_project.Cliente;
-import eBury_project.Usuario;
-import exceptions.UsuarioException;
+package es.uma.ejb;
 
+import eBury_project.Usuario;
+import es.uma.exceptions.UsuarioException;
+
+import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
-import javax.persistence.TypedQuery;
 import javax.ws.rs.core.UriBuilder;
 import java.net.URI;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.logging.Logger;
 
-public class UsuarioEJB implements GestionUsuario{
+@Stateless
+public class UsuarioEJB implements GestionUsuario {
 
 
     private EntityManager em;

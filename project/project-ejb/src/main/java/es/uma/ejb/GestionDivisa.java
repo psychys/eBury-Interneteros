@@ -1,7 +1,8 @@
+package es.uma.ejb;
 
 import eBury_project.Divisa;
 import eBury_project.Usuario;
-import exceptions.DivisaException;
+import es.uma.exceptions.DivisaException;
 
 import javax.ws.rs.core.UriBuilder;
 

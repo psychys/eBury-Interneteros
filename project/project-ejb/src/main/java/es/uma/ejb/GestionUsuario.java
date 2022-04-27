@@ -1,7 +1,8 @@
+package es.uma.ejb;
+
 import eBury_project.Cliente;
 import eBury_project.Usuario;
-import exceptions.ClienteException;
-import exceptions.UsuarioException;
+import es.uma.exceptions.UsuarioException;
 
 import javax.ws.rs.core.UriBuilder;
 

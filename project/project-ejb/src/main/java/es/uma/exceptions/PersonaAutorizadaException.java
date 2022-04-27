@@ -1,4 +1,4 @@
-package exceptions;
+package es.uma.exceptions;
 
 public class PersonaAutorizadaException extends Exception {
 

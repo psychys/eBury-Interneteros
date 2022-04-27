@@ -1,8 +1,8 @@
+package es.uma.ejb;
+
 import eBury_project.Cuenta;
 import eBury_project.Usuario;
-import exceptions.CuentaException;
-
-import javax.ws.rs.core.UriBuilder;
+import es.uma.exceptions.CuentaException;
 
 public interface GestionCuenta {
     //@Requisitos({"RF5"})

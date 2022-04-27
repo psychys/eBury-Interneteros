@@ -1,13 +1,15 @@
+package es.uma.ejb;
 
 import eBury_project.Divisa;
 import eBury_project.Usuario;
-import exceptions.DivisaException;
+import es.uma.exceptions.DivisaException;
 
+import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import java.util.logging.Logger;
-
-public class DivisaEJB implements GestionDivisa{
+@Stateless
+public class DivisaEJB implements GestionDivisa {
 
     private static final Logger LOGGER = java.util.logging.Logger.getLogger(DivisaEJB.class.getCanonicalName());
 
@@ -15,7 +17,7 @@ public class DivisaEJB implements GestionDivisa{
     private EntityManager em;
 
     @Override
-    public void CrearDivisa(Divisa d, Usuario u) throws DivisaException{
+    public void CrearDivisa(Divisa d, Usuario u) throws DivisaException {
         if(!u.isAdministrador()){
             throw new DivisaException("No eres administrador");
         }

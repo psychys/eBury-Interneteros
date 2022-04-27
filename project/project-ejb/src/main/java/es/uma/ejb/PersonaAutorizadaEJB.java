@@ -1,10 +1,13 @@
-import eBury_project.Cliente;
-import eBury_project.Persona_autorizada;
-import exceptions.ClienteException;
-import exceptions.PersonaAutorizadaException;
+package es.uma.ejb;
 
+
+import eBury_project.Persona_autorizada;
+import es.uma.exceptions.PersonaAutorizadaException;
+
+import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 
+@Stateless
 public class PersonaAutorizadaEJB implements GestionPersonaAutorizada{
 
     //@PersistenceContext(name="Trazabilidad")

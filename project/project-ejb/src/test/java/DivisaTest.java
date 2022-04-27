@@ -1,6 +1,7 @@
 
-import exceptions.DivisaException;
 
+import es.uma.ejb.GestionDivisa;
+import es.uma.exceptions.DivisaException;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -17,7 +18,7 @@ public class DivisaTest {
     private static final Logger LOG = Logger.getLogger(DivisaTest.class.getCanonicalName());
 
     private static final String UNIDAD_PERSITENCIA_PRUEBAS = "eBuryTest";
-    private static final String DIVISA_EJB = "java:global/classes/DivisaEJB";
+    private static final String DIVISA_EJB = "java:global/classes/eBury_project.DivisaEJB";
 
     private GestionDivisa gestionDivisa;
 
