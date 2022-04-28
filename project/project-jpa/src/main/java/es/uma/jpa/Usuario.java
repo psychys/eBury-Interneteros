@@ -13,18 +13,21 @@ public class Usuario {
     private String contrasena;
     @Column(nullable = false)
     private boolean administrador;
+    @Column
+    private String estado;
 
-    public Usuario(int id, String contrasena ,boolean administrador, Cliente cliente) {
+    public Usuario(int id, String contrasena ,boolean administrador, Cliente cliente, String estado) {
         this.id = id;
         this.contrasena = contrasena;
         this.administrador = administrador;
         this.c_cliente = cliente;
+        this.estado = estado;
     }
-    public Usuario(int id, String contrasena ,boolean administrador) {
+    public Usuario(int id, String contrasena ,boolean administrador, String estado) {
         this.id = id;
         this.contrasena = contrasena;
         this.administrador = administrador;
-
+        this.estado = estado;
     }
 
     public Usuario() {
@@ -39,6 +42,13 @@ public class Usuario {
     @OneToOne //(mappedBy ="uu_usuario")
     private Persona_autorizada persona_autorizada;
 
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
 
     public int getId() {
         return id;
