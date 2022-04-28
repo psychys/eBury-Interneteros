@@ -17,6 +17,7 @@
 	  <class>es.uma.jpa.Divisa</class>
 	  <class>es.uma.jpa.Persona_autorizada</class>
 	  <class>es.uma.jpa.Usuario</class>
+	  <class>es.uma.jpa.Cuenta</class>
     <shared-cache-mode>NONE</shared-cache-mode>
     <properties>
     	<property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>

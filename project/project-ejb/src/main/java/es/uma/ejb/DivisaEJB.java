@@ -70,10 +70,9 @@ public class DivisaEJB implements GestionDivisa {
             throw new DivisaException("Divisa no existente");
         }
 
-        EntityTransaction tx = em.getTransaction();
-        tx.begin();
+
         em.remove(d);
-        tx.commit();
+
 
     }
 

@@ -1,4 +1,4 @@
-
+/*
 
 import es.uma.ejb.GestionDivisa;
 import es.uma.exceptions.DivisaException;
@@ -115,3 +115,4 @@ public class DivisaTest {
     }
 
 }
+*/

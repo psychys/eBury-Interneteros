@@ -61,10 +61,9 @@ public class UsuarioEJB implements GestionUsuario {
             throw new UsuarioException("Usuario no existente");
         }
 
-        EntityTransaction tx = em.getTransaction();
-        tx.begin();
+
         em.remove(c);
-        tx.commit();
+
 
     }
 

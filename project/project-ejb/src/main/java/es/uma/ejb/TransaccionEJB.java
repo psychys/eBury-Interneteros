@@ -135,10 +135,9 @@ public class TransaccionEJB implements GestionTransaccion {
             throw new TransaccionException("CLiente no existente");
         }
 
-        EntityTransaction tx = em.getTransaction();
-        tx.begin();
+
         em.remove(TransaccionExistente);
-        tx.commit();
+
 
         }
 
