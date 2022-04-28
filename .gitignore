@@ -34,3 +34,5 @@ project/.idea/sqldialects.xml
 project\project-ejb\target
 
 project/project-ejb/target/classes/CuentaEJB.class
+
+project/project-ejb/target/surefire/
