@@ -1,8 +1,8 @@
 
 import es.uma.jpa.*;
 
-import java.util.ArrayList;
 import java.util.Date;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -15,16 +15,14 @@ public class BaseDatos {
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory(nombreUnidadPersistencia);
 		EntityManager em = emf.createEntityManager();
 
-
-
 		em.getTransaction().begin();
 
-		Cuenta c = new Cuenta("12345A","123","activa");
-		em.persist(c);
-
-		Cliente cliente = new Cliente(1, 1234, "persona", new Date(), null, "calle platano", "Malaga", 1234, "España", "activa");
-
+		Cliente cliente = new Cliente(1,123, "cliente",new Date(),null, "calle platano 5", "Malaga", 20749, "España", "activo");
 		em.persist(cliente);
+
+		Cuenta cuenta = new Cuenta("123A","123","activa");
+		em.persist(cuenta);
+
 		/*
 		Date d = new Date(22,2,23);
 		Date d1 = new Date(20,5,18);

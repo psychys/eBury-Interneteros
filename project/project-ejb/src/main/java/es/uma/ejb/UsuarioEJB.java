@@ -6,6 +6,7 @@ import es.uma.exceptions.UsuarioException;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
+import javax.persistence.PersistenceContext;
 import javax.ws.rs.core.UriBuilder;
 import java.net.URI;
 import java.util.logging.Logger;
@@ -13,7 +14,7 @@ import java.util.logging.Logger;
 @Stateless
 public class UsuarioEJB implements GestionUsuario {
 
-
+    @PersistenceContext(name="eBuryEJB")
     private EntityManager em;
     private static final Logger LOGGER =java.util.logging.Logger.getLogger(UsuarioEJB.class.getCanonicalName());
 

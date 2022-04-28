@@ -15,7 +15,7 @@ public class ClienteEJB implements GestionCliente {
 
     private static final Logger LOGGER =java.util.logging.Logger.getLogger(ClienteEJB.class.getCanonicalName());
 
-    @PersistenceContext(name="ClienteTest")
+    @PersistenceContext(name="eBuryEJB")
     private EntityManager em;
 
     //@Requisito 2
@@ -27,7 +27,7 @@ public class ClienteEJB implements GestionCliente {
                 throw new ClienteException("Cliente repetido");
             }
 
-            em.persist(cliente);
+            em.persist(c);
 
         }else  {
             throw new ClienteException("NO ERES ADMINISTRADOR");
@@ -37,7 +37,7 @@ public class ClienteEJB implements GestionCliente {
     // @Requisito 3
     @Override
     public void ActualizarCliente(Usuario admin, Cliente c) throws ClienteException {
-        if (!admin.isAdministrador()) {
+        if (admin.isAdministrador()) {
 
             Cliente cliente = BuscarCliente(c.getID());
             cliente.setDireccion(c.getDireccion());

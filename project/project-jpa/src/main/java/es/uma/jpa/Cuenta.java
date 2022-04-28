@@ -6,6 +6,7 @@ import java.util.Objects;
 import javax.persistence.*;
 
 @Entity
+@Inheritance(strategy = InheritanceType.JOINED)
 public class Cuenta {
 	
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)

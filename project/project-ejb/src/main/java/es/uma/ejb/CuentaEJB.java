@@ -8,6 +8,7 @@ import es.uma.jpa.Usuario;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
+import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 import java.util.List;
 import java.util.logging.Logger;
@@ -15,7 +16,7 @@ import java.util.logging.Logger;
 @Stateless
 public class CuentaEJB implements GestionCuenta {
 
-    //@PersistenceContext(name="Trazabilidad")
+    @PersistenceContext(name="eBuryEJB")
     private EntityManager em;
 
     private static final Logger LOGGER =java.util.logging.Logger.getLogger(CuentaEJB.class.getCanonicalName());
@@ -73,7 +74,7 @@ public class CuentaEJB implements GestionCuenta {
            boolean x = comprobarSaldo(lista);
 
            if(x){//tiene todas las divisas a 0
-               Cuenta c1 = em.find(Cuenta.class, c);
+               Cuenta c1 = em.find(Cuenta.class, c.getIBAN());
 
                if(c1 == null) {
                    throw new CuentaException("Cuenta no existente");
@@ -90,11 +91,11 @@ public class CuentaEJB implements GestionCuenta {
        }
 
     private List<Cuenta_referencia> pedirCuentaRef(Cuenta c) {
-        EntityTransaction tx=em.getTransaction();
-        tx.begin();
+        //EntityTransaction tx=em.getTransaction();
+        //tx.begin();
         TypedQuery<Cuenta_referencia> query = em.createQuery("SELECT p from Cuenta_referencia p", Cuenta_referencia.class);
         List<Cuenta_referencia> listaCuentaRef= query.getResultList();
-        tx.commit();
+        //tx.commit();
         return listaCuentaRef;
     }
 

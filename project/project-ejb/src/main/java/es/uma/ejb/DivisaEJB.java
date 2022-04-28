@@ -7,13 +7,14 @@ import es.uma.exceptions.DivisaException;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
+import javax.persistence.PersistenceContext;
 import java.util.logging.Logger;
 @Stateless
 public class DivisaEJB implements GestionDivisa {
 
     private static final Logger LOGGER = java.util.logging.Logger.getLogger(DivisaEJB.class.getCanonicalName());
 
-    //@PersistenceContext(name="Trazabilidad")
+    //@PersistenceContext(name="eBury_project")
     private EntityManager em;
 
     @Override
