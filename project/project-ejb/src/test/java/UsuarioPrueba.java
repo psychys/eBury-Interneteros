@@ -19,7 +19,7 @@ import static org.junit.Assert.*;
 
 public class UsuarioPrueba {
 
-    private static final Logger LOG = Logger.getLogger(ClientePrueba.class.getCanonicalName());
+    private static final Logger LOG = Logger.getLogger(UsuarioPrueba.class.getCanonicalName());
 
     private static final String UNIDAD_PERSITENCIA_PRUEBAS = "eBuryTest";
     private static final String USUARIO_EJB = "java:global/classes/UsuarioEJB";
