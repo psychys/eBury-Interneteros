@@ -48,7 +48,7 @@ public class CuentaPrueba {
 
         cuenta = gestionCuenta.BuscarCuenta("456B");
 
-        assertNotEquals(null, cuenta);
+        assertNotEquals("No se ha encontrado la cuenta", null, cuenta);
 
     }
 

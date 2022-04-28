@@ -37,11 +37,13 @@ public class ClientePrueba {
 
 	//@Requisito 2
 	@Test
-	public void testAltaCliente() throws ClienteException, UsuarioException {
+	public void testAltaCliente() throws ClienteException {
 		Usuario admin = new Usuario(000,"123", true);
 		Cliente cliente = new Cliente(2,456, "cliente",new Date(),null, "calle platano 5", "Malaga", 20749, "España", "activo");
 
 		gestionCliente.AltaCliente(admin, cliente);
+
+		assertNotNull("No se ha creado el cliente", gestionCliente.BuscarCliente(cliente.getID()));
 
 	 }
 

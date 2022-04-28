@@ -133,6 +133,13 @@ public class Divisa {
 		// TODO Auto-generated constructor stub
 	}
 
+	public Divisa(String abreviatura, String nombre, String simbolo, double cambio_euro) {
+		this.abreviatura = abreviatura;
+		this.nombre = nombre;
+		this.simbolo = simbolo;
+		this.cambio_euro = cambio_euro;
+	}
+
 	@Override
 	public boolean equals(Object o) {
 		if (this == o) return true;
@@ -154,7 +161,6 @@ public class Divisa {
 		this.trans_emsior = trans_emsior;
 		this.trans_receptor = trans_receptor;
 		this.c_ref = c_ref;
-
 
 	}
 

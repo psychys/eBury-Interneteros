@@ -12,9 +12,7 @@ import java.util.logging.Logger;
 @Stateless
 public class DivisaEJB implements GestionDivisa {
 
-    private static final Logger LOGGER = java.util.logging.Logger.getLogger(DivisaEJB.class.getCanonicalName());
-
-    //@PersistenceContext(name="eBury_project")
+    @PersistenceContext(name="eBuryEJB")
     private EntityManager em;
 
     @Override
@@ -23,7 +21,7 @@ public class DivisaEJB implements GestionDivisa {
             throw new DivisaException("No eres administrador");
         }
 
-        Divisa divisaExiste = em.find(Divisa.class, d);
+        Divisa divisaExiste = em.find(Divisa.class, d.getAbreviatura());
         if(divisaExiste != null){
             throw new DivisaException("Divisa repetida");
         }
@@ -38,7 +36,7 @@ public class DivisaEJB implements GestionDivisa {
             throw new DivisaException("No eres administrador");
         }
 
-        Divisa divisaExiste = em.find(Divisa.class, d);
+        Divisa divisaExiste = em.find(Divisa.class, d.getAbreviatura());
         if (divisaExiste == null) {
             throw new DivisaException("Divisa no existente");
         }
@@ -66,14 +64,15 @@ public class DivisaEJB implements GestionDivisa {
             throw new DivisaException("No eres administrador");
         }
 
-        Divisa divisaExiste = em.find(Divisa.class, d);
+        Divisa divisaExiste = em.find(Divisa.class, d.getAbreviatura());
         if(divisaExiste == null){
             throw new DivisaException("Divisa no existente");
         }
 
-
+        if (!em.contains(d)) {
+            d = em.merge(d);
+        }
         em.remove(d);
-
 
     }
 
