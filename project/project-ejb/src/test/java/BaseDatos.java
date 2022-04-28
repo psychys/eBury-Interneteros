@@ -1,8 +1,8 @@
 
 import es.uma.jpa.*;
 
-import java.sql.Date;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -22,7 +22,7 @@ public class BaseDatos {
 		Cuenta c = new Cuenta("12345A","123","activa");
 		em.persist(c);
 
-		Cliente cliente = new Cliente(1, 1234, "persona", null, null, "calle platano", "Malaga", 1234, "España", "activa");
+		Cliente cliente = new Cliente(1, 1234, "persona", new Date(), null, "calle platano", "Malaga", 1234, "España", "activa");
 
 		em.persist(cliente);
 		/*
