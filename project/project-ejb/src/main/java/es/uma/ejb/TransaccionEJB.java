@@ -7,13 +7,14 @@ import es.uma.exceptions.TransaccionException;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
+import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 import java.util.List;
 
 @Stateless
 public class TransaccionEJB implements GestionTransaccion {
 
-    //@PersistenceContext(name="Trazabilidad")
+    @PersistenceContext(name="eBuryEJB")
     private EntityManager em;
 
     @Override

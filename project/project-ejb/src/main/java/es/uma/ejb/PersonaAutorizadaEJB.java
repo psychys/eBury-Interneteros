@@ -6,11 +6,12 @@ import es.uma.exceptions.PersonaAutorizadaException;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 
 @Stateless
 public class PersonaAutorizadaEJB implements GestionPersonaAutorizada{
 
-    //@PersistenceContext(name="Trazabilidad")
+    @PersistenceContext(name="eBuryEJB")
     private EntityManager em;
 
     @Override
