@@ -1,16 +1,6 @@
-<<<<<<< Updated upstream
-/home/alumno/Desktop/proyecto/eBury-Interneteros/project/project-ejb/src/test/java/BaseDatos.java
-/home/alumno/Desktop/proyecto/eBury-Interneteros/project/project-ejb/src/test/java/SuiteTest.java
-<<<<<<< Updated upstream
-/home/alumno/Desktop/proyecto/eBury-Interneteros/project/project-ejb/src/test/java/ClientePrueba.java
-/home/alumno/Desktop/proyecto/eBury-Interneteros/project/project-ejb/src/test/java/DivisaPrueba.java
-/home/alumno/Desktop/proyecto/eBury-Interneteros/project/project-ejb/src/test/java/CuentaPrueba.java
-=======
-=======
-/mnt/c/Users/edu-a/OneDrive - Universidad de Málaga/SI Internet Definitivo/eBury-Interneteros/project/project-ejb/src/test/java/DivisaTest.java
-/mnt/c/Users/edu-a/OneDrive - Universidad de Málaga/SI Internet Definitivo/eBury-Interneteros/project/project-ejb/src/test/java/BaseDatos.java
-/mnt/c/Users/edu-a/OneDrive - Universidad de Málaga/SI Internet Definitivo/eBury-Interneteros/project/project-ejb/src/test/java/ClienteTest.java
-/mnt/c/Users/edu-a/OneDrive - Universidad de Málaga/SI Internet Definitivo/eBury-Interneteros/project/project-ejb/src/test/java/CuentaTest.java
-/mnt/c/Users/edu-a/OneDrive - Universidad de Málaga/SI Internet Definitivo/eBury-Interneteros/project/project-ejb/src/test/java/SuiteTest.java
->>>>>>> Stashed changes
->>>>>>> Stashed changes
+/home/alumno/Desktop/eBury-Interneteros/project/project-ejb/src/test/java/DivisaPrueba.java
+/home/alumno/Desktop/eBury-Interneteros/project/project-ejb/src/test/java/SuiteTest.java
+/home/alumno/Desktop/eBury-Interneteros/project/project-ejb/src/test/java/BaseDatos.java
+/home/alumno/Desktop/eBury-Interneteros/project/project-ejb/src/test/java/UsuarioPrueba.java
+/home/alumno/Desktop/eBury-Interneteros/project/project-ejb/src/test/java/CuentaPrueba.java
+/home/alumno/Desktop/eBury-Interneteros/project/project-ejb/src/test/java/ClientePrueba.java
